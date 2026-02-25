@@ -32,7 +32,7 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
-        Vector2 forward =  cameraTransform.forward;
+        /*Vector2 forward =  cameraTransform.forward;
         Vector2 right =  cameraTransform.right;
         
         forward.y = 0;
@@ -48,10 +48,10 @@ public class PlayerController : MonoBehaviour
         {
             transform.Translate( direction * (currentSpeed * Time.deltaTime), Space.World);
             
-        }
-        /*rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
+        }*/
+        rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
          
-        autre solution possible sans la caméra mais il y a un bug a resoudre, en gros quand on saute vers le coté d'un 
+        /*autre solution possible sans la caméra mais il y a un bug a resoudre, en gros quand on saute vers le coté d'un 
         element considere comme un sol bas on reste bloque dans les air #flemme de le resoudre cordialement */
         
     }
