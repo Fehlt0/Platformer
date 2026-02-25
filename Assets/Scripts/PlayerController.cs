@@ -1,3 +1,5 @@
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -6,13 +8,21 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] float currentSpeed = 1f;
     [SerializeField] float jumpForce= 10f;
-    [SerializeField] float distanceOfGroundJump= 1.05f;
+    [SerializeField] float distanceOfGroundJump= 1f;
+    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float jumpBufferTime = 0.2f;
+    [SerializeField] private float airTimeKill = 1f;
     
     private Vector2 moveInput;
     private Transform cameraTransform;
     private Rigidbody2D rb;
+    private float coyoteTimeCounter;
+    private float jumpBufferTimeCounter;
+    private float lastJump;
+    private float airTime;
     
     private bool isGrounded;
+    
     
     public LayerMask layerMask;
     
@@ -27,54 +37,62 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CheckGround();
+        if (isGrounded)
+        {
+            if (airTime >= airTimeKill)
+            {
+                Debug.Log("mort sale nul");
+            }
+            coyoteTimeCounter = coyoteTime;
+            airTime = 0;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+            airTime += Time.deltaTime;
+        }
+
+        jumpBufferTimeCounter -= Time.deltaTime;
+        
+        if (jumpBufferTimeCounter > 0f && coyoteTimeCounter > 0f && Time.time -lastJump > 0.5f)
+        {
+            rb.AddForce(jumpForce *  Vector2.up, ForceMode2D.Impulse);
+            lastJump = Time.time;
+            coyoteTimeCounter = 0f;
+            jumpBufferTimeCounter = 0f;
+        }
     }
 
     private void FixedUpdate()
     {
-        /*Vector2 forward =  cameraTransform.forward;
-        Vector2 right =  cameraTransform.right;
+        CheckGround();
         
-        forward.y = 0;
-        right.y = 0;
-        
-        forward.Normalize();
-        right.Normalize();
-        
-        
-        Vector2 direction = forward * moveInput.y + right * moveInput.x;
-
-        if (direction.magnitude > 0.0001f)
-        {
-            transform.Translate( direction * (currentSpeed * Time.deltaTime), Space.World);
-            
-        }*/
         rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
-         
-        /*autre solution possible sans la caméra mais il y a un bug a resoudre, en gros quand on saute vers le coté d'un 
-        element considere comme un sol bas on reste bloque dans les air #flemme de le resoudre cordialement */
-        
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded)
+        if (context.performed)
         {
-            rb.AddForce(jumpForce *  Vector2.up, ForceMode2D.Impulse);
-
+            jumpBufferTimeCounter = jumpBufferTime;
         }
-        
     }
+    
 
     private void CheckGround()
     {
         RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceOfGroundJump, layerMask);
         isGrounded =  hit.collider != null;
+    }
+
+    private void OnDrawGizmos()
+    {
+        Gizmos.color = Color.crimson;
+        Gizmos.DrawRay(transform.position, Vector2.down * distanceOfGroundJump);
     }
 }
