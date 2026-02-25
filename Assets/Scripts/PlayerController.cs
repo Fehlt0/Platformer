@@ -1,3 +1,4 @@
+using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -5,14 +6,25 @@ public class PlayerController : MonoBehaviour
 {
     
     [SerializeField] float currentSpeed = 1f;
+    
+    
     [SerializeField] float jumpForce= 10f;
     [SerializeField] float distanceOfGroundJump= 1.05f;
+    [SerializeField] float distanceOfWallJump = 1;
+    [SerializeField] float jumpDuration = 0.2f;
+    [SerializeField] float currentCooldownJump;
+    [SerializeField] float cooldownJump = 0f;
+    [SerializeField] float initCooldownJump = 0f;
+    
     
     private Vector2 moveInput;
     private Transform cameraTransform;
     private Rigidbody2D rb;
     
     private bool isGrounded;
+    private bool isWall;
+
+    
     
     public LayerMask layerMask;
     
@@ -22,38 +34,21 @@ public class PlayerController : MonoBehaviour
     {
         cameraTransform = Camera.main.transform;
         rb = GetComponent<Rigidbody2D>();
+        currentCooldownJump = initCooldownJump;
 
     }
 
     void Update()
     {
         CheckGround();
+        CheckWalls();
+        
+        currentCooldownJump += Time.deltaTime;
     }
 
     private void FixedUpdate()
     {
-        /*Vector2 forward =  cameraTransform.forward;
-        Vector2 right =  cameraTransform.right;
-        
-        forward.y = 0;
-        right.y = 0;
-        
-        forward.Normalize();
-        right.Normalize();
-        
-        
-        Vector2 direction = forward * moveInput.y + right * moveInput.x;
-
-        if (direction.magnitude > 0.0001f)
-        {
-            transform.Translate( direction * (currentSpeed * Time.deltaTime), Space.World);
-            
-        }*/
         rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
-         
-        /*autre solution possible sans la caméra mais il y a un bug a resoudre, en gros quand on saute vers le coté d'un 
-        element considere comme un sol bas on reste bloque dans les air #flemme de le resoudre cordialement */
-        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -67,14 +62,40 @@ public class PlayerController : MonoBehaviour
         if (context.performed && isGrounded)
         {
             rb.AddForce(jumpForce *  Vector2.up, ForceMode2D.Impulse);
-
         }
-        
+        else if (isWall && !isGrounded && currentCooldownJump > cooldownJump )
+        {
+            rb.linearVelocity = new Vector2(-Mathf.Sign(transform.localScale.x)*3,6) ;
+            currentCooldownJump = initCooldownJump;
+        }
     }
+
+
+    
 
     private void CheckGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceOfGroundJump, layerMask);
-        isGrounded =  hit.collider != null;
+        RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down, distanceOfGroundJump, layerMask);
+        isGrounded =  hitGround.collider != null;
+    }
+
+    private void CheckWalls()
+    {
+        RaycastHit2D hitWallLeft = Physics2D.Raycast(transform.position, Vector2.left, distanceOfWallJump, layerMask);
+        RaycastHit2D hitWallRight = Physics2D.Raycast(transform.position, Vector2.right, distanceOfWallJump, layerMask);
+        isWall = hitWallLeft.collider != null;
+        if (isWall)
+        {
+            Debug.Log("Wall");
+        }
+    }
+
+    void OnDrawGizmos()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawRay(transform.position, Vector2.down * distanceOfGroundJump);
+        Gizmos.DrawRay(transform.position, Vector2.left * distanceOfWallJump);
+        Gizmos.DrawRay(transform.position, Vector2.right * distanceOfWallJump);
+        
     }
 }
