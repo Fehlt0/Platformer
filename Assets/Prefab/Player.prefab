@@ -439,12 +439,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a791afa84da8c74c9f8093afe5d7b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentSpeed: 5
+  currentmoveSpeed: 5
   jumpForce: 5
-  distanceOfGroundJump: 1.01
+  groundCheckDistance: 0.18
   coyoteTime: 0.2
   jumpBufferTime: 0.2
+  jumpCutMultiplier: 0.5
   airTimeKill: 1.5
-  layerMask:
+  wallCheckDistance: 0.22
+  wallSlideSpeed: 2
+  wallJumpForce: {x: 6, y: 10}
+  groundLayer:
     serializedVersion: 2
-    m_Bits: 64
+    m_Bits: 0
+  wallLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  groundCheck: {fileID: 0}
+  wallCheckRight: {fileID: 0}
+  wallCheckLeft: {fileID: 0}
