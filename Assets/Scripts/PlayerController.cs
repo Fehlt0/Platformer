@@ -1,4 +1,5 @@
-using UnityEditor.Rendering.LookDev;
+using System;
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -9,17 +10,19 @@ public class PlayerController : MonoBehaviour
     
     
     [SerializeField] float jumpForce= 10f;
-    [SerializeField] float distanceOfGroundJump= 1.05f;
-    [SerializeField] float distanceOfWallJump = 1;
-    [SerializeField] float jumpDuration = 0.2f;
-    [SerializeField] float currentCooldownJump;
-    [SerializeField] float cooldownJump = 0f;
-    [SerializeField] float initCooldownJump = 0f;
+    [SerializeField] float distanceOfGroundJump= 1f;
+    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float jumpBufferTime = 0.2f;
+    [SerializeField] private float airTimeKill = 1f;
     
     
     private Vector2 moveInput;
     private Transform cameraTransform;
     private Rigidbody2D rb;
+    private float coyoteTimeCounter;
+    private float jumpBufferTimeCounter;
+    private float lastJump;
+    private float airTime;
     
     private bool isGrounded;
     private bool isWall;
@@ -40,35 +43,52 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CheckGround();
-        CheckWalls();
+        if (isGrounded)
+        {
+            if (airTime >= airTimeKill)
+            {
+                Debug.Log("mort sale nul");
+            }
+            coyoteTimeCounter = coyoteTime;
+            airTime = 0;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+            airTime += Time.deltaTime;
+        }
+
+        jumpBufferTimeCounter -= Time.deltaTime;
         
-        currentCooldownJump += Time.deltaTime;
+        if (jumpBufferTimeCounter > 0f && coyoteTimeCounter > 0f && Time.time -lastJump > 0.5f)
+        {
+            rb.AddForce(jumpForce *  Vector2.up, ForceMode2D.Impulse);
+            lastJump = Time.time;
+            coyoteTimeCounter = 0f;
+            jumpBufferTimeCounter = 0f;
+        }
     }
 
     private void FixedUpdate()
     {
+        CheckGround();
+        
         rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded)
+        if (context.performed)
         {
-            rb.AddForce(jumpForce *  Vector2.up, ForceMode2D.Impulse);
-        }
-        else if (isWall && !isGrounded && currentCooldownJump > cooldownJump )
-        {
-            rb.linearVelocity = new Vector2(-Mathf.Sign(transform.localScale.x)*3,6) ;
-            currentCooldownJump = initCooldownJump;
+            jumpBufferTimeCounter = jumpBufferTime;
         }
     }
+    
 
 
     
@@ -79,23 +99,9 @@ public class PlayerController : MonoBehaviour
         isGrounded =  hitGround.collider != null;
     }
 
-    private void CheckWalls()
+    private void OnDrawGizmos()
     {
-        RaycastHit2D hitWallLeft = Physics2D.Raycast(transform.position, Vector2.left, distanceOfWallJump, layerMask);
-        RaycastHit2D hitWallRight = Physics2D.Raycast(transform.position, Vector2.right, distanceOfWallJump, layerMask);
-        isWall = hitWallLeft.collider != null;
-        if (isWall)
-        {
-            Debug.Log("Wall");
-        }
-    }
-
-    void OnDrawGizmos()
-    {
-        Gizmos.color = Color.red;
+        Gizmos.color = Color.crimson;
         Gizmos.DrawRay(transform.position, Vector2.down * distanceOfGroundJump);
-        Gizmos.DrawRay(transform.position, Vector2.left * distanceOfWallJump);
-        Gizmos.DrawRay(transform.position, Vector2.right * distanceOfWallJump);
-        
     }
 }
