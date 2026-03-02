@@ -1,42 +1,56 @@
-using System;
-using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     
-    [SerializeField] float currentSpeed = 1f;
+    [SerializeField] float currentmoveSpeed = 1f;
+    
     [SerializeField] float jumpForce= 10f;
-    [SerializeField] float distanceOfGroundJump= 1f;
+    [SerializeField] float groundCheckDistance = 1f;
+    
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float jumpBufferTime = 0.2f;
+    [SerializeField] private float jumpCutMultiplier = 0.5f;
     [SerializeField] private float airTimeKill = 1f;
     
+    [SerializeField] private float wallCheckDistance = 0.5f;
+    [SerializeField] private float wallSlideSpeed = 2f;
+    [SerializeField] private Vector2 wallJumpForce = new Vector2(8f, 12f);
+    
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
+    
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform wallCheckRight;
+    [SerializeField] private Transform wallCheckLeft;
+    
     private Vector2 moveInput;
-    private Transform cameraTransform;
     private Rigidbody2D rb;
+    
     private float coyoteTimeCounter;
     private float jumpBufferTimeCounter;
     private float lastJump;
     private float airTime;
     
     private bool isGrounded;
+    private bool isTouchingWall;
+    private bool isWallSliding;
     
-    
-    public LayerMask layerMask;
-    
+    private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
    
     void Start()
     {
-        cameraTransform = Camera.main.transform;
         rb = GetComponent<Rigidbody2D>();
-
     }
 
     void Update()
     {
+        CheckGround();
+        CheckWall();
+        WallSlide();
+        
         if (isGrounded)
         {
             if (airTime >= airTimeKill)
@@ -54,20 +68,38 @@ public class PlayerController : MonoBehaviour
 
         jumpBufferTimeCounter -= Time.deltaTime;
         
-        if (jumpBufferTimeCounter > 0f && coyoteTimeCounter > 0f && Time.time -lastJump > 0.5f)
+        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isWallSliding) && Time.time -lastJump > 0.5f)
         {
-            rb.AddForce(jumpForce *  Vector2.up, ForceMode2D.Impulse);
+            Jump();
             lastJump = Time.time;
-            coyoteTimeCounter = 0f;
             jumpBufferTimeCounter = 0f;
         }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        CheckGround();
+        Move();
+    }
+
+    private void Move()
+    {
+        rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y);
+    }
+
+    private void Jump()
+    {
         
-        rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
+        if (isWallSliding)
+        {
+            rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, wallJumpForce.y);
+            isWallSliding =  false;
+            coyoteTimeCounter = 0f;
+            return;
+            
+        }
+        
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        coyoteTimeCounter = 0f;
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -77,22 +109,61 @@ public class PlayerController : MonoBehaviour
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed)
+        if (context.started)
         {
             jumpBufferTimeCounter = jumpBufferTime;
         }
+        
+        // Ajout du Jump cut entre guillemet genre tu sans quand on relache la touche plus tot il saute moin haut
+        if (context.canceled && rb.linearVelocity.y > 0f)
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
+        
     }
+    
+
     
 
     private void CheckGround()
     {
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, Vector2.down, distanceOfGroundJump, layerMask);
-        isGrounded =  hit.collider != null;
+        RaycastHit2D hitGround = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
+        isGrounded =  hitGround.collider != null;
     }
 
+    private void CheckWall()
+    {
+        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, wallLayer);
+        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, wallLayer);
+
+        isTouchingWall = hitRight || hitLeft;
+
+        if (hitRight)
+            wallDirection = 1;
+        else if (hitLeft)
+            wallDirection = -1;
+        
+    }
+
+    private void WallSlide()
+    {
+        if (isTouchingWall && !isGrounded)
+        {
+            isWallSliding = true;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
+        }
+    }
+
+    
+    
+    
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.crimson;
-        Gizmos.DrawRay(transform.position, Vector2.down * distanceOfGroundJump);
+        Gizmos.DrawRay(groundCheck.position, Vector2.down * groundCheckDistance );
+        Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
+        Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
     }
 }
