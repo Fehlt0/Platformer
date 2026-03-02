@@ -24,6 +24,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheckRight;
     [SerializeField] private Transform wallCheckLeft;
+
+    [SerializeField] private GameObject light;
     
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -117,6 +119,19 @@ public class PlayerController : MonoBehaviour
         // Ajout du Jump cut entre guillemet genre tu sans quand on relache la touche plus tot il saute moin haut
         if (context.canceled && rb.linearVelocity.y > 0f)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
+        
+    }
+
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.ReadValueAsButton())
+        {
+            light.SetActive(true);
+        }
+        else
+        {
+            light.SetActive(false);
+        }
         
     }
     
