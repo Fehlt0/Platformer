@@ -1,101 +1,184 @@
-using UnityEditor.Rendering.LookDev;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
     
-    [SerializeField] float currentSpeed = 1f;
-    
+    [SerializeField] float currentmoveSpeed = 1f;
     
     [SerializeField] float jumpForce= 10f;
-    [SerializeField] float distanceOfGroundJump= 1.05f;
-    [SerializeField] float distanceOfWallJump = 1;
-    [SerializeField] float jumpDuration = 0.2f;
-    [SerializeField] float currentCooldownJump;
-    [SerializeField] float cooldownJump = 0f;
-    [SerializeField] float initCooldownJump = 0f;
+    [SerializeField] float groundCheckDistance = 1f;
     
+    [SerializeField] private float coyoteTime = 0.2f;
+    [SerializeField] private float jumpBufferTime = 0.2f;
+    [SerializeField] private float jumpCutMultiplier = 0.5f;
+    [SerializeField] private float airTimeKill = 1f;
+    
+    [SerializeField] private float wallCheckDistance = 0.5f;
+    [SerializeField] private float wallSlideSpeed = 2f;
+    [SerializeField] private Vector2 wallJumpForce = new Vector2(8f, 12f);
+    
+    [SerializeField] private LayerMask groundLayer;
+    [SerializeField] private LayerMask wallLayer;
+    
+    [SerializeField] private Transform groundCheck;
+    [SerializeField] private Transform wallCheckRight;
+    [SerializeField] private Transform wallCheckLeft;
+
+    [SerializeField] private GameObject light;
     
     private Vector2 moveInput;
-    private Transform cameraTransform;
     private Rigidbody2D rb;
     
+    private float coyoteTimeCounter;
+    private float jumpBufferTimeCounter;
+    private float lastJump;
+    private float airTime;
+    
     private bool isGrounded;
-    private bool isWall;
-
+    private bool isTouchingWall;
+    private bool isWallSliding;
     
-    
-    public LayerMask layerMask;
-    
+    private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
    
     void Start()
     {
-        cameraTransform = Camera.main.transform;
         rb = GetComponent<Rigidbody2D>();
-        currentCooldownJump = initCooldownJump;
-
     }
 
     void Update()
     {
         CheckGround();
-        CheckWalls();
+        CheckWall();
+        WallSlide();
         
-        currentCooldownJump += Time.deltaTime;
+        if (isGrounded)
+        {
+            if (airTime >= airTimeKill)
+            {
+                Debug.Log("mort sale nul");
+            }
+            coyoteTimeCounter = coyoteTime;
+            airTime = 0;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+            airTime += Time.deltaTime;
+        }
+
+        jumpBufferTimeCounter -= Time.deltaTime;
+        
+        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isWallSliding) && Time.time -lastJump > 0.5f)
+        {
+            Jump();
+            lastJump = Time.time;
+            jumpBufferTimeCounter = 0f;
+        }
     }
 
-    private void FixedUpdate()
+    void FixedUpdate()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * currentSpeed, rb.linearVelocity.y);
+        Move();
+    }
+
+    private void Move()
+    {
+        rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y);
+    }
+
+    private void Jump()
+    {
+        
+        if (isWallSliding)
+        {
+            rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, wallJumpForce.y);
+            isWallSliding =  false;
+            coyoteTimeCounter = 0f;
+            return;
+            
+        }
+        
+        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+        coyoteTimeCounter = 0f;
     }
 
     public void OnMove(InputAction.CallbackContext context)
     {
         moveInput = context.ReadValue<Vector2>();
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
-        if (context.performed && isGrounded)
+        if (context.started)
         {
-            rb.AddForce(jumpForce *  Vector2.up, ForceMode2D.Impulse);
+            jumpBufferTimeCounter = jumpBufferTime;
         }
-        else if (isWall && !isGrounded && currentCooldownJump > cooldownJump )
-        {
-            rb.linearVelocity = new Vector2(-Mathf.Sign(transform.localScale.x)*3,6) ;
-            currentCooldownJump = initCooldownJump;
-        }
+        
+        // Ajout du Jump cut entre guillemet genre tu sans quand on relache la touche plus tot il saute moin haut
+        if (context.canceled && rb.linearVelocity.y > 0f)
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
+        
     }
 
+    public void OnInteract(InputAction.CallbackContext context)
+    {
+        if (context.ReadValueAsButton())
+        {
+            light.SetActive(true);
+        }
+        else
+        {
+            light.SetActive(false);
+        }
+        
+    }
+    
 
     
 
     private void CheckGround()
     {
-        RaycastHit2D hitGround = Physics2D.Raycast(transform.position, Vector2.down, distanceOfGroundJump, layerMask);
+        RaycastHit2D hitGround = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
         isGrounded =  hitGround.collider != null;
     }
 
-    private void CheckWalls()
+    private void CheckWall()
     {
-        RaycastHit2D hitWallLeft = Physics2D.Raycast(transform.position, Vector2.left, distanceOfWallJump, layerMask);
-        RaycastHit2D hitWallRight = Physics2D.Raycast(transform.position, Vector2.right, distanceOfWallJump, layerMask);
-        isWall = hitWallLeft.collider != null;
-        if (isWall)
+        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, wallLayer);
+        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, wallLayer);
+
+        isTouchingWall = hitRight || hitLeft;
+
+        if (hitRight)
+            wallDirection = 1;
+        else if (hitLeft)
+            wallDirection = -1;
+        
+    }
+
+    private void WallSlide()
+    {
+        if (isTouchingWall && !isGrounded)
         {
-            Debug.Log("Wall");
+            isWallSliding = true;
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
+        }
+        else
+        {
+            isWallSliding = false;
         }
     }
 
-    void OnDrawGizmos()
+    
+    
+    
+    private void OnDrawGizmos()
     {
-        Gizmos.color = Color.red;
-        Gizmos.DrawRay(transform.position, Vector2.down * distanceOfGroundJump);
-        Gizmos.DrawRay(transform.position, Vector2.left * distanceOfWallJump);
-        Gizmos.DrawRay(transform.position, Vector2.right * distanceOfWallJump);
-        
+        Gizmos.color = Color.crimson;
+        Gizmos.DrawRay(groundCheck.position, Vector2.down * groundCheckDistance );
+        Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
+        Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
     }
 }
