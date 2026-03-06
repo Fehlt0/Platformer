@@ -1134,7 +1134,7 @@ Transform:
   m_GameObject: {fileID: 1883224192}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 6.69, y: -1.23, z: 0}
+  m_LocalPosition: {x: 6.7581897, y: -1.02138, z: 0}
   m_LocalScale: {x: 10.2, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1408,14 +1408,6 @@ PrefabInstance:
       propertyPath: light
       value: 
       objectReference: {fileID: 1924626586}
-    - target: {fileID: 8947842431380497069, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
-      propertyPath: wallJumpForce.x
-      value: 8
-      objectReference: {fileID: 0}
-    - target: {fileID: 8947842431380497069, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
-      propertyPath: wallJumpForce.y
-      value: 10
-      objectReference: {fileID: 0}
     - target: {fileID: 9030068658206032383, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
       propertyPath: m_ActionEvents.Array.data[3].m_PersistentCalls.m_Calls.Array.size
       value: 1

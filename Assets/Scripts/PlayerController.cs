@@ -12,11 +12,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float jumpBufferTime = 0.2f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
-    [SerializeField] private float airTimeKill = 1f;
     
     [SerializeField] private float wallCheckDistance = 0.5f;
     [SerializeField] private float wallSlideSpeed = 2f;
     [SerializeField] private Vector2 wallJumpForce = new Vector2(8f, 12f);
+    [SerializeField] private Vector2 boxSize = new Vector2(0.5f, 0.05f);
     
     [SerializeField] private LayerMask groundLayer;
     [SerializeField] private LayerMask wallLayer;
@@ -33,11 +33,10 @@ public class PlayerController : MonoBehaviour
     private float coyoteTimeCounter;
     private float jumpBufferTimeCounter;
     private float lastJump;
-    private float airTime;
     
     private bool isGrounded;
     private bool isTouchingWall;
-    private bool isWallSliding;
+    private bool lastTouchingIsWall;
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
@@ -49,28 +48,26 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        CheckGround();
+        
         CheckWall();
-        WallSlide();
+        
         
         if (isGrounded)
         {
-            if (airTime >= airTimeKill)
+            if (rb.linearVelocity.y <= -10)
             {
                 Debug.Log("mort sale nul");
             }
             coyoteTimeCounter = coyoteTime;
-            airTime = 0;
         }
         else
         {
             coyoteTimeCounter -= Time.deltaTime;
-            airTime += Time.deltaTime;
         }
 
         jumpBufferTimeCounter -= Time.deltaTime;
         
-        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isWallSliding) && Time.time -lastJump > 0.5f)
+        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
         {
             Jump();
             lastJump = Time.time;
@@ -81,27 +78,34 @@ public class PlayerController : MonoBehaviour
     void FixedUpdate()
     {
         Move();
+        CheckGround();
     }
 
     private void Move()
     {
-        rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y);
+        if (!lastTouchingIsWall)
+        {
+            rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y);
+        }
     }
 
     private void Jump()
     {
-        
-        if (isWallSliding)
+        if (isTouchingWall && !isGrounded)
         {
+            lastTouchingIsWall = true;
             rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, wallJumpForce.y);
-            isWallSliding =  false;
+            isTouchingWall = false;
             coyoteTimeCounter = 0f;
             return;
-            
+        }
+        else
+        {
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
+            coyoteTimeCounter = 0f;
         }
         
-        rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
-        coyoteTimeCounter = 0f;
+        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -135,13 +139,15 @@ public class PlayerController : MonoBehaviour
         
     }
     
-
-    
-
     private void CheckGround()
     {
-        RaycastHit2D hitGround = Physics2D.Raycast(groundCheck.position, Vector2.down, groundCheckDistance, groundLayer);
+        RaycastHit2D hitGround = Physics2D.BoxCast(groundCheck.position, boxSize, 0f, Vector2.down, groundCheckDistance, groundLayer);      
         isGrounded =  hitGround.collider != null;
+        Debug.Log(isGrounded);
+        if (isGrounded)
+        {
+            lastTouchingIsWall = false;
+        }
     }
 
     private void CheckWall()
@@ -157,27 +163,11 @@ public class PlayerController : MonoBehaviour
             wallDirection = -1;
         
     }
-
-    private void WallSlide()
-    {
-        if (isTouchingWall && !isGrounded)
-        {
-            isWallSliding = true;
-            rb.linearVelocity = new Vector2(rb.linearVelocity.x, Mathf.Clamp(rb.linearVelocity.y, -wallSlideSpeed, float.MaxValue));
-        }
-        else
-        {
-            isWallSliding = false;
-        }
-    }
-
-    
-    
     
     private void OnDrawGizmos()
     {
         Gizmos.color = Color.crimson;
-        Gizmos.DrawRay(groundCheck.position, Vector2.down * groundCheckDistance );
+        Gizmos.DrawWireCube(groundCheck.position, boxSize );
         Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
     }
