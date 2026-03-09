@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float coyoteTime = 0.2f;
     [SerializeField] private float jumpBufferTime = 0.2f;
     [SerializeField] private float jumpCutMultiplier = 0.5f;
+    [SerializeField] private float acceleration = 1f;
+    [SerializeField] private float deceleration = 1f;
     
     [SerializeField] private float wallCheckDistance = 0.5f;
     [SerializeField] private float wallSlideSpeed = 2f;
@@ -26,6 +28,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform wallCheckLeft;
 
     [SerializeField] private GameObject light;
+    
     
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -85,7 +88,23 @@ public class PlayerController : MonoBehaviour
     {
         if (!lastTouchingIsWall)
         {
-            rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y);
+           // rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); laisse le en com au cas ou si on doit rechanger a l'avenir
+           
+           float targetSpeed = moveInput.x * currentmoveSpeed;
+           float SpeedDiff = targetSpeed - rb.linearVelocity.x;
+           float accelerate;
+
+           if (Mathf.Abs(targetSpeed) > 0.01f)
+           {
+               accelerate = acceleration;
+           }
+           else
+           {
+               accelerate = deceleration;
+           }
+           
+           float mouvement = SpeedDiff * accelerate;
+           rb.AddForce(Vector2.right * mouvement);
         }
     }
 
@@ -131,10 +150,12 @@ public class PlayerController : MonoBehaviour
         if (context.ReadValueAsButton())
         {
             light.SetActive(true);
+
         }
         else
         {
             light.SetActive(false);
+    
         }
         
     }
@@ -143,7 +164,6 @@ public class PlayerController : MonoBehaviour
     {
         RaycastHit2D hitGround = Physics2D.BoxCast(groundCheck.position, boxSize, 0f, Vector2.down, groundCheckDistance, groundLayer);      
         isGrounded =  hitGround.collider != null;
-        Debug.Log(isGrounded);
         if (isGrounded)
         {
             lastTouchingIsWall = false;
