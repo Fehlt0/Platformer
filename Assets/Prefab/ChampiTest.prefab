@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 616652972471504674}
   - component: {fileID: 5244068541570106950}
   - component: {fileID: 1779671935425070425}
+  - component: {fileID: 1232497599586774486}
   m_Layer: 0
   m_Name: ChampiTest
   m_TagString: Untagged
@@ -180,7 +181,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
-  spriteVivant: {fileID: 3310002292416464744, guid: 541671cc07e50624abe621775307177d, type: 3}
-  spriteMort: {fileID: 6728674274503774912, guid: 3448f01bbed8d604e88dbc085da995f9, type: 3}
+  animatorRef: {fileID: 0}
   isAlive: 0
   strength: 1000
+--- !u!95 &1232497599586774486
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8465805151850064899}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a33c3c24dd43c3e45b4d8d58b3fc72fd, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

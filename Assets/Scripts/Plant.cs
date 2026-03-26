@@ -23,7 +23,6 @@ public abstract class Plant : MonoBehaviour
     {
         if (other.CompareTag("Light"))
         {
-            Debug.Log("est detecte");
             timeUntilDecay = baseTimeUntilDecay;
         }
     }
