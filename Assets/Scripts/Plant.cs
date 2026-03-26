@@ -7,23 +7,25 @@ public abstract class Plant : MonoBehaviour
     
     [SerializeField] private float baseTimeUntilDecay;
     private float timeUntilDecay;
+
+    public Animator animatorRef;
     
-    [SerializeField] private Sprite spriteVivant;
-    [SerializeField] private Sprite spriteMort;
-    private SpriteRenderer spriteRef;
 
     public bool isAlive;
 
-    private void Start()
+    public virtual void Start()
     {
-        spriteRef = GetComponent<SpriteRenderer>();
+        animatorRef = GetComponent<Animator>();
         timeUntilDecay = 0;
     }
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("est detecte");
-        timeUntilDecay = baseTimeUntilDecay;
+        if (other.CompareTag("Light"))
+        {
+            Debug.Log("est detecte");
+            timeUntilDecay = baseTimeUntilDecay;
+        }
     }
 
     private void Update()
@@ -34,13 +36,19 @@ public abstract class Plant : MonoBehaviour
         {
             timeUntilDecay = 0;
         }
+        IfIsAlive();
+        
+    }
+
+    public virtual void IfIsAlive()
+    {
         if (isAlive)
         {
-            spriteRef.sprite = spriteVivant;
+            animatorRef.SetBool("isAlive", true);
         }
         else
         {
-            spriteRef.sprite = spriteMort;
+            animatorRef.SetBool("isAlive", false);
         }
     }
 }
