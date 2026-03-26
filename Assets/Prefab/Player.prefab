@@ -93,8 +93,8 @@ Transform:
   m_GameObject: {fileID: 2378635752514104430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.95, y: 0.03, z: 0}
-  m_LocalScale: {x: 1.104, y: 2.7675993, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2491451223389530772}
@@ -149,7 +149,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: 7482667652216324306, guid: 75f5f34dc1b5347e0b8351032682f224, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_Color: {r: 0.9433962, g: 0.90557134, b: 0.5562478, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -171,7 +171,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LampControll
   player: {fileID: 1028939692511918276}
-  distance: 2
+  distance: 3.5
 --- !u!60 &2691264686689457375
 PolygonCollider2D:
   m_ObjectHideFlags: 0
@@ -202,7 +202,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -314,7 +314,7 @@ Transform:
   m_GameObject: {fileID: 6521004814734928236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -397,7 +397,7 @@ Rigidbody2D:
   m_Mass: 1
   m_LinearDamping: 0
   m_AngularDamping: 0.05
-  m_GravityScale: 1
+  m_GravityScale: 2
   m_Material: {fileID: 6200000, guid: be8d5c8e871bf244cbb88c6ef82a1e31, type: 2}
   m_IncludeLayers:
     serializedVersion: 2
@@ -600,17 +600,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a791afa84da8c74c9f8093afe5d7b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentmoveSpeed: 5
-  jumpForce: 5
+  currentmoveSpeed: 6
+  jumpForce: 10
   groundCheckDistance: 0.18
   coyoteTime: 0.2
-  jumpBufferTime: 0.2
-  jumpCutMultiplier: 0.5
-  acceleration: 1
-  deceleration: 1
+  jumpBufferTime: 0.4
+  jumpCutMultiplier: 0.6
+  acceleration: 2
+  deceleration: 3
   wallCheckDistance: 0.22
   wallSlideSpeed: 2
-  wallJumpForce: {x: 8, y: 10}
+  wallJumpForce: {x: 4, y: 8}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:
     serializedVersion: 2
@@ -641,7 +641,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &266425855003086198
 Transform:
   m_ObjectHideFlags: 0
@@ -651,7 +651,7 @@ Transform:
   m_GameObject: {fileID: 7512966595118957086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.06, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -692,7 +692,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.69
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -785,7 +785,7 @@ Transform:
   m_GameObject: {fileID: 8933197436456888975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.895, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
