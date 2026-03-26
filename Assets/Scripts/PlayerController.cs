@@ -115,7 +115,6 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, wallJumpForce.y);
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
-            return;
         }
         else
         {
