@@ -91,8 +91,8 @@ Transform:
   m_GameObject: {fileID: 2378635752514104430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 4.95, y: 0.03, z: 0}
-  m_LocalScale: {x: 1.104, y: 2.7675993, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 2491451223389530772}
@@ -248,7 +248,7 @@ Transform:
   m_GameObject: {fileID: 6521004814734928236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3.3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -522,15 +522,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a791afa84da8c74c9f8093afe5d7b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentmoveSpeed: 5
-  jumpForce: 5
+  currentmoveSpeed: 6
+  jumpForce: 7
   groundCheckDistance: 0.18
   coyoteTime: 0.2
-  jumpBufferTime: 0.2
+  jumpBufferTime: 0.3
   jumpCutMultiplier: 0.5
+  acceleration: 1.5
+  deceleration: 3
   wallCheckDistance: 0.22
   wallSlideSpeed: 2
-  wallJumpForce: {x: 8, y: 10}
+  wallJumpForce: {x: 4, y: 6.5}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:
     serializedVersion: 2
@@ -542,6 +544,7 @@ MonoBehaviour:
   wallCheckRight: {fileID: 739658565774027413}
   wallCheckLeft: {fileID: 6750413823159471417}
   light: {fileID: 0}
+  luciole: {fileID: 0}
 --- !u!1 &7512966595118957086
 GameObject:
   m_ObjectHideFlags: 0
@@ -560,7 +563,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &266425855003086198
 Transform:
   m_ObjectHideFlags: 0
@@ -570,7 +573,7 @@ Transform:
   m_GameObject: {fileID: 7512966595118957086}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -2.06, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -611,7 +614,7 @@ Camera:
   far clip plane: 1000
   field of view: 34
   orthographic: 1
-  orthographic size: 5
+  orthographic size: 6.69
   m_Depth: -1
   m_CullingMask:
     serializedVersion: 2
@@ -694,7 +697,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!4 &2491451223389530772
 Transform:
   m_ObjectHideFlags: 0
@@ -704,7 +707,7 @@ Transform:
   m_GameObject: {fileID: 8933197436456888975}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.895, y: 0, z: 0}
+  m_LocalPosition: {x: 3, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
