@@ -10,13 +10,13 @@ public abstract class Plant : MonoBehaviour
     
     [SerializeField] private Sprite spriteVivant;
     [SerializeField] private Sprite spriteMort;
-    private Sprite spriteRef;
+    private SpriteRenderer spriteRef;
 
     public bool isAlive;
 
     private void Start()
     {
-        spriteRef = GetComponent<SpriteRenderer>().sprite;
+        spriteRef = GetComponent<SpriteRenderer>();
         timeUntilDecay = 0;
     }
 
@@ -36,11 +36,11 @@ public abstract class Plant : MonoBehaviour
         }
         if (isAlive)
         {
-            spriteRef = spriteVivant;
+            spriteRef.sprite = spriteVivant;
         }
         else
         {
-            spriteRef = spriteMort;
+            spriteRef.sprite = spriteMort;
         }
     }
 }
