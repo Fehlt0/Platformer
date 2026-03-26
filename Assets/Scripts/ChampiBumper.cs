@@ -19,6 +19,4 @@ public class ChampiBumper : Plant
             other.rigidbody.AddForce(direction * strength);
         }
     }
-
-    
 }
