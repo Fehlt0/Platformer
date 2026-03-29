@@ -30,7 +30,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform wallCheckLeft;
 
     [SerializeField] private GameObject light;
-    
+    [SerializeField] private GameObject luciole;
     
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -58,19 +58,6 @@ public class PlayerController : MonoBehaviour
         
         CheckWall();
         
-        
-        if (isGrounded)
-        {
-            if (rb.linearVelocity.y <= -10)
-            {
-                Debug.Log("mort sale nul");
-            }
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
-        }
 
         jumpBufferTimeCounter -= Time.deltaTime;
         
@@ -86,13 +73,25 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         CheckGround();
+        if (isGrounded)
+        {
+            if (rb.linearVelocity.y <= -10)
+            {
+                Debug.Log("mort sale nul");
+            }
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
     }
 
     private void Move()
     {
         if (!lastTouchingIsWall)
         {
-           // rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); laisse le en com au cas ou si on doit rechanger a l'avenir
+           //rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); 
            
            float targetSpeed = moveInput.x * currentmoveSpeed;
            float SpeedDiff = targetSpeed - rb.linearVelocity.x;
@@ -127,15 +126,12 @@ public class PlayerController : MonoBehaviour
             
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
-            return;
         }
         else
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             coyoteTimeCounter = 0f;
         }
-        
-        
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -153,7 +149,6 @@ public class PlayerController : MonoBehaviour
         // Ajout du Jump cut entre guillemet genre tu sans quand on relache la touche plus tot il saute moin haut
         if (context.canceled && rb.linearVelocity.y > 0f)
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, rb.linearVelocity.y * jumpCutMultiplier);
-        
     }
 
     public void OnInteract(InputAction.CallbackContext context)
@@ -168,7 +163,6 @@ public class PlayerController : MonoBehaviour
             light.SetActive(false);
     
         }
-        
     }
     
     private void CheckGround()
@@ -202,5 +196,10 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireCube(groundCheck.position, boxSize );
         Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
+    }
+
+    private void ThrowLuciole()
+    {
+        Instantiate(luciole, transform.position, Quaternion.identity);
     }
 }
