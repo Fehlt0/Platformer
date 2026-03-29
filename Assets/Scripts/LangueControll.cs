@@ -15,35 +15,41 @@ public class LangueControll : MonoBehaviour
     private Vector2 grapplePoint;
     private Vector2 aimInput;
     
+    private bool isHoldingTongue;
     private bool isGrappling;
+
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody2D>();
+    }
+
+    private void Update()
+    {
+       ShowAim();
+    }
 
     private void FixedUpdate()
     {
+
         if (isGrappling)
         {
             GrappleMove();
-            rb.linearVelocity = Vector2.zero;
-            
-            tongueLine.enabled = true;
-            tongueLine.SetPosition(0, transform.position);
-            tongueLine.SetPosition(1, grapplePoint); 
-        }
-        else
-        {
-            tongueLine.enabled = false;
         }
     } 
     
     public void OnTongue(InputAction.CallbackContext context)
     {
+        
+        Debug.Log("Tongue input reçu");
         if (context.started)
         {
-
+            isHoldingTongue =  true;
             TryGrapple();
         }
 
         if (context.canceled)
         {
+            isHoldingTongue =  false;
             isGrappling = false;
         }
     }
@@ -52,16 +58,15 @@ public class LangueControll : MonoBehaviour
     {
         if (aimInput.magnitude < 0.2f)
         {
-            Debug.Log(aimInput);
+            Debug.Log("Aim: " + aimInput);
             return;
         }
         
         Vector2 direction = aimInput.normalized;
         
-        
+        Debug.DrawRay(transform.position, direction * tongueDistance, Color.red, 1f);
         RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tongueDistance, grappleLayer);
         
-        //Debug.DrawRay(transform.position, direction, Color.red);
         Debug.Log(hit.collider);
         
         if (hit.collider != null)
@@ -91,5 +96,32 @@ public class LangueControll : MonoBehaviour
         
         aimInput = context.ReadValue<Vector2>();
 
+    }
+
+    private void ShowAim()
+    {
+        if ( !isHoldingTongue || aimInput.magnitude < 0.2f)
+        {
+            tongueLine.enabled = false;
+            return;
+        }
+
+        Vector2 direction = aimInput.normalized;
+
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tongueDistance, grappleLayer);
+
+        tongueLine.enabled = true;
+        tongueLine.SetPosition(0, transform.position);
+
+        if (hit.collider != null)
+        {
+            tongueLine.material.color = Color.green;
+            tongueLine.SetPosition(1, hit.point);
+        }
+        else
+        {
+            tongueLine.material.color = Color.red;
+            tongueLine.SetPosition(1, (Vector2)transform.position + direction * tongueDistance);
+        }
     }
 }
