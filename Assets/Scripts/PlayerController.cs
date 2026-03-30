@@ -1,3 +1,4 @@
+using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -28,9 +29,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private Transform groundCheck;
     [SerializeField] private Transform wallCheckRight;
     [SerializeField] private Transform wallCheckLeft;
-
-    [SerializeField] private GameObject light;
-    [SerializeField] private GameObject luciole;
     
     private Vector2 moveInput;
     private Rigidbody2D rb;
@@ -43,6 +41,12 @@ public class PlayerController : MonoBehaviour
     private bool isGrounded;
     private bool isTouchingWall;
     private bool lastTouchingIsWall;
+    
+    [SerializeField] private float distance = 2f;
+    [SerializeField] private GameObject pointeur;
+    [SerializeField] private GameObject lampCursor;
+    [SerializeField] private GameObject lampCircle;
+    public static float lampTimer = 1f;
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
@@ -66,6 +70,19 @@ public class PlayerController : MonoBehaviour
             Jump();
             lastJump = Time.time;
             jumpBufferTimeCounter = 0f;
+        }
+        
+        Vector2 joystick = Gamepad.current.rightStick.ReadValue();
+
+        if (joystick.magnitude > 0.1f)
+        {
+            joystick.Normalize();
+            
+            Vector3 decalage = new Vector3(joystick.x, joystick.y, 0f) * distance ;
+            pointeur.transform.position = transform.position + decalage;
+            
+            float angle = Mathf.Atan2(decalage.y, decalage.x) * Mathf.Rad2Deg; 
+            pointeur.transform.rotation = Quaternion.Euler(0f, 0f, angle +90f);
         }
     }
 
@@ -156,16 +173,25 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
+        Vector2 joystick = Gamepad.current.rightStick.ReadValue();
         if (context.ReadValueAsButton())
         {
-            light.SetActive(true);
+            if (joystick.magnitude >= 0.1)
+            {
+                Instantiate(lampCursor, pointeur.transform.position, pointeur.transform.rotation);
+            }
+            else
+            {
+                lampCircle.SetActive(true);
+                StartCoroutine(LampOffTimer());
+            }
+        }
+    }
 
-        }
-        else
-        {
-            light.SetActive(false);
-    
-        }
+    private IEnumerator LampOffTimer()
+    {
+        yield return new WaitForSeconds(lampTimer);
+        lampCircle.SetActive(false);
     }
     
     private void CheckGround()
@@ -201,8 +227,5 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
     }
 
-    private void ThrowLuciole()
-    {
-        Instantiate(luciole, transform.position, Quaternion.identity);
-    }
+    
 }
