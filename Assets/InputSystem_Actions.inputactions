@@ -505,11 +505,11 @@
                 },
                 {
                     "name": "",
-                    "id": "edb7b163-b380-440b-82af-6d611a579d33",
+                    "id": "fe013fc1-a6d2-4a37-ab46-ee4784c7c7a1",
                     "path": "<Gamepad>/rightStick",
                     "interactions": "",
                     "processors": "",
-                    "groups": ";Joystick;Gamepad",
+                    "groups": ";Gamepad",
                     "action": "Aim",
                     "isComposite": false,
                     "isPartOfComposite": false

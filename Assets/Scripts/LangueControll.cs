@@ -8,12 +8,14 @@ public class LangueControll : MonoBehaviour
     [SerializeField] private float tonguePullForce = 20f;
     
     [SerializeField] private LayerMask grappleLayer;
+    
     [SerializeField] private LineRenderer tongueLine;
 
     private Rigidbody2D rb;
     
     private Vector2 grapplePoint;
     private Vector2 aimInput;
+    private Vector2 direction;
     
     private bool isHoldingTongue;
     private bool isGrappling;
@@ -40,7 +42,7 @@ public class LangueControll : MonoBehaviour
     public void OnTongue(InputAction.CallbackContext context)
     {
         
-        Debug.Log("Tongue input reçu");
+
         if (context.started)
         {
             isHoldingTongue =  true;
@@ -69,6 +71,7 @@ public class LangueControll : MonoBehaviour
         
         Debug.Log(hit.collider);
         
+        
         if (hit.collider != null)
         {
             grapplePoint = hit.point;
@@ -82,7 +85,6 @@ public class LangueControll : MonoBehaviour
 
         rb.linearVelocity = direction * tonguePullForce;
         
-        
         float distance = Vector2.Distance(transform.position, grapplePoint);
         if (distance < 0.5f)
         {
@@ -93,8 +95,9 @@ public class LangueControll : MonoBehaviour
     
     public void OnAim(InputAction.CallbackContext context)
     {
-        
+
         aimInput = context.ReadValue<Vector2>();
+
 
     }
 

@@ -429,7 +429,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 474273778982581514, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.0485625
+      value: 0.44
       objectReference: {fileID: 0}
     - target: {fileID: 474273778982581514, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_LocalPosition.z
@@ -463,9 +463,17 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1779671935425070425, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
+      propertyPath: strength
+      value: 800
+      objectReference: {fileID: 0}
     - target: {fileID: 8465805151850064899, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_Name
       value: ChampiTest
+      objectReference: {fileID: 0}
+    - target: {fileID: 8465805151850064899, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
+      propertyPath: m_Layer
+      value: 6
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -532,6 +540,10 @@ PrefabInstance:
       propertyPath: tongueLine
       value: 
       objectReference: {fileID: 674701133}
+    - target: {fileID: 3815535619944118968, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
+      propertyPath: tonguePullForce
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 6521004814734928236, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
       propertyPath: m_Name
       value: Player
