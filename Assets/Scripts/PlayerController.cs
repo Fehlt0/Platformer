@@ -17,7 +17,9 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private float deceleration = 1f;
     
     [SerializeField] private float wallCheckDistance = 0.5f;
-    [SerializeField] private float wallSlideSpeed = 2f;
+    [SerializeField] private float wallJumpTired = 2f;
+    [SerializeField] private float wallJumpTiredMultiplier = 0.5f;
+    
     [SerializeField] private Vector2 wallJumpForce = new Vector2(8f, 12f);
     [SerializeField] private Vector2 boxSize = new Vector2(0.5f, 0.05f);
     
@@ -34,6 +36,7 @@ public class PlayerController : MonoBehaviour
     private float coyoteTimeCounter;
     private float jumpBufferTimeCounter;
     private float lastJump;
+    private float currentWallJumpY;
     
     private bool isGrounded;
     private bool isTouchingWall;
@@ -51,6 +54,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentWallJumpY = wallJumpForce.y;
     }
 
     void Update()
@@ -129,7 +133,14 @@ public class PlayerController : MonoBehaviour
         if (isTouchingWall && !isGrounded)
         {
             lastTouchingIsWall = true;
-            rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, wallJumpForce.y);
+            rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, currentWallJumpY);
+            
+            currentWallJumpY -= wallJumpTired;
+            currentWallJumpY *= wallJumpTiredMultiplier;
+            
+            if(currentWallJumpY < 0f)
+                currentWallJumpY = 0f;
+            
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
         }
@@ -142,11 +153,14 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        
         moveInput = context.ReadValue<Vector2>();
+
     }
 
     public void OnJump(InputAction.CallbackContext context)
     {
+
         if (context.started)
         {
             jumpBufferTimeCounter = jumpBufferTime;
@@ -187,6 +201,7 @@ public class PlayerController : MonoBehaviour
         if (isGrounded)
         {
             lastTouchingIsWall = false;
+            currentWallJumpY = wallJumpForce.y;
         }
     }
 
