@@ -19,6 +19,5 @@ public class LampControll : MonoBehaviour
     private void Update()
     {
         transform.position = player.transform.position + decalage;
-        
     }
 }

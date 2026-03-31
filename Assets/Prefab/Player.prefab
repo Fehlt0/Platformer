@@ -315,7 +315,7 @@ PolygonCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
@@ -753,7 +753,7 @@ MonoBehaviour:
   grappleLayer:
     serializedVersion: 2
     m_Bits: 512
-  tongueLine: {fileID: 0}
+  tongueLine: {fileID: -4433647437144218176}
 --- !u!114 &8947842431380497069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -766,18 +766,18 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8a791afa84da8c74c9f8093afe5d7b53, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  currentmoveSpeed: 5
-  jumpForce: 5
+  currentmoveSpeed: 6
+  jumpForce: 10
   groundCheckDistance: 0.18
   coyoteTime: 0.2
-  jumpBufferTime: 0.2
-  jumpCutMultiplier: 0.5
-  acceleration: 1
-  deceleration: 1
+  jumpBufferTime: 0.4
+  jumpCutMultiplier: 0.6
+  acceleration: 2
+  deceleration: 3
   wallCheckDistance: 0.22
   wallJumpTired: 2
   wallJumpTiredMultiplier: 0.5
-  wallJumpForce: {x: 8, y: 10}
+  wallJumpForce: {x: 4, y: 8}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:
     serializedVersion: 2
