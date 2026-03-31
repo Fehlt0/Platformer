@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5855304252603354272}
   m_Layer: 0
   m_Name: LampCircle
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -792,8 +792,6 @@ MonoBehaviour:
   pointeur: {fileID: 2378635752514104430}
   lampCursor: {fileID: 2555989938054832127, guid: 74ce57491512a9945a2e8b263ea3d00c, type: 3}
   lampCircle: {fileID: 219131457488845381}
-  light: {fileID: 8933197436456888975}
-  luciole: {fileID: 0}
 --- !u!120 &-4433647437144218176
 LineRenderer:
   serializedVersion: 3

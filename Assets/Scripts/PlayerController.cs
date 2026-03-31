@@ -46,7 +46,11 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject lampCursor;
     [SerializeField] private GameObject lampCircle;
+    private bool canLamp = true;
+    
+    //A modifier dès que scriptable sont fait;
     public static float lampTimer = 1f;
+    
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
@@ -74,7 +78,7 @@ public class PlayerController : MonoBehaviour
         
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
 
-        if (joystick.magnitude > 0.1f)
+        if (joystick.magnitude > 0.2f)
         {
             joystick.Normalize();
             
@@ -174,7 +178,7 @@ public class PlayerController : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
-        if (context.ReadValueAsButton())
+        if (context.ReadValueAsButton() && canLamp)
         {
             if (joystick.magnitude >= 0.1)
             {
@@ -183,14 +187,17 @@ public class PlayerController : MonoBehaviour
             else
             {
                 lampCircle.SetActive(true);
-                StartCoroutine(LampOffTimer());
             }
+
+            canLamp = false;
+            StartCoroutine(LampOffTimer());
         }
     }
 
     private IEnumerator LampOffTimer()
     {
         yield return new WaitForSeconds(lampTimer);
+        canLamp = true;
         lampCircle.SetActive(false);
     }
     
