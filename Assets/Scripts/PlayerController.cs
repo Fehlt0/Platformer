@@ -17,10 +17,13 @@ public class PlayerController : MonoBehaviour
     private float wallCheckDistance = 0.5f;
     private float wallJumpTired = 2f;
     private float wallJumpTiredMultiplier = 0.5f;
+    
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
+    
     private LayerMask groundLayer;
     private LayerMask wallLayer;
+    
     [SerializeField] private Transform groundCheck;
     [SerializeField] private  Transform wallCheckRight;
     [SerializeField] private Transform wallCheckLeft;
@@ -40,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private float distance = 2f;
     private bool canLamp = true;
     private float lampTimer = 1f;
+    
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject lampCursor;
     [SerializeField] private GameObject lampCircle;
