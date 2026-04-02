@@ -4,30 +4,28 @@ using UnityEngine.InputSystem;
 
 public class PlayerController : MonoBehaviour
 {
+    [SerializeField] private PlayerData playerData;
     
-    [SerializeField] float currentmoveSpeed = 1f;
+    private float currentmoveSpeed = 1f;
+    private float jumpForce= 10f;
+    private float groundCheckDistance = 1f;
+    private float coyoteTime = 0.2f;
+    private float jumpBufferTime = 0.2f;
+    private float jumpCutMultiplier = 0.5f;
+    private float acceleration = 1f;
+    private float deceleration = 1f;
+    private float wallCheckDistance = 0.5f;
+    private float wallJumpTired = 2f;
+    private float wallJumpTiredMultiplier = 0.5f;
     
-    [SerializeField] float jumpForce= 10f;
-    [SerializeField] float groundCheckDistance = 1f;
+    private Vector2 wallJumpForce = new Vector2(8f, 12f);
+    private Vector2 boxSize = new Vector2(0.5f, 0.05f);
     
-    [SerializeField] private float coyoteTime = 0.2f;
-    [SerializeField] private float jumpBufferTime = 0.2f;
-    [SerializeField] private float jumpCutMultiplier = 0.5f;
-    [SerializeField] private float acceleration = 1f;
-    [SerializeField] private float deceleration = 1f;
-    
-    [SerializeField] private float wallCheckDistance = 0.5f;
-    [SerializeField] private float wallJumpTired = 2f;
-    [SerializeField] private float wallJumpTiredMultiplier = 0.5f;
-    
-    [SerializeField] private Vector2 wallJumpForce = new Vector2(8f, 12f);
-    [SerializeField] private Vector2 boxSize = new Vector2(0.5f, 0.05f);
-    
-    [SerializeField] private LayerMask groundLayer;
-    [SerializeField] private LayerMask wallLayer;
+    private LayerMask groundLayer;
+    private LayerMask wallLayer;
     
     [SerializeField] private Transform groundCheck;
-    [SerializeField] private Transform wallCheckRight;
+    [SerializeField] private  Transform wallCheckRight;
     [SerializeField] private Transform wallCheckLeft;
     
     private Vector2 moveInput;
@@ -42,11 +40,15 @@ public class PlayerController : MonoBehaviour
     private bool isTouchingWall;
     private bool lastTouchingIsWall;
     
-    [SerializeField] private float distance = 2f;
+    private float distance = 2f;
+    private bool canLamp = true;
+    private float lampTimer = 1f;
+    
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject lampCursor;
     [SerializeField] private GameObject lampCircle;
-    public static float lampTimer = 1f;
+    
+    
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
@@ -54,6 +56,24 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        currentmoveSpeed = playerData.currentmoveSpeed;
+        jumpForce = playerData.jumpForce;
+        groundCheckDistance = playerData.groundCheckDistance;
+        coyoteTime = playerData.coyoteTime;
+        jumpBufferTime = playerData.jumpBufferTime;
+        jumpCutMultiplier = playerData.jumpCutMultiplier;
+        acceleration = playerData.acceleration;
+        deceleration = playerData.acceleration;
+        wallCheckDistance = playerData.wallCheckDistance;
+        wallJumpTired = playerData.wallJumpTired;
+        wallJumpTiredMultiplier = playerData.wallJumpTiredMultiplier;
+        wallJumpForce = playerData.wallJumpForce; 
+        boxSize = playerData.boxSize;
+        groundLayer  = playerData.groundLayer;
+        wallLayer  = playerData.wallLayer;
+        distance = playerData.distance;
+        lampTimer = playerData.lampTimer;
+        
         currentWallJumpY = wallJumpForce.y;
     }
 
@@ -74,7 +94,7 @@ public class PlayerController : MonoBehaviour
         
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
 
-        if (joystick.magnitude > 0.1f)
+        if (joystick.magnitude > 0.2f)
         {
             joystick.Normalize();
             
@@ -111,7 +131,7 @@ public class PlayerController : MonoBehaviour
            //rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); 
            
            float targetSpeed = moveInput.x * currentmoveSpeed;
-           float SpeedDiff = targetSpeed - rb.linearVelocity.x;
+           float speedDiff = targetSpeed - rb.linearVelocity.x;
            float accelerate;
 
            if (Mathf.Abs(targetSpeed) > 0.01f)
@@ -123,7 +143,7 @@ public class PlayerController : MonoBehaviour
                accelerate = deceleration;
            }
            
-           float mouvement = SpeedDiff * accelerate;
+           float mouvement = speedDiff * accelerate;
            rb.AddForce(Vector2.right * mouvement);
         }
     }
@@ -174,7 +194,7 @@ public class PlayerController : MonoBehaviour
     public void OnInteract(InputAction.CallbackContext context)
     {
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
-        if (context.ReadValueAsButton())
+        if (context.ReadValueAsButton() && canLamp)
         {
             if (joystick.magnitude >= 0.1)
             {
@@ -183,14 +203,17 @@ public class PlayerController : MonoBehaviour
             else
             {
                 lampCircle.SetActive(true);
-                StartCoroutine(LampOffTimer());
             }
+
+            canLamp = false;
+            StartCoroutine(LampOffTimer());
         }
     }
 
     private IEnumerator LampOffTimer()
     {
         yield return new WaitForSeconds(lampTimer);
+        canLamp = true;
         lampCircle.SetActive(false);
     }
     
@@ -216,7 +239,6 @@ public class PlayerController : MonoBehaviour
             wallDirection = 1;
         else if (hitLeft)
             wallDirection = -1;
-        
     }
     
     private void OnDrawGizmos()
@@ -226,6 +248,4 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
     }
-
-    
 }
