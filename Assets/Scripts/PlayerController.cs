@@ -114,7 +114,7 @@ public class PlayerController : MonoBehaviour
         {
             if (rb.linearVelocity.y <= -10)
             {
-                Debug.Log("mort sale nul");
+                Die();
             }
             coyoteTimeCounter = coyoteTime;
         }
@@ -247,5 +247,11 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireCube(groundCheck.position, boxSize );
         Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
+    }
+
+    private void Die()
+    {
+        Destroy(gameObject);
+        UIManager.instance.SetDeathMenu(true);
     }
 }

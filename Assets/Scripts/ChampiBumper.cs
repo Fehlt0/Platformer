@@ -10,15 +10,15 @@ public class ChampiBumper : Plant
     {
         if (isAlive)
         {
-            switch (transform.rotation.z)
+            switch (transform.eulerAngles.z)
             {
                 case 0:
                     direction =  new Vector2(0,1);
                     break;
-                case <= -45:
+                case >= 315:
                     direction = new Vector2(1,1);
                     break;
-                case <=45:
+                case <= 45:
                     direction = new Vector2(-1, 1);
                     break;
             }
