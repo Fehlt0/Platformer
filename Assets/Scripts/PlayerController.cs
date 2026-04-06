@@ -19,6 +19,7 @@ public class PlayerController : MonoBehaviour
     private float wallJumpTiredMultiplier = 0.5f;
     public float dryCount = 10f;
     public float maxDryCount = 10f;
+    private float maxVelocity;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -77,6 +78,7 @@ public class PlayerController : MonoBehaviour
         lampTimer = playerData.lampTimer;
         maxDryCount = playerData.dryCount;
         dryCount = maxDryCount;
+        maxVelocity = playerData.maxVelocity;
         
         currentWallJumpY = wallJumpForce.y;
     }
@@ -123,7 +125,7 @@ public class PlayerController : MonoBehaviour
         CheckGround();
         if (isGrounded)
         {
-            if (rb.linearVelocity.y <= -10)
+            if (rb.linearVelocity.y <= maxVelocity)
             {
                 Die();
             }
