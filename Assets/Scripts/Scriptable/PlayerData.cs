@@ -15,6 +15,7 @@ public class PlayerData : ScriptableObject
     public float wallCheckDistance = 0.5f;
     public float wallJumpTired = 2f;
     public float wallJumpTiredMultiplier = 0.5f;
+    public float dryCount = 10f;
     
     public float distance = 2f;
     public float lampTimer = 1f;

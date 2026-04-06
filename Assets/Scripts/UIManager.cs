@@ -1,4 +1,5 @@
 using UnityEngine;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -18,6 +19,8 @@ public class UIManager : MonoBehaviour
 
     public GameObject pauseMenu;
     public GameObject deathMenu;
+
+    public Image dryCountImage;
 
     public void SetDeathMenu(bool set)
     {

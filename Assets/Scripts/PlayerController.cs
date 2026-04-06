@@ -17,6 +17,8 @@ public class PlayerController : MonoBehaviour
     private float wallCheckDistance = 0.5f;
     private float wallJumpTired = 2f;
     private float wallJumpTiredMultiplier = 0.5f;
+    public float dryCount = 10f;
+    public float maxDryCount = 10f;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -73,6 +75,8 @@ public class PlayerController : MonoBehaviour
         wallLayer  = playerData.wallLayer;
         distance = playerData.distance;
         lampTimer = playerData.lampTimer;
+        maxDryCount = playerData.dryCount;
+        dryCount = maxDryCount;
         
         currentWallJumpY = wallJumpForce.y;
     }
@@ -103,6 +107,13 @@ public class PlayerController : MonoBehaviour
             
             float angle = Mathf.Atan2(decalage.y, decalage.x) * Mathf.Rad2Deg; 
             pointeur.transform.rotation = Quaternion.Euler(0f, 0f, angle +90f);
+        }
+
+        dryCount -= 0.01f;
+        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
+        if (dryCount <= 0)
+        {
+            Die();
         }
     }
 
@@ -249,7 +260,7 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
     }
 
-    private void Die()
+    public void Die()
     {
         Destroy(gameObject);
         UIManager.instance.SetDeathMenu(true);
