@@ -32,7 +32,6 @@ public class LangueControll : MonoBehaviour
 
     private void FixedUpdate()
     {
-
         if (isGrappling)
         {
             GrappleMove();

@@ -4,17 +4,24 @@ using UnityEngine;
 public class ChampiBumper : Plant
 {
     [SerializeField] private float strength;
+    private Vector2 direction;
 
     private void OnCollisionEnter2D(Collision2D other)
     {
         if (isAlive)
         {
-            Debug.Log("collision");
-            Vector3 a = transform.position;
-            Vector3 b = other.transform.position;
-            Vector3 direction;
-            direction = b - a;
-            direction = direction.normalized;
+            switch (transform.eulerAngles.z)
+            {
+                case 0:
+                    direction =  new Vector2(0,1);
+                    break;
+                case >= 315:
+                    direction = new Vector2(1,1);
+                    break;
+                case <= 45:
+                    direction = new Vector2(-1, 1);
+                    break;
+            }
         
             other.rigidbody.AddForce(direction * strength);
         }
