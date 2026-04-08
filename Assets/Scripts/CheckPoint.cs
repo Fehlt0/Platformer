@@ -15,7 +15,6 @@ public class CheckPoint : MonoBehaviour
     {
         if (other.CompareTag("Player") && GameManager.instance.lastCheckpoint < id)
         {
-            Debug.Log("détecté");
             GameManager.instance.lastCheckpoint = id;
         }
     }

@@ -48,7 +48,9 @@ public class GameManager : MonoBehaviour
 
     public void ReloadScene()
     {
+        Debug.Log("Sequence respawn");
         string currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log(currentScene);
         SceneManager.LoadScene(currentScene);
     }
 }
