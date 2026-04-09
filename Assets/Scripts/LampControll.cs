@@ -11,7 +11,7 @@ public class LampControll : MonoBehaviour
     [SerializeField] private float distance;
     private void Start()
     {
-        player = GameObject.Find("Player");
+        player = GameObject.Find("Player(Clone)");
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
         joystick.Normalize();
         decalage = new Vector3(joystick.x, joystick.y, 0f) * distance;
@@ -20,6 +20,9 @@ public class LampControll : MonoBehaviour
 
     private void Update()
     {
+        //Debug.Log(player);
+        //Debug.Log(player.transform.position);
+        //Debug.Log(decalage);
         transform.position = player.transform.position + decalage;
     }
 }
