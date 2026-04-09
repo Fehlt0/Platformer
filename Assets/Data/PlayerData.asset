@@ -21,10 +21,12 @@ MonoBehaviour:
   acceleration: 2
   deceleration: 3
   wallCheckDistance: 0.22
-  wallJumpTired: 2
-  wallJumpTiredMultiplier: 0.5
+  wallJumpTired: 0
+  wallJumpTiredMultiplier: 0.8
+  dryCount: 50
+  maxVelocity: -100
   distance: 2
-  lampTimer: 1
+  lampTimer: 0.5
   wallJumpForce: {x: 4, y: 8}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:
