@@ -1,4 +1,6 @@
+using System;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
@@ -33,5 +35,12 @@ public class UIManager : MonoBehaviour
             Time.timeScale = 1;
         }
         deathMenu.SetActive(set);
+    }
+    
+    public void ReloadScene()
+    {
+        string currentScene = SceneManager.GetActiveScene().name;
+        Debug.Log(currentScene);
+        SceneManager.LoadScene(currentScene);
     }
 }
