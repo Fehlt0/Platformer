@@ -149,6 +149,22 @@ public class PlayerController : MonoBehaviour
            float targetSpeed = moveInput.x * currentmoveSpeed;
            float speedDiff = targetSpeed - rb.linearVelocity.x;
            float accelerate;
+           if (isGrounded)
+           {
+               if (Mathf.Abs(moveInput.x) < 0.01f)
+               {
+                   rb.linearDamping = 8f;
+               }
+               else
+               {
+                   rb.linearDamping = 0f;
+               }
+           }
+           else
+           {
+               rb.linearDamping = 0f;
+           }
+           
 
            if (Mathf.Abs(targetSpeed) > 0.01f)
            {
@@ -160,7 +176,8 @@ public class PlayerController : MonoBehaviour
            }
            
            float mouvement = speedDiff * accelerate;
-           rb.AddForce(Vector2.right * mouvement);
+           
+           rb.AddForce(Vector2.right * mouvement, ForceMode2D.Force);
         }
     }
 
