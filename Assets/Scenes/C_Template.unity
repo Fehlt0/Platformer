@@ -289,7 +289,7 @@ Transform:
   m_GameObject: {fileID: 28970298}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 9.00523, y: 0.23624, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -407,7 +407,7 @@ Transform:
   m_GameObject: {fileID: 619394800}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 4.63, y: 3.44, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -491,7 +491,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   lastCheckpoint: 0
   listCheckPoint:
-  - {fileID: 0}
   - {fileID: 1501946250}
   player: {fileID: 6521004814734928236, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
 --- !u!1 &1132406489
@@ -767,7 +766,7 @@ Transform:
   m_GameObject: {fileID: 1431161000}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 21.23, y: -0.05, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -888,7 +887,7 @@ GameObject:
   - component: {fileID: 1480097784}
   - component: {fileID: 1480097783}
   m_Layer: 0
-  m_Name: TargetChanger
+  m_Name: TargetChanger_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -903,7 +902,7 @@ Transform:
   m_GameObject: {fileID: 1480097781}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.41, y: -0.06, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -956,7 +955,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -0.03453636, y: 2.5704536}
+  m_Offset: {x: 0, y: 0}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -966,7 +965,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.01, y: 6.1409073}
+  m_Size: {x: 0.1, y: 10}
   m_EdgeRadius: 0
 --- !u!1 &1501946247
 GameObject:
@@ -981,7 +980,7 @@ GameObject:
   - component: {fileID: 1501946248}
   - component: {fileID: 1501946251}
   m_Layer: 0
-  m_Name: CheckpointTest
+  m_Name: Checkpoint_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -999,7 +998,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a9938e346f0baf3488ab7210ed6fd9ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckPoint
-  id: 1
+  id: 0
 --- !u!212 &1501946249
 SpriteRenderer:
   serializedVersion: 2
@@ -1068,7 +1067,7 @@ Transform:
   m_GameObject: {fileID: 1501946247}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 23.14, y: 0.43, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1130,7 +1129,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1596521706}
   m_Layer: 0
-  m_Name: Target
+  m_Name: Target_01
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1145,7 +1144,7 @@ Transform:
   m_GameObject: {fileID: 1596521705}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -7.3152294, y: 5.58376, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1482,7 +1481,7 @@ Transform:
   m_GameObject: {fileID: 1899744056}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 1.68, y: 5.95, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

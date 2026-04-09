@@ -48,8 +48,8 @@ public class PlayerController : MonoBehaviour
     private float lampTimer = 1f;
     
     [SerializeField] private GameObject pointeur;
-    [SerializeField] private GameObject lampCursor;
-    [SerializeField] private GameObject lampCircle;
+    [SerializeField] private GameObject lightCursor;
+    [SerializeField] private GameObject lightSphere;
     
     
     
@@ -85,10 +85,8 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
-        
         CheckWall();
         
-
         jumpBufferTimeCounter -= Time.deltaTime;
         
         if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
@@ -109,6 +107,11 @@ public class PlayerController : MonoBehaviour
             
             float angle = Mathf.Atan2(decalage.y, decalage.x) * Mathf.Rad2Deg; 
             pointeur.transform.rotation = Quaternion.Euler(0f, 0f, angle +90f);
+            pointeur.SetActive(true);
+        }
+        else
+        {
+            pointeur.SetActive(false);
         }
 
         dryCount -= 0.01f;
@@ -211,11 +214,11 @@ public class PlayerController : MonoBehaviour
         {
             if (joystick.magnitude >= 0.1)
             {
-                Instantiate(lampCursor, pointeur.transform.position, pointeur.transform.rotation);
+                Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
             }
             else
             {
-                lampCircle.SetActive(true);
+                lightSphere.SetActive(true);
             }
 
             canLamp = false;
@@ -227,7 +230,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
-        lampCircle.SetActive(false);
+        lightSphere.SetActive(false);
     }
     
     private void CheckGround()
@@ -243,8 +246,8 @@ public class PlayerController : MonoBehaviour
 
     private void CheckWall()
     {
-        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, wallLayer);
-        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, wallLayer);
+        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, groundLayer);
+        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, groundLayer);
 
         isTouchingWall = hitRight || hitLeft;
 
