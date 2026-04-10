@@ -44,6 +44,4 @@ public class GameManager : MonoBehaviour
         Debug.Log(CameraManager.instance.targetPos[lastCheckpoint].transform.position);
         CameraManager.instance.SetNewTarget(lastCheckpoint);
     }
-    
-    
 }
