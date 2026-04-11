@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
 {
@@ -16,15 +17,33 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
+        transform.SetParent(null);
+        DontDestroyOnLoad(gameObject);
+        
     }
 
     public int lastCheckpoint;
     [SerializeField] private List<Transform> listCheckPoint;
     [SerializeField] private GameObject player;
+    
 
-    private void Start()
+    private void OnEnable()
     {
-        DontDestroyOnLoad(gameObject);
-        Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
+        SceneManager.sceneLoaded += OnSceneLoaded;
     }
+    
+    private void OnDisable()
+    {
+        SceneManager.sceneLoaded -= OnSceneLoaded;
+    }
+
+
+    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    {
+        Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
+        Debug.Log(CameraManager.instance.targetPos[lastCheckpoint].transform.position);
+        CameraManager.instance.SetNewTarget(lastCheckpoint);
+    }
+    
+    
 }
