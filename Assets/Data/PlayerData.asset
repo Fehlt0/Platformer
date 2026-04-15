@@ -12,15 +12,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b434843ce11836b46afbe0a04191ca27, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  currentmoveSpeed: 6
+  currentmoveSpeed: 10
   jumpForce: 10
   groundCheckDistance: 0.18
   coyoteTime: 0.2
   jumpBufferTime: 0.4
   jumpCutMultiplier: 0.6
-  acceleration: 2
-  deceleration: 3
-  wallCheckDistance: 0.22
+  acceleration: 3
+  deceleration: 4
+  wallCheckDistance: 0.3
   wallJumpTired: 0
   wallJumpTiredMultiplier: 0.8
   dryCount: 50
@@ -34,4 +34,4 @@ MonoBehaviour:
     m_Bits: 64
   wallLayer:
     serializedVersion: 2
-    m_Bits: 128
+    m_Bits: 0
