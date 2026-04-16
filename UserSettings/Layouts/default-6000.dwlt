@@ -95,7 +95,7 @@ MonoBehaviour:
   m_MaxSize: {x: 4000, y: 4026}
   m_ActualView: {fileID: 20}
   m_Panes:
-  - {fileID: 15}
+  - {fileID: 20}
   m_Selected: 0
   m_LastSelected: 0
 --- !u!114 &5
@@ -121,7 +121,7 @@ MonoBehaviour:
   m_MinSize: {x: 280, y: 276}
   m_MaxSize: {x: 4000, y: 4026}
   vertical: 0
-  controlID: 10507
+  controlID: 92
   draggingID: 0
 --- !u!114 &6
 MonoBehaviour:
@@ -172,7 +172,7 @@ MonoBehaviour:
   m_MinSize: {x: 50, y: 76}
   m_MaxSize: {x: 4000, y: 4026}
   vertical: 0
-  controlID: 17
+  controlID: 70
   draggingID: 0
 --- !u!114 &8
 MonoBehaviour:
@@ -225,7 +225,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 42
+  controlID: 145
   draggingID: 0
 --- !u!114 &10
 MonoBehaviour:
@@ -261,32 +261,6 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
-  m_Name: 
-  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.SplitView
-  m_Children:
-  - {fileID: 5}
-  - {fileID: 14}
-  m_Position:
-    serializedVersion: 2
-    x: 0
-    y: 0
-    width: 1405
-    height: 660
-  m_MinSize: {x: 200, y: 56}
-  m_MaxSize: {x: 16192, y: 8096}
-  vertical: 0
-  controlID: 133
-  draggingID: 0
---- !u!114 &7
-MonoBehaviour:
-  m_ObjectHideFlags: 52
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
   m_EditorHideFlags: 1
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
@@ -303,7 +277,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 40
+  controlID: 242
   draggingID: 0
 --- !u!114 &12
 MonoBehaviour:
@@ -452,7 +426,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 41
+  controlID: 243
   draggingID: 0
 --- !u!114 &18
 MonoBehaviour:
@@ -478,7 +452,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 189
+  controlID: 244
   draggingID: 0
 --- !u!114 &19
 MonoBehaviour:
@@ -728,11 +702,30 @@ MonoBehaviour:
     m_OverlaysVisible: 1
     m_DynamicPanelBehavior: 0
   m_ViewTransforms:
-    m_KeySerializationHelper: []
-    m_ValueSerializationHelper: []
+    m_KeySerializationHelper:
+    - {fileID: -3405761627017319319, guid: a33c3c24dd43c3e45b4d8d58b3fc72fd, type: 2}
+    m_ValueSerializationHelper:
+    - e00: 1
+      e01: 0
+      e02: 0
+      e03: 0
+      e10: 0
+      e11: 1
+      e12: 0
+      e13: 0
+      e20: 0
+      e21: 0
+      e22: 1
+      e23: 0
+      e30: 0
+      e31: 0
+      e32: 0
+      e33: 1
   m_PreviewAnimator: {fileID: 0}
-  m_AnimatorController: {fileID: 0}
-  m_BreadCrumbs: []
+  m_AnimatorController: {fileID: 9100000, guid: a33c3c24dd43c3e45b4d8d58b3fc72fd, type: 2}
+  m_BreadCrumbs:
+  - m_Target: {fileID: -3405761627017319319, guid: a33c3c24dd43c3e45b4d8d58b3fc72fd, type: 2}
+    m_ScrollPosition: {x: 0, y: 0}
   stateMachineGraph: {fileID: 0}
   stateMachineGraphGUI: {fileID: 0}
   blendTreeGraph: {fileID: 0}
@@ -784,7 +777,7 @@ MonoBehaviour:
     m_DynamicPanelBehavior: 0
   m_LockTracker:
     m_IsLocked: 0
-  m_LastSelectedObjectID: 0
+  m_LastSelectedObjectID: 49176
 --- !u!114 &25
 MonoBehaviour:
   m_ObjectHideFlags: 52
@@ -1100,7 +1093,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Assets/Prefab
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -1110,7 +1103,7 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Assets/Prefab
   m_LastFoldersGridSize: -1
   m_LastProjectPath: C:\Users\jb.delbove\Desktop\Unity Projects\Platformer
   m_LockTracker:
@@ -1119,23 +1112,24 @@ MonoBehaviour:
   m_FolderTreeState:
     scrollPos: {x: 0, y: 0}
     m_SelectedIDs:
-    - m_Data: 49152
+    - m_Data: 49792
     m_LastClickedID:
-      m_Data: 49152
+      m_Data: 49792
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49380
-    - m_Data: 49382
-    - m_Data: 49384
-    - m_Data: 49386
-    - m_Data: 49388
-    - m_Data: 49390
-    - m_Data: 49392
-    - m_Data: 49394
-    - m_Data: 49396
-    - m_Data: 49398
-    - m_Data: 49400
-    - m_Data: 49402
+    - m_Data: 49424
+    - m_Data: 49426
+    - m_Data: 49428
+    - m_Data: 49430
+    - m_Data: 49432
+    - m_Data: 49434
+    - m_Data: 49436
+    - m_Data: 49438
+    - m_Data: 49440
+    - m_Data: 49442
+    - m_Data: 49444
+    - m_Data: 49446
+    - m_Data: 49448
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1168,18 +1162,19 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49380
-    - m_Data: 49382
-    - m_Data: 49384
-    - m_Data: 49386
-    - m_Data: 49388
-    - m_Data: 49390
-    - m_Data: 49392
-    - m_Data: 49394
-    - m_Data: 49396
-    - m_Data: 49398
-    - m_Data: 49400
-    - m_Data: 49402
+    - m_Data: 49424
+    - m_Data: 49426
+    - m_Data: 49428
+    - m_Data: 49430
+    - m_Data: 49432
+    - m_Data: 49434
+    - m_Data: 49436
+    - m_Data: 49438
+    - m_Data: 49440
+    - m_Data: 49442
+    - m_Data: 49444
+    - m_Data: 49446
+    - m_Data: 49448
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1207,9 +1202,9 @@ MonoBehaviour:
       m_ResourceFile: 
   m_ListAreaState:
     m_SelectedInstanceIDs:
-    - m_Data: -56020
-    m_LastClickedInstanceID: -56020
-    m_HadKeyboardFocusLastEvent: 1
+    - m_Data: 49172
+    m_LastClickedInstanceID: 49172
+    m_HadKeyboardFocusLastEvent: 0
     m_ExpandedInstanceIDs:
     - m_Data: 47200
     - m_Data: 50226
@@ -1287,7 +1282,7 @@ MonoBehaviour:
     m_ControlHash: -371814159
     m_PrefName: Preview_InspectorPreview
   m_LastInspectedObjectInstanceID: -1
-  m_LastVerticalScrollValue: 0
+  m_LastVerticalScrollValue: 655
   m_GlobalObjectId: 
   m_InspectorMode: 0
   m_LockTracker:
@@ -1334,28 +1329,12 @@ MonoBehaviour:
   m_SceneHierarchy:
     m_TreeViewState:
       scrollPos: {x: 0, y: 0}
-      m_SelectedIDs: []
+      m_SelectedIDs:
+      - m_Data: 49172
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -14338
-      - m_Data: -12992
-      - m_Data: -8730
-      - m_Data: -8612
-      - m_Data: -4450
       - m_Data: -1314
-      - m_Data: -12
-      - m_Data: 48686
-      - m_Data: 48720
-      - m_Data: 48770
-      - m_Data: 49900
-      - m_Data: 49992
-      - m_Data: 50592
-      - m_Data: 58412
-      - m_Data: 58570
-      - m_Data: 58654
-      - m_Data: 58688
-      - m_Data: 58698
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1669,13 +1648,13 @@ MonoBehaviour:
       sizeOverridden: 0
     - dockPosition: 1
       containerId: overlay-container--right
-      displayed: 1
+      displayed: 0
       id: SceneView/CamerasOverlay
       index: 9
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":25.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: 0, y: 25}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
       snapCorner: 0
       layout: 4
@@ -1892,9 +1871,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 29.605623, y: -1.9635048, z: -0.101253405}
+    m_Target: {x: -19.440367, y: 1.3969625, z: -0.113062285}
     speed: 2
-    m_Value: {x: 29.605623, y: -1.9635048, z: -0.101253405}
+    m_Value: {x: -19.440367, y: 1.3969625, z: -0.113062285}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1944,9 +1923,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 13.479429
+    m_Target: 14.660318
     speed: 2
-    m_Value: 13.479429
+    m_Value: 14.660318
   m_Ortho:
     m_Target: 1
     speed: 2
