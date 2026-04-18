@@ -23,6 +23,7 @@ public class GameManager : MonoBehaviour
     }
 
     public int lastCheckpoint;
+    public int lastCamTarget;
     [SerializeField] private List<Transform> listCheckPoint;
     [SerializeField] private GameObject player;
     
@@ -42,6 +43,6 @@ public class GameManager : MonoBehaviour
     {
         Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
         Debug.Log(CameraManager.instance.targetPos[lastCheckpoint].transform.position);
-        CameraManager.instance.SetNewTarget(lastCheckpoint);
+        CameraManager.instance.SetNewTarget(lastCamTarget);
     }
 }
