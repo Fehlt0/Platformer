@@ -4,6 +4,7 @@
 TagManager:
   serializedVersion: 3
   tags:
+  - Undefined
   - Light
   layers:
   - Default
@@ -13,7 +14,7 @@ TagManager:
   - Water
   - UI
   - Ground
-  - Wall
+  - 
   - Light
   - Plante
   - 

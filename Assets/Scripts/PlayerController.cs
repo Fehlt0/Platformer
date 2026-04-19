@@ -17,6 +17,9 @@ public class PlayerController : MonoBehaviour
     private float wallCheckDistance = 0.5f;
     private float wallJumpTired = 2f;
     private float wallJumpTiredMultiplier = 0.5f;
+    public float dryCount = 10f;
+    public float maxDryCount = 10f;
+    private float maxVelocity;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -45,8 +48,8 @@ public class PlayerController : MonoBehaviour
     private float lampTimer = 1f;
     
     [SerializeField] private GameObject pointeur;
-    [SerializeField] private GameObject lampCursor;
-    [SerializeField] private GameObject lampCircle;
+    [SerializeField] private GameObject lightCursor;
+    [SerializeField] private GameObject lightSphere;
     
     
     
@@ -73,16 +76,17 @@ public class PlayerController : MonoBehaviour
         wallLayer  = playerData.wallLayer;
         distance = playerData.distance;
         lampTimer = playerData.lampTimer;
+        maxDryCount = playerData.dryCount;
+        dryCount = maxDryCount;
+        maxVelocity = playerData.maxVelocity;
         
         currentWallJumpY = wallJumpForce.y;
     }
 
     void Update()
     {
-        
         CheckWall();
         
-
         jumpBufferTimeCounter -= Time.deltaTime;
         
         if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
@@ -103,6 +107,18 @@ public class PlayerController : MonoBehaviour
             
             float angle = Mathf.Atan2(decalage.y, decalage.x) * Mathf.Rad2Deg; 
             pointeur.transform.rotation = Quaternion.Euler(0f, 0f, angle +90f);
+            pointeur.SetActive(true);
+        }
+        else
+        {
+            pointeur.SetActive(false);
+        }
+
+        dryCount -= 0.01f;
+        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
+        if (dryCount <= 0)
+        {
+            Die();
         }
     }
 
@@ -112,9 +128,9 @@ public class PlayerController : MonoBehaviour
         CheckGround();
         if (isGrounded)
         {
-            if (rb.linearVelocity.y <= -10)
+            if (rb.linearVelocity.y <= maxVelocity)
             {
-                Debug.Log("mort sale nul");
+                Die();
             }
             coyoteTimeCounter = coyoteTime;
         }
@@ -133,6 +149,22 @@ public class PlayerController : MonoBehaviour
            float targetSpeed = moveInput.x * currentmoveSpeed;
            float speedDiff = targetSpeed - rb.linearVelocity.x;
            float accelerate;
+           if (isGrounded)
+           {
+               if (Mathf.Abs(moveInput.x) < 0.01f)
+               {
+                   rb.linearDamping = 8f;
+               }
+               else
+               {
+                   rb.linearDamping = 0f;
+               }
+           }
+           else
+           {
+               rb.linearDamping = 0f;
+           }
+           
 
            if (Mathf.Abs(targetSpeed) > 0.01f)
            {
@@ -144,7 +176,8 @@ public class PlayerController : MonoBehaviour
            }
            
            float mouvement = speedDiff * accelerate;
-           rb.AddForce(Vector2.right * mouvement);
+           
+           rb.AddForce(Vector2.right * mouvement, ForceMode2D.Force);
         }
     }
 
@@ -173,9 +206,7 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
-        
         moveInput = context.ReadValue<Vector2>();
-
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -198,11 +229,11 @@ public class PlayerController : MonoBehaviour
         {
             if (joystick.magnitude >= 0.1)
             {
-                Instantiate(lampCursor, pointeur.transform.position, pointeur.transform.rotation);
+                Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
             }
             else
             {
-                lampCircle.SetActive(true);
+                lightSphere.SetActive(true);
             }
 
             canLamp = false;
@@ -214,7 +245,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
-        lampCircle.SetActive(false);
+        lightSphere.SetActive(false);
     }
     
     private void CheckGround()
@@ -230,8 +261,8 @@ public class PlayerController : MonoBehaviour
 
     private void CheckWall()
     {
-        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, wallLayer);
-        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, wallLayer);
+        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, groundLayer);
+        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, groundLayer);
 
         isTouchingWall = hitRight || hitLeft;
 
@@ -247,5 +278,11 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireCube(groundCheck.position, boxSize );
         Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+        UIManager.instance.SetDeathMenu(true);
     }
 }
