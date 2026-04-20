@@ -19,6 +19,8 @@ public class LangueControll : MonoBehaviour
     
     private bool isHoldingTongue;
     private bool isGrappling;
+   
+    
 
     private void Start()
     {
@@ -32,10 +34,14 @@ public class LangueControll : MonoBehaviour
 
     private void FixedUpdate()
     {
-        if (isGrappling)
+        if (LanguePlant.langueAvailable) 
         {
-            GrappleMove();
+            if (isGrappling)
+            {
+                GrappleMove();
+            }
         }
+        
     } 
     
     public void OnTongue(InputAction.CallbackContext context)
