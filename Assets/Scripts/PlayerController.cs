@@ -20,6 +20,7 @@ public class PlayerController : MonoBehaviour
     public float dryCount = 10f;
     public float maxDryCount = 10f;
     private float maxVelocity;
+    private float jumpForceLangue;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -51,6 +52,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject lightCursor;
     [SerializeField] private GameObject lightSphere;
     
+    [SerializeField] private LangueControll langueControll;
+    
     
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
@@ -59,6 +62,7 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
         currentmoveSpeed = playerData.currentmoveSpeed;
         jumpForce = playerData.jumpForce;
         groundCheckDistance = playerData.groundCheckDistance;
@@ -79,8 +83,12 @@ public class PlayerController : MonoBehaviour
         maxDryCount = playerData.dryCount;
         dryCount = maxDryCount;
         maxVelocity = playerData.maxVelocity;
+
+        jumpForceLangue = playerData.jumpForceLangue;
         
         currentWallJumpY = wallJumpForce.y;
+        
+        
     }
 
     void Update()
@@ -118,6 +126,7 @@ public class PlayerController : MonoBehaviour
         UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
         if (dryCount <= 0)
         {
+           
             Die();
         }
     }
@@ -195,6 +204,15 @@ public class PlayerController : MonoBehaviour
                 currentWallJumpY = 0f;
             
             isTouchingWall = false;
+            coyoteTimeCounter = 0f;
+        }
+        else if (!isGrounded && langueControll.wasHoldingTongue )
+        {
+            langueControll.isGrappling = false;
+            langueControll.wasHoldingTongue = false;
+            Debug.Log("banane noir");
+            Debug.Log(jumpForceLangue);
+            rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
         }
         else

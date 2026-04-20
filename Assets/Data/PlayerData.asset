@@ -27,6 +27,7 @@ MonoBehaviour:
   maxVelocity: -100
   distance: 2
   lampTimer: 0.5
+  jumpForceLangue: 17
   wallJumpForce: {x: 4, y: 8}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:
