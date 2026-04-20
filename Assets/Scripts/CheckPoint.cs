@@ -4,6 +4,7 @@ using UnityEngine;
 public class CheckPoint : MonoBehaviour
 {
     [SerializeField] private int id;
+    [SerializeField] private int idCam;
 
     private void Start()
     {
@@ -16,6 +17,7 @@ public class CheckPoint : MonoBehaviour
         if (other.CompareTag("Player") && GameManager.instance.lastCheckpoint < id)
         {
             GameManager.instance.lastCheckpoint = id;
+            GameManager.instance.lastCamTarget = idCam;
         }
     }
 }
