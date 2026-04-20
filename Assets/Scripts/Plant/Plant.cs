@@ -3,14 +3,11 @@ using UnityEngine;
 
 public abstract class Plant : MonoBehaviour
 {
-
-    
     [SerializeField] private float baseTimeUntilDecay;
     private float timeUntilDecay;
 
     public Animator animatorRef;
     
-
     public bool isAlive;
 
     public virtual void Start()
@@ -21,6 +18,7 @@ public abstract class Plant : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
+        Debug.Log("détecté");
         if (other.CompareTag("Light"))
         {
             timeUntilDecay = baseTimeUntilDecay;
@@ -41,13 +39,6 @@ public abstract class Plant : MonoBehaviour
 
     public virtual void IfIsAlive()
     {
-        if (isAlive)
-        {
-            animatorRef.SetBool("isAlive", true);
-        }
-        else
-        {
-            animatorRef.SetBool("isAlive", false);
-        }
+        animatorRef.SetBool("isAlive", isAlive);
     }
 }
