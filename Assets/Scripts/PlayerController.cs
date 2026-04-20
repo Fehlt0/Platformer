@@ -50,6 +50,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject lightCursor;
     [SerializeField] private GameObject lightSphere;
+    [SerializeField] private GameObject lightCone;
     
     
     
@@ -229,7 +230,9 @@ public class PlayerController : MonoBehaviour
         {
             if (joystick.magnitude >= 0.1)
             {
-                Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
+                //Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
+                lightCone.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f,0f,-90f);
+                lightCone.SetActive(true);
             }
             else
             {
@@ -246,6 +249,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
         lightSphere.SetActive(false);
+        lightCone.SetActive(false);
     }
     
     private void CheckGround()
