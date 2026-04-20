@@ -1,14 +1,16 @@
 using System;
+using System.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class ChampiBumper : Plant
 {
     [SerializeField] private float strength;
     private Vector2 direction;
-
-    private void OnCollisionEnter2D(Collision2D other)
+    
+    private void OnTriggerEnter2D(Collider2D other)
     {
-        if (isAlive)
+        if (isAlive && other.CompareTag("Player"))
         {
             //Debug.Log(transform.eulerAngles.z);
             switch (transform.eulerAngles.z)
@@ -23,8 +25,9 @@ public class ChampiBumper : Plant
                     direction = new Vector2(-1, 1);
                     break;
             }
-        
-            other.rigidbody.AddForce(direction * strength);
+
+            other.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
+            other.GetComponent<Rigidbody2D>().AddForce(direction * strength);
         }
     }
 }
