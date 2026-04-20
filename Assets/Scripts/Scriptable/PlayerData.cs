@@ -20,10 +20,13 @@ public class PlayerData : ScriptableObject
     
     public float distance = 2f;
     public float lampTimer = 1f;
+
+    public float jumpForceLangue = 5f;
     
     public Vector2 wallJumpForce = new Vector2(8f, 12f);
     public Vector2 boxSize = new Vector2(0.5f, 0.05f);
     
     public LayerMask groundLayer;
     public LayerMask wallLayer;
+    
 }

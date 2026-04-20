@@ -1,4 +1,5 @@
 using System;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
 
@@ -17,8 +18,10 @@ public class LangueControll : MonoBehaviour
     private Vector2 aimInput;
     private Vector2 direction;
     
-    private bool isHoldingTongue;
-    private bool isGrappling;
+    public bool wasHoldingTongue;
+    public bool isGrappling;
+
+    
    
     
 
@@ -27,19 +30,16 @@ public class LangueControll : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
-    private void Update()
+    /*private void Update()
     {
        ShowAim();
-    }
+    }*/
 
     private void FixedUpdate()
     {
-        if (LanguePlant.langueAvailable) 
+        if (isGrappling)
         {
-            if (isGrappling)
-            {
-                GrappleMove();
-            }
+            GrappleMove();
         }
         
     } 
@@ -47,21 +47,24 @@ public class LangueControll : MonoBehaviour
     public void OnTongue(InputAction.CallbackContext context)
     {
         
-
-        if (context.started)
+        
+        if (context.performed)
         {
-            isHoldingTongue =  true;
-            TryGrapple();
+            wasHoldingTongue =  false;
+            isGrappling = true; 
+
         }
 
         if (context.canceled)
         {
-            isHoldingTongue =  false;
+            
             isGrappling = false;
         }
     }
 
-    private void TryGrapple()
+
+
+    /*private void TryGrapple()
     {
         if (aimInput.magnitude < 0.2f)
         {
@@ -82,9 +85,39 @@ public class LangueControll : MonoBehaviour
             grapplePoint = hit.point;
             isGrappling = true;
         }
+    }*/
+
+    private void GrappleMove()
+    {
+        
+        var langueGrapple = LanguePlant.listPlanteLangue[0];
+        
+        foreach (var plante in LanguePlant.listPlanteLangue)
+        {
+            if (Vector2.Distance(plante.transform.position, transform.position) <=
+                Vector2.Distance(langueGrapple.transform.position, transform.position))
+            {
+                langueGrapple = plante;
+            }
+        }
+
+        if (Vector2.Distance(langueGrapple.transform.position, transform.position) <= tongueDistance )
+        {
+            Vector2 direction = (langueGrapple.transform.position -  transform.position).normalized;
+            rb.linearVelocity = direction * tonguePullForce;
+            wasHoldingTongue = true;
+
+        }
+        float distance = Vector2.Distance(transform.position, grapplePoint);
+        if (distance < 0.01f )
+        {
+            isGrappling = false;
+            rb.linearVelocity = Vector2.zero;
+        }
+        
     }
     
-    private void GrappleMove()
+    /*private void GrappleMove()
     {
         Vector2 direction = (grapplePoint - (Vector2)transform.position).normalized;
 
@@ -96,17 +129,17 @@ public class LangueControll : MonoBehaviour
             isGrappling = false;
             rb.linearVelocity = Vector2.zero;
         }
-    }
+    }*/
     
-    public void OnAim(InputAction.CallbackContext context)
+    /*public void OnAim(InputAction.CallbackContext context)
     {
 
         aimInput = context.ReadValue<Vector2>();
 
 
-    }
+    }*/
 
-    private void ShowAim()
+    /*private void ShowAim()
     {
         if ( !isHoldingTongue || aimInput.magnitude < 0.2f)
         {
@@ -131,5 +164,5 @@ public class LangueControll : MonoBehaviour
             tongueLine.material.color = Color.red;
             tongueLine.SetPosition(1, (Vector2)transform.position + direction * tongueDistance);
         }
-    }
+    }*/
 }
