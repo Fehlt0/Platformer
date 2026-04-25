@@ -62,7 +62,7 @@ public class PlayerController : MonoBehaviour
     }
     private State currentState;
     [SerializeField] private float switchRunning;
-    private Animator animatorRef;
+    public Animator animatorRef;
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
