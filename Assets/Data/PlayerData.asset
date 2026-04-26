@@ -14,6 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
   currentmoveSpeed: 10
   jumpForce: 10
+  multiplierStaticJump: 1.3
   groundCheckDistance: 0.18
   coyoteTime: 0.2
   jumpBufferTime: 0.4

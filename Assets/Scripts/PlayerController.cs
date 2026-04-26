@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     
     private float currentmoveSpeed = 1f;
     private float jumpForce= 10f;
+    private float multiplierStaticJump = 1.3f;
     private float groundCheckDistance = 1f;
     private float coyoteTime = 0.2f;
     private float jumpBufferTime = 0.2f;
@@ -53,6 +54,8 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject lightSphere;
     
     [SerializeField] private LangueControll langueControll;
+
+    private Vector2 joystick = new Vector2();
     
     
     
@@ -65,6 +68,7 @@ public class PlayerController : MonoBehaviour
         
         currentmoveSpeed = playerData.currentmoveSpeed;
         jumpForce = playerData.jumpForce;
+        multiplierStaticJump =  playerData.multiplierStaticJump;
         groundCheckDistance = playerData.groundCheckDistance;
         coyoteTime = playerData.coyoteTime;
         jumpBufferTime = playerData.jumpBufferTime;
@@ -104,7 +108,7 @@ public class PlayerController : MonoBehaviour
             jumpBufferTimeCounter = 0f;
         }
         
-        Vector2 joystick = Gamepad.current.rightStick.ReadValue();
+        joystick = Gamepad.current.rightStick.ReadValue();
 
         if (joystick.magnitude > 0.2f)
         {
@@ -156,6 +160,7 @@ public class PlayerController : MonoBehaviour
            //rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); 
            
            float targetSpeed = moveInput.x * currentmoveSpeed;
+
            float speedDiff = targetSpeed - rb.linearVelocity.x;
            float accelerate;
            if (isGrounded)
@@ -215,6 +220,13 @@ public class PlayerController : MonoBehaviour
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
         }
+        else if (isGrounded && Mathf.Abs(moveInput.x) < 0.01f && !langueControll.wasHoldingTongue)
+        {
+
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * multiplierStaticJump);
+            coyoteTimeCounter = 0f;
+        }
+        
         else
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);

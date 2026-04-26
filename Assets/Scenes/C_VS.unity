@@ -1966,7 +1966,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 3640593291564004319, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
       propertyPath: m_LocalPosition.x
-      value: -35.48
+      value: -38.92
       objectReference: {fileID: 0}
     - target: {fileID: 3640593291564004319, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
       propertyPath: m_LocalPosition.y
@@ -2008,9 +2008,25 @@ PrefabInstance:
       propertyPath: m_Layer
       value: 6
       objectReference: {fileID: 0}
+    - target: {fileID: 7925153740745017533, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925153740745017533, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
+      propertyPath: m_Color.g
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925153740745017533, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 8835647319396915112, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
       propertyPath: m_Name
       value: BlocLangue_01
+      objectReference: {fileID: 0}
+    - target: {fileID: 8835647319396915112, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
+      propertyPath: m_Layer
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -11554,7 +11570,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 3640593291564004319, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 1.93
+      value: 6.16
       objectReference: {fileID: 0}
     - target: {fileID: 3640593291564004319, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
       propertyPath: m_LocalPosition.z
@@ -11595,6 +11611,14 @@ PrefabInstance:
     - target: {fileID: 6157814046267624046, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
       propertyPath: m_TagString
       value: Untagged
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925153740745017533, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
+      propertyPath: m_Color.b
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7925153740745017533, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
+      propertyPath: m_Color.g
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8835647319396915112, guid: a4b985fed07bda3488babd20f37f5c4a, type: 3}
       propertyPath: m_Name
