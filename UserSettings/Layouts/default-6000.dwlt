@@ -1134,25 +1134,25 @@ MonoBehaviour:
       m_Data: 49462
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49442
-    - m_Data: 49444
-    - m_Data: 49446
-    - m_Data: 49448
-    - m_Data: 49450
-    - m_Data: 49452
-    - m_Data: 49454
-    - m_Data: 49456
-    - m_Data: 49458
-    - m_Data: 49460
-    - m_Data: 49462
-    - m_Data: 49464
-    - m_Data: 49466
-    - m_Data: 49468
-    - m_Data: 49470
-    - m_Data: 49472
-    - m_Data: 49474
-    - m_Data: 49476
-    - m_Data: 49478
+    - m_Data: 47920
+    - m_Data: 49758
+    - m_Data: 49760
+    - m_Data: 49762
+    - m_Data: 49764
+    - m_Data: 49766
+    - m_Data: 49768
+    - m_Data: 49770
+    - m_Data: 49772
+    - m_Data: 49774
+    - m_Data: 49776
+    - m_Data: 49778
+    - m_Data: 49780
+    - m_Data: 49782
+    - m_Data: 49784
+    - m_Data: 49786
+    - m_Data: 49788
+    - m_Data: 49790
+    - m_Data: 49792
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1170,7 +1170,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 2}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1185,25 +1185,25 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 49442
-    - m_Data: 49444
-    - m_Data: 49446
-    - m_Data: 49448
-    - m_Data: 49450
-    - m_Data: 49452
-    - m_Data: 49454
-    - m_Data: 49456
-    - m_Data: 49458
-    - m_Data: 49460
-    - m_Data: 49462
-    - m_Data: 49464
-    - m_Data: 49466
-    - m_Data: 49468
-    - m_Data: 49470
-    - m_Data: 49472
-    - m_Data: 49474
-    - m_Data: 49476
-    - m_Data: 49478
+    - m_Data: 47920
+    - m_Data: 49758
+    - m_Data: 49760
+    - m_Data: 49762
+    - m_Data: 49764
+    - m_Data: 49766
+    - m_Data: 49768
+    - m_Data: 49770
+    - m_Data: 49772
+    - m_Data: 49774
+    - m_Data: 49776
+    - m_Data: 49778
+    - m_Data: 49780
+    - m_Data: 49782
+    - m_Data: 49784
+    - m_Data: 49786
+    - m_Data: 49788
+    - m_Data: 49790
+    - m_Data: 49792
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1904,7 +1904,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -29.636003, y: 0.3947271, z: -0.069588}
     speed: 2
-    m_Value: {x: -36.86483, y: 4.975796, z: -0.030226037}
+    m_Value: {x: -29.636003, y: 0.3947271, z: -0.069588}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1956,7 +1956,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 16.958813
     speed: 2
-    m_Value: 13.022601
+    m_Value: 16.958813
   m_Ortho:
     m_Target: 1
     speed: 2
