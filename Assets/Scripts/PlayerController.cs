@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     
     private float currentmoveSpeed = 1f;
     private float jumpForce= 10f;
+    private float multiplierStaticJump = 1.3f;
     private float groundCheckDistance = 1f;
     private float coyoteTime = 0.2f;
     private float jumpBufferTime = 0.2f;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float dryCount = 10f;
     public float maxDryCount = 10f;
     private float maxVelocity;
+    private float jumpForceLangue;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -63,6 +65,11 @@ public class PlayerController : MonoBehaviour
     private State currentState;
     [SerializeField] private float switchRunning;
     public Animator animatorRef;
+    [SerializeField] private LangueControll langueControll;
+
+    private Vector2 joystick = new Vector2();
+    
+    
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
@@ -71,8 +78,10 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animatorRef = GetComponent<Animator>();
+        
         currentmoveSpeed = playerData.currentmoveSpeed;
         jumpForce = playerData.jumpForce;
+        multiplierStaticJump =  playerData.multiplierStaticJump;
         groundCheckDistance = playerData.groundCheckDistance;
         coyoteTime = playerData.coyoteTime;
         jumpBufferTime = playerData.jumpBufferTime;
@@ -91,8 +100,12 @@ public class PlayerController : MonoBehaviour
         maxDryCount = playerData.dryCount;
         dryCount = maxDryCount;
         maxVelocity = playerData.maxVelocity;
+
+        jumpForceLangue = playerData.jumpForceLangue;
         
         currentWallJumpY = wallJumpForce.y;
+        
+        
     }
 
     void Update()
@@ -170,6 +183,8 @@ public class PlayerController : MonoBehaviour
     private void PointeurPosition()
     {
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
+        
+        joystick = Gamepad.current.rightStick.ReadValue();
 
         if (joystick.magnitude > 0.2f)
         {
@@ -185,6 +200,14 @@ public class PlayerController : MonoBehaviour
         else
         {
             pointeur.SetActive(false);
+        }
+
+        dryCount -= 0.01f;
+        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
+        if (dryCount <= 0)
+        {
+           
+            Die();
         }
     }
 
@@ -207,6 +230,7 @@ public class PlayerController : MonoBehaviour
            //rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); 
            
            float targetSpeed = moveInput.x * currentmoveSpeed;
+
            float speedDiff = targetSpeed - rb.linearVelocity.x;
            float accelerate;
            if (isGrounded)
@@ -257,6 +281,22 @@ public class PlayerController : MonoBehaviour
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
         }
+        else if (!isGrounded && langueControll.wasHoldingTongue )
+        {
+            langueControll.isGrappling = false;
+            langueControll.wasHoldingTongue = false;
+            Debug.Log("banane noir");
+            Debug.Log(jumpForceLangue);
+            rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
+            coyoteTimeCounter = 0f;
+        }
+        else if (isGrounded && Mathf.Abs(moveInput.x) < 0.01f && !langueControll.wasHoldingTongue)
+        {
+
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * multiplierStaticJump);
+            coyoteTimeCounter = 0f;
+        }
+        
         else
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);

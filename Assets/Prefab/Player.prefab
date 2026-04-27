@@ -855,11 +855,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LangueControll
   tongueDistance: 10
-  tonguePullForce: 20
+  tonguePullForce: 10
   grappleLayer:
     serializedVersion: 2
     m_Bits: 512
   tongueLine: {fileID: -4433647437144218176}
+  wasHoldingTongue: 0
+  isGrappling: 0
 --- !u!114 &8947842431380497069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -881,6 +883,7 @@ MonoBehaviour:
   pointeur: {fileID: 2378635752514104430}
   lightCursor: {fileID: 2555989938054832127, guid: 74ce57491512a9945a2e8b263ea3d00c, type: 3}
   lightSphere: {fileID: 219131457488845381}
+  langueControll: {fileID: 3815535619944118968}
   lightCone: {fileID: 9048021264145302179}
   switchRunning: 5
 --- !u!120 &-4433647437144218176
