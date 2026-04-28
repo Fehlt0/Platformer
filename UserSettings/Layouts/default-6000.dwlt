@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ContainerWindow
   m_PixelRect:
     serializedVersion: 2
-    x: -1911
+    x: 1
     y: 36
     width: 1902
     height: 991
@@ -62,8 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ContainerWindow
   m_PixelRect:
     serializedVersion: 2
-    x: -1920
-    y: 28
+    x: 0
+    y: 23
     width: 1920
     height: 1009
   m_ShowMode: 0
@@ -564,7 +564,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1920, y: 962}
+  m_TargetSize: {x: 1710, y: 962}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -579,8 +579,8 @@ MonoBehaviour:
     m_VRangeLocked: 0
     hZoomLockedByDefault: 0
     vZoomLockedByDefault: 0
-    m_HBaseRangeMin: -960
-    m_HBaseRangeMax: 960
+    m_HBaseRangeMin: -855
+    m_HBaseRangeMax: 855
     m_VBaseRangeMin: -481
     m_VBaseRangeMax: 481
     m_HAllowExceedBaseRangeMin: 1
@@ -1044,12 +1044,12 @@ MonoBehaviour:
       displayed: 1
       id: Play Mode Controls
       index: 0
-      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":-940.0,"y":-36.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":3,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
+      contents: '{"m_Layout":4,"m_Collapsed":false,"m_Folded":false,"m_Floating":false,"m_FloatingSnapOffset":{"x":0.0,"y":0.0},"m_SnapOffsetDelta":{"x":0.0,"y":0.0},"m_FloatingSnapCorner":0,"m_Size":{"x":0.0,"y":0.0},"m_SizeOverridden":false}'
       floating: 0
       collapsed: 0
-      snapOffset: {x: -940, y: -36}
+      snapOffset: {x: 0, y: 0}
       snapOffsetDelta: {x: 0, y: 0}
-      snapCorner: 3
+      snapCorner: 0
       layout: 4
       size: {x: 0, y: 0}
       sizeOverridden: 0
@@ -1134,25 +1134,13 @@ MonoBehaviour:
       m_Data: 49462
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 47920
-    - m_Data: 49758
-    - m_Data: 49760
-    - m_Data: 49762
-    - m_Data: 49764
-    - m_Data: 49766
-    - m_Data: 49768
-    - m_Data: 49770
-    - m_Data: 49772
-    - m_Data: 49774
-    - m_Data: 49776
-    - m_Data: 49778
-    - m_Data: 49780
-    - m_Data: 49782
-    - m_Data: 49784
-    - m_Data: 49786
-    - m_Data: 49788
-    - m_Data: 49790
-    - m_Data: 49792
+    - m_Data: 49644
+    - m_Data: 49646
+    - m_Data: 49648
+    - m_Data: 49650
+    - m_Data: 49652
+    - m_Data: 49654
+    - m_Data: 49656
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1170,7 +1158,7 @@ MonoBehaviour:
       m_OriginalEventType: 11
       m_IsRenamingFilename: 1
       m_TrimLeadingAndTrailingWhitespace: 0
-      m_ClientGUIView: {fileID: 2}
+      m_ClientGUIView: {fileID: 0}
     m_SearchString: 
     m_CreateAssetUtility:
       m_EndAction: {fileID: 0}
@@ -1185,25 +1173,13 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 47920
-    - m_Data: 49758
-    - m_Data: 49760
-    - m_Data: 49762
-    - m_Data: 49764
-    - m_Data: 49766
-    - m_Data: 49768
-    - m_Data: 49770
-    - m_Data: 49772
-    - m_Data: 49774
-    - m_Data: 49776
-    - m_Data: 49778
-    - m_Data: 49780
-    - m_Data: 49782
-    - m_Data: 49784
-    - m_Data: 49786
-    - m_Data: 49788
-    - m_Data: 49790
-    - m_Data: 49792
+    - m_Data: 49644
+    - m_Data: 49646
+    - m_Data: 49648
+    - m_Data: 49650
+    - m_Data: 49652
+    - m_Data: 49654
+    - m_Data: 49656
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1902,7 +1878,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -29.636003, y: 0.3947271, z: -0.069588}
+    m_Target: {x: -50.299164, y: 0.6477668, z: -0.15571946}
     speed: 2
     m_Value: {x: -29.636003, y: 0.3947271, z: -0.069588}
   m_RenderMode: 0
@@ -1954,7 +1930,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 16.958813
+    m_Target: 16.43803
     speed: 2
     m_Value: 16.958813
   m_Ortho:
