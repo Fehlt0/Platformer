@@ -18,6 +18,8 @@ public class LangueControll : MonoBehaviour
     private Vector2 aimInput;
     private Vector2 direction;
     
+    private LanguePlant currentTarget;
+    
     public bool wasHoldingTongue;
     public bool isGrappling;
 
@@ -30,6 +32,11 @@ public class LangueControll : MonoBehaviour
         rb = GetComponent<Rigidbody2D>();
     }
 
+    public void Update()
+    {
+        UpdateTarget();
+    }
+
     /*private void Update()
     {
        ShowAim();
@@ -40,6 +47,14 @@ public class LangueControll : MonoBehaviour
         if (isGrappling)
         {
             GrappleMove();
+        }
+        else
+        {
+            if (currentTarget != null)
+            {
+                currentTarget.SetColorOnTarget(false);
+                currentTarget = null;
+            }
         }
         
     } 
@@ -61,33 +76,99 @@ public class LangueControll : MonoBehaviour
             isGrappling = false;
         }
     }
-
-
-
-    /*private void TryGrapple()
+    
+    
+    private void UpdateTarget()
     {
-        if (aimInput.magnitude < 0.2f)
+        if (LanguePlant.listPlanteLangue.Count == 0) return;
+
+        LanguePlant nearest = null;
+        float minDistance = Mathf.Infinity;
+
+        foreach (var plante in LanguePlant.listPlanteLangue)
         {
-            Debug.Log("Aim: " + aimInput);
+            if (plante == null) continue;
+
+            float dist = Vector2.Distance(plante.transform.position, transform.position);
+
+            
+            if (dist <= tongueDistance && dist < minDistance)
+            {
+                minDistance = dist;
+                nearest = plante;
+            }
+        }
+
+        
+        if (currentTarget != nearest)
+        {
+            currentTarget?.SetColorOnTarget(false);
+
+            currentTarget = nearest;
+
+            currentTarget?.SetColorOnTarget(true);
+        }
+    }
+
+    
+
+    
+    private void GrappleMove()
+    {
+        if (LanguePlant.listPlanteLangue.Count == 0) return;
+        
+        LanguePlant langueGrapple = null;
+        float minDistance = Mathf.Infinity;
+
+        foreach (var plante in LanguePlant.listPlanteLangue)
+        {
+
+            if (plante == null )
+            {
+                Debug.LogWarning("not available");
+                continue;
+            }
+
+            float dist = Vector2.Distance(plante.transform.position, transform.position);
+
+            
+            if (dist < minDistance)
+            {
+                
+                Debug.Log(plante.name);
+                minDistance = dist;
+                langueGrapple = plante;
+                
+            }
+        }
+
+        if (langueGrapple == null)
+        {
+            Debug.LogWarning("langueGrapple is null");
             return;
         }
         
-        Vector2 direction = aimInput.normalized;
+        grapplePoint = langueGrapple.transform.position;
         
-        Debug.DrawRay(transform.position, direction * tongueDistance, Color.red, 1f);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tongueDistance, grappleLayer);
-        
-        Debug.Log(hit.collider);
-        
-        
-        if (hit.collider != null)
-        {
-            grapplePoint = hit.point;
-            isGrappling = true;
-        }
-    }*/
 
-    private void GrappleMove()
+        if (minDistance <= tongueDistance)
+        {
+            Vector2 direction = (grapplePoint - (Vector2)transform.position).normalized;
+            
+            rb.linearVelocity = direction * tonguePullForce;
+            
+            wasHoldingTongue = true;
+        }
+
+        if (minDistance < 0.01f)
+        {
+            isGrappling = false;
+            rb.linearVelocity = Vector2.zero;
+        }
+    }
+
+    
+    /*private void GrappleMove()
     {
         
         var langueGrapple = LanguePlant.listPlanteLangue[0];
@@ -115,7 +196,30 @@ public class LangueControll : MonoBehaviour
             rb.linearVelocity = Vector2.zero;
         }
         
-    }
+    }*/
+    
+    /*private void TryGrapple()
+    {
+        if (aimInput.magnitude < 0.2f)
+        {
+            Debug.Log("Aim: " + aimInput);
+            return;
+        }
+
+        Vector2 direction = aimInput.normalized;
+
+        Debug.DrawRay(transform.position, direction * tongueDistance, Color.red, 1f);
+        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tongueDistance, grappleLayer);
+
+        Debug.Log(hit.collider);
+
+
+        if (hit.collider != null)
+        {
+            grapplePoint = hit.point;
+            isGrappling = true;
+        }
+    }*/
     
     /*private void GrappleMove()
     {
