@@ -366,7 +366,7 @@ public class PlayerController : MonoBehaviour
     {
         bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, groundLayer);
         bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, groundLayer);
-
+         
         isTouchingWall = hitRight || hitLeft;
 
         if (hitRight)
