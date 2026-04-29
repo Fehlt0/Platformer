@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4475848547881028544}
   - component: {fileID: 8580930162608062340}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plateformes_06
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,8 +101,8 @@ GameObject:
   m_Component:
   - component: {fileID: 88439886580741760}
   - component: {fileID: 4446280089151479871}
-  - component: {fileID: 8197011315809243404}
-  m_Layer: 0
+  - component: {fileID: 7846595746876644765}
+  m_Layer: 6
   m_Name: plateformes_03
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -183,7 +183,7 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
---- !u!61 &8197011315809243404
+--- !u!61 &7846595746876644765
 BoxCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -217,7 +217,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: -0.76160145}
+  m_Offset: {x: -0.0036729574, y: -0.76426053}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -227,7 +227,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 2.03, y: 1.8295381}
+  m_Size: {x: 1.6992433, y: 1.830277}
   m_EdgeRadius: 0
 --- !u!1 &6886970377041775705
 GameObject:
@@ -238,8 +238,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 2977592543655075707}
-  m_Layer: 0
-  m_Name: platforme_droite
+  m_Layer: 6
+  m_Name: platforme_droite 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -273,7 +273,7 @@ GameObject:
   m_Component:
   - component: {fileID: 472451098914157721}
   - component: {fileID: 7465276246659176090}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: plate-forme plate_08
   m_TagString: Untagged
   m_Icon: {fileID: 0}
