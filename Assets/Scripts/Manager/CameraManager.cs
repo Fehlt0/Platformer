@@ -30,7 +30,7 @@ public class CameraManager : MonoBehaviour
     
     void Update()
     {
-        camera.transform.position = target.position;
+        camera.transform.position = new Vector3(target.position.x, target.position.y, -1) ;
     }
     
     public void SetNewTarget(int newTarget)

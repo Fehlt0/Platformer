@@ -884,7 +884,7 @@ MonoBehaviour:
   lightCursor: {fileID: 2555989938054832127, guid: 74ce57491512a9945a2e8b263ea3d00c, type: 3}
   lightSphere: {fileID: 219131457488845381}
   lightCone: {fileID: 9048021264145302179}
-  switchRunning: 5
+  switchRunning: 2
   animatorRef: {fileID: 0}
   langueControll: {fileID: 3815535619944118968}
 --- !u!120 &-4433647437144218176
