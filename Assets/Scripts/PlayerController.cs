@@ -60,7 +60,8 @@ public class PlayerController : MonoBehaviour
         Walking,
         Running,
         Jumping,
-        OnWall
+        OnWall,
+        Falling
     }
     private State currentState;
     [SerializeField] private float switchRunning;
@@ -143,6 +144,8 @@ public class PlayerController : MonoBehaviour
             case State.Idle:
                 animatorRef.SetBool("isWalking", false);
                 animatorRef.SetBool("isRunning", false);
+                animatorRef.SetBool("isJumping", false);
+                animatorRef.SetBool("isFalling", false);
                 break;
             case State.Walking:
                 animatorRef.SetBool("isWalking", true);
@@ -151,12 +154,28 @@ public class PlayerController : MonoBehaviour
             case State.Running:
                 animatorRef.SetBool("isRunning", true);
                 break;
+            case State.Jumping:
+                animatorRef.SetBool("isJumping", true);
+                break;
+            case State.Falling:
+                animatorRef.SetBool("isFalling", true);
+                break;
         }
     }
     
     private void SwitchState()
     {
-        if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
+        if (rb.linearVelocityY < 0 && !isGrounded)
+        {
+            Debug.Log("tombe");
+            currentState = State.Falling;
+        }
+        else if( rb.linearVelocityY >= 0 && !isGrounded)
+        {
+            Debug.Log("saute");
+            currentState = State.Jumping;
+        }
+        else if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
         {
             currentState = State.Running;
         }
@@ -201,14 +220,6 @@ public class PlayerController : MonoBehaviour
         {
             pointeur.SetActive(false);
         }
-
-        dryCount -= 0.01f;
-        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
-        if (dryCount <= 0)
-        {
-           
-            Die();
-        }
     }
 
     private void JumpBuffer()
@@ -248,7 +259,6 @@ public class PlayerController : MonoBehaviour
            {
                rb.linearDamping = 0f;
            }
-           
 
            if (Mathf.Abs(targetSpeed) > 0.01f)
            {
@@ -285,8 +295,6 @@ public class PlayerController : MonoBehaviour
         {
             langueControll.isGrappling = false;
             langueControll.wasHoldingTongue = false;
-            Debug.Log("banane noir");
-            Debug.Log(jumpForceLangue);
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
         }
@@ -366,7 +374,7 @@ public class PlayerController : MonoBehaviour
     {
         bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, groundLayer);
         bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, groundLayer);
-
+         
         isTouchingWall = hitRight || hitLeft;
 
         if (hitRight)

@@ -631,7 +631,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -9095717837082945937, guid: 207ee8102dd4143d288186ef0be518ee, type: 3}
+  m_Sprite: {fileID: 4519162460761889723, guid: 800ccde495c4c994bb131d8ab437f77f, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -883,9 +883,10 @@ MonoBehaviour:
   pointeur: {fileID: 2378635752514104430}
   lightCursor: {fileID: 2555989938054832127, guid: 74ce57491512a9945a2e8b263ea3d00c, type: 3}
   lightSphere: {fileID: 219131457488845381}
-  langueControll: {fileID: 3815535619944118968}
   lightCone: {fileID: 9048021264145302179}
-  switchRunning: 5
+  switchRunning: 2
+  animatorRef: {fileID: 0}
+  langueControll: {fileID: 3815535619944118968}
 --- !u!120 &-4433647437144218176
 LineRenderer:
   serializedVersion: 3
@@ -1034,7 +1035,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1, y: 2}
+    oldSize: {x: 1.02, y: 1.98}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
