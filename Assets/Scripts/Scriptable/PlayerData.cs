@@ -6,6 +6,7 @@ public class PlayerData : ScriptableObject
     public float currentmoveSpeed = 1f;
     
     public float jumpForce = 10f;
+    public float multiplierStaticJump = 1.3f;
     public float groundCheckDistance = 1f;
     public float coyoteTime = 0.2f;
     public float jumpBufferTime = 0.2f;

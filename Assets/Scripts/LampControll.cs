@@ -20,9 +20,6 @@ public class LampControll : MonoBehaviour
 
     private void Update()
     {
-        //Debug.Log(player);
-        //Debug.Log(player.transform.position);
-        //Debug.Log(decalage);
         transform.position = player.transform.position + decalage;
     }
 }
