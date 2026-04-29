@@ -101,12 +101,8 @@ public class PlayerController : MonoBehaviour
         maxDryCount = playerData.dryCount;
         dryCount = maxDryCount;
         maxVelocity = playerData.maxVelocity;
-
         jumpForceLangue = playerData.jumpForceLangue;
-        
         currentWallJumpY = wallJumpForce.y;
-        
-        
     }
 
     void Update()
@@ -167,12 +163,10 @@ public class PlayerController : MonoBehaviour
     {
         if (rb.linearVelocityY < 0 && !isGrounded)
         {
-            Debug.Log("tombe");
             currentState = State.Falling;
         }
         else if( rb.linearVelocityY >= 0 && !isGrounded)
         {
-            Debug.Log("saute");
             currentState = State.Jumping;
         }
         else if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
