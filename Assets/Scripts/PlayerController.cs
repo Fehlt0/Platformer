@@ -6,6 +6,8 @@ public class PlayerController : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
     
+    private float airControlSpeed;
+    
     private float currentmoveSpeed = 1f;
     private float jumpForce= 10f;
     private float multiplierStaticJump = 1.3f;
@@ -91,8 +93,10 @@ public class PlayerController : MonoBehaviour
         jumpForceLangue = playerData.jumpForceLangue;
         
         currentWallJumpY = wallJumpForce.y;
-        
-        
+
+        airControlSpeed = playerData.airControlSpeed;
+
+
     }
 
     void Update()
@@ -103,6 +107,7 @@ public class PlayerController : MonoBehaviour
         
         if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
         {
+            
             Jump();
             lastJump = Time.time;
             jumpBufferTimeCounter = 0f;
@@ -139,6 +144,7 @@ public class PlayerController : MonoBehaviour
     {
         Move();
         CheckGround();
+        
         if (isGrounded)
         {
             if (rb.linearVelocity.y <= maxVelocity)
@@ -151,6 +157,12 @@ public class PlayerController : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
+
+        if (langueControll.wasHoldingTongue)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        
     }
 
     private void Move()
@@ -179,15 +191,24 @@ public class PlayerController : MonoBehaviour
                rb.linearDamping = 0f;
            }
            
-
-           if (Mathf.Abs(targetSpeed) > 0.01f)
+           if(isGrounded)
            {
-               accelerate = acceleration;
+               if (Mathf.Abs(targetSpeed) > 0.01f)
+               {
+                   accelerate = acceleration;
+               }
+               else
+               {
+                   accelerate = deceleration;
+               }
            }
            else
            {
-               accelerate = deceleration;
+               accelerate = airControlSpeed;
+               
            }
+           
+           
            
            float mouvement = speedDiff * accelerate;
            
@@ -197,6 +218,10 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
+        
+        Debug.Log(!isGrounded);
+        Debug.Log(langueControll.wasHoldingTongue);
+        
         if (isTouchingWall && !isGrounded)
         {
             lastTouchingIsWall = true;
@@ -213,9 +238,9 @@ public class PlayerController : MonoBehaviour
         }
         else if (!isGrounded && langueControll.wasHoldingTongue )
         {
+            Debug.Log("je debug un truc");
             langueControll.isGrappling = false;
             langueControll.wasHoldingTongue = false;
-            Debug.Log("banane noir");
             Debug.Log(jumpForceLangue);
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
@@ -232,6 +257,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             coyoteTimeCounter = 0f;
         }
+
     }
 
     public void OnMove(InputAction.CallbackContext context)
@@ -244,6 +270,7 @@ public class PlayerController : MonoBehaviour
 
         if (context.started)
         {
+            Debug.Log("Jump");
             jumpBufferTimeCounter = jumpBufferTime;
         }
         

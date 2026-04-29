@@ -14,7 +14,6 @@ public class LanguePlant : MonoBehaviour
     {
         sr = GetComponent<SpriteRenderer>();
         listPlanteLangue.Add(this);
-        Debug.Log("Plante ajoutée : " + name);
     }
 
     private void OnDestroy()

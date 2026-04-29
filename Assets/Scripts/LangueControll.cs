@@ -72,7 +72,7 @@ public class LangueControll : MonoBehaviour
 
         if (context.canceled)
         {
-            
+            wasHoldingTongue = false;
             isGrappling = false;
         }
     }
@@ -116,6 +116,8 @@ public class LangueControll : MonoBehaviour
     private void GrappleMove()
     {
         if (LanguePlant.listPlanteLangue.Count == 0) return;
+
+        wasHoldingTongue = true;
         
         LanguePlant langueGrapple = null;
         float minDistance = Mathf.Infinity;
@@ -134,8 +136,7 @@ public class LangueControll : MonoBehaviour
             
             if (dist < minDistance)
             {
-                
-                Debug.Log(plante.name);
+
                 minDistance = dist;
                 langueGrapple = plante;
                 

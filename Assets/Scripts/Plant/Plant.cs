@@ -18,7 +18,7 @@ public abstract class Plant : MonoBehaviour
 
     public void OnTriggerStay2D(Collider2D other)
     {
-        Debug.Log("détecté");
+
         if (other.CompareTag("Light"))
         {
             timeUntilDecay = baseTimeUntilDecay;
