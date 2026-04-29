@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     
     private float currentmoveSpeed = 1f;
     private float jumpForce= 10f;
+    private float multiplierStaticJump = 1.3f;
     private float groundCheckDistance = 1f;
     private float coyoteTime = 0.2f;
     private float jumpBufferTime = 0.2f;
@@ -20,6 +21,7 @@ public class PlayerController : MonoBehaviour
     public float dryCount = 10f;
     public float maxDryCount = 10f;
     private float maxVelocity;
+    private float jumpForceLangue;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -50,6 +52,22 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject lightCursor;
     [SerializeField] private GameObject lightSphere;
+    [SerializeField] private GameObject lightCone;
+    
+    private enum State
+    {
+        Idle,
+        Walking,
+        Running,
+        Jumping,
+        OnWall
+    }
+    private State currentState;
+    [SerializeField] private float switchRunning;
+    public Animator animatorRef;
+    [SerializeField] private LangueControll langueControll;
+
+    private Vector2 joystick = new Vector2();
     
     
     
@@ -59,8 +77,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animatorRef = GetComponent<Animator>();
+        
         currentmoveSpeed = playerData.currentmoveSpeed;
         jumpForce = playerData.jumpForce;
+        multiplierStaticJump =  playerData.multiplierStaticJump;
         groundCheckDistance = playerData.groundCheckDistance;
         coyoteTime = playerData.coyoteTime;
         jumpBufferTime = playerData.jumpBufferTime;
@@ -79,24 +100,91 @@ public class PlayerController : MonoBehaviour
         maxDryCount = playerData.dryCount;
         dryCount = maxDryCount;
         maxVelocity = playerData.maxVelocity;
+
+        jumpForceLangue = playerData.jumpForceLangue;
         
         currentWallJumpY = wallJumpForce.y;
+        
+        
     }
 
     void Update()
     {
         CheckWall();
-        
-        jumpBufferTimeCounter -= Time.deltaTime;
-        
-        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
+        JumpBuffer();
+        PointeurPosition();
+        Drying();
+        SwitchState();
+        SwitchAnim();
+    }
+    
+    private void FixedUpdate()
+    {
+        Move();
+        CheckGround();
+        if (isGrounded)
         {
-            Jump();
-            lastJump = Time.time;
-            jumpBufferTimeCounter = 0f;
+            if (rb.linearVelocity.y <= maxVelocity)
+            {
+                Die();
+            }
+            coyoteTimeCounter = coyoteTime;
         }
-        
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+    }
+
+    private void SwitchAnim()
+    {
+        switch (currentState)
+        {
+            case State.Idle:
+                animatorRef.SetBool("isWalking", false);
+                animatorRef.SetBool("isRunning", false);
+                break;
+            case State.Walking:
+                animatorRef.SetBool("isWalking", true);
+                animatorRef.SetBool("isRunning", false);
+                break;
+            case State.Running:
+                animatorRef.SetBool("isRunning", true);
+                break;
+        }
+    }
+    
+    private void SwitchState()
+    {
+        if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
+        {
+            currentState = State.Running;
+        }
+        else if (rb.linearVelocityX != 0 && isGrounded)
+        {
+            currentState = State.Walking;
+        }
+        else
+        {
+            currentState = State.Idle;
+        }
+    }
+
+    private void Drying()
+    {
+        dryCount -= 0.01f;
+        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
+        if (dryCount <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void PointeurPosition()
+    {
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
+        
+        joystick = Gamepad.current.rightStick.ReadValue();
 
         if (joystick.magnitude > 0.2f)
         {
@@ -118,25 +206,20 @@ public class PlayerController : MonoBehaviour
         UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
         if (dryCount <= 0)
         {
+           
             Die();
         }
     }
 
-    void FixedUpdate()
+    private void JumpBuffer()
     {
-        Move();
-        CheckGround();
-        if (isGrounded)
+        jumpBufferTimeCounter -= Time.deltaTime;
+        
+        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
         {
-            if (rb.linearVelocity.y <= maxVelocity)
-            {
-                Die();
-            }
-            coyoteTimeCounter = coyoteTime;
-        }
-        else
-        {
-            coyoteTimeCounter -= Time.deltaTime;
+            Jump();
+            lastJump = Time.time;
+            jumpBufferTimeCounter = 0f;
         }
     }
 
@@ -147,6 +230,7 @@ public class PlayerController : MonoBehaviour
            //rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); 
            
            float targetSpeed = moveInput.x * currentmoveSpeed;
+
            float speedDiff = targetSpeed - rb.linearVelocity.x;
            float accelerate;
            if (isGrounded)
@@ -197,6 +281,22 @@ public class PlayerController : MonoBehaviour
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
         }
+        else if (!isGrounded && langueControll.wasHoldingTongue )
+        {
+            langueControll.isGrappling = false;
+            langueControll.wasHoldingTongue = false;
+            Debug.Log("banane noir");
+            Debug.Log(jumpForceLangue);
+            rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
+            coyoteTimeCounter = 0f;
+        }
+        else if (isGrounded && Mathf.Abs(moveInput.x) < 0.01f && !langueControll.wasHoldingTongue)
+        {
+
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * multiplierStaticJump);
+            coyoteTimeCounter = 0f;
+        }
+        
         else
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -229,7 +329,9 @@ public class PlayerController : MonoBehaviour
         {
             if (joystick.magnitude >= 0.1)
             {
-                Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
+                //Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
+                lightCone.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f,0f,-90f);
+                lightCone.SetActive(true);
             }
             else
             {
@@ -246,6 +348,7 @@ public class PlayerController : MonoBehaviour
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
         lightSphere.SetActive(false);
+        lightCone.SetActive(false);
     }
     
     private void CheckGround()
