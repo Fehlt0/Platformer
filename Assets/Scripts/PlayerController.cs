@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject lightCursor;
     [SerializeField] private GameObject lightSphere;
     [SerializeField] private GameObject lightCone;
+    [SerializeField] private GameObject playerArm; 
     
     private enum State
     {
@@ -333,24 +334,29 @@ public class PlayerController : MonoBehaviour
         {
             if (joystick.magnitude >= 0.1)
             {
-                //Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
+                animatorRef.SetBool("isFlashingPointing", true);
+                playerArm.transform.rotation = pointeur.transform.rotation;
                 lightCone.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f,0f,-90f);
                 lightCone.SetActive(true);
             }
             else
             {
+                //animatorRef.SetBool("isFlashingAround", true);
                 lightSphere.SetActive(true);
             }
 
             canLamp = false;
             StartCoroutine(LampOffTimer());
         }
+        
     }
 
     private IEnumerator LampOffTimer()
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
+        //animatorRef.SetBool("isFlashingAround", false);
+        animatorRef.SetBool("isFlashingPointing", false);
         lightSphere.SetActive(false);
         lightCone.SetActive(false);
     }
