@@ -2178,6 +2178,7 @@ MonoBehaviour:
   lastCamTarget: 0
   listCheckPoint:
   - {fileID: 1501946250}
+  - {fileID: 1520382326}
   player: {fileID: 6521004814734928236, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
 --- !u!1001 &877295613
 PrefabInstance:
@@ -3528,7 +3529,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec1c867bae2d63d40952dfd1a5a6c9f2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  id: 1
+  id: 0
 --- !u!61 &1480097784
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -4208,7 +4209,7 @@ Transform:
   m_GameObject: {fileID: 1596521705}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3.71, y: -4.08, z: 0}
+  m_LocalPosition: {x: -10.71, y: -4.08, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4583,9 +4584,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0920e90729db53045861e8f143f27fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCamera
-  target: {fileID: 0}
+  target: {fileID: 1028939692511918276, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
   camera: {fileID: 1899744056}
   targetPos:
+  - {fileID: 1550012131}
   - {fileID: 1596521706}
   moveSpeed: 5
 --- !u!1001 &1705533533
