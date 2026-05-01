@@ -53,6 +53,7 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject lightCursor;
     [SerializeField] private GameObject lightSphere;
     [SerializeField] private GameObject lightCone;
+    [SerializeField] private GameObject playerArm; 
     
     private enum State
     {
@@ -60,7 +61,8 @@ public class PlayerController : MonoBehaviour
         Walking,
         Running,
         Jumping,
-        OnWall
+        OnWall,
+        Falling
     }
     private State currentState;
     [SerializeField] private float switchRunning;
@@ -100,12 +102,8 @@ public class PlayerController : MonoBehaviour
         maxDryCount = playerData.dryCount;
         dryCount = maxDryCount;
         maxVelocity = playerData.maxVelocity;
-
         jumpForceLangue = playerData.jumpForceLangue;
-        
         currentWallJumpY = wallJumpForce.y;
-        
-        
     }
 
     void Update()
@@ -143,6 +141,8 @@ public class PlayerController : MonoBehaviour
             case State.Idle:
                 animatorRef.SetBool("isWalking", false);
                 animatorRef.SetBool("isRunning", false);
+                animatorRef.SetBool("isJumping", false);
+                animatorRef.SetBool("isFalling", false);
                 break;
             case State.Walking:
                 animatorRef.SetBool("isWalking", true);
@@ -151,12 +151,26 @@ public class PlayerController : MonoBehaviour
             case State.Running:
                 animatorRef.SetBool("isRunning", true);
                 break;
+            case State.Jumping:
+                animatorRef.SetBool("isJumping", true);
+                break;
+            case State.Falling:
+                animatorRef.SetBool("isFalling", true);
+                break;
         }
     }
     
     private void SwitchState()
     {
-        if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
+        if (rb.linearVelocityY < 0 && !isGrounded)
+        {
+            currentState = State.Falling;
+        }
+        else if( rb.linearVelocityY >= 0 && !isGrounded)
+        {
+            currentState = State.Jumping;
+        }
+        else if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
         {
             currentState = State.Running;
         }
@@ -201,14 +215,6 @@ public class PlayerController : MonoBehaviour
         {
             pointeur.SetActive(false);
         }
-
-        dryCount -= 0.01f;
-        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
-        if (dryCount <= 0)
-        {
-           
-            Die();
-        }
     }
 
     private void JumpBuffer()
@@ -248,7 +254,6 @@ public class PlayerController : MonoBehaviour
            {
                rb.linearDamping = 0f;
            }
-           
 
            if (Mathf.Abs(targetSpeed) > 0.01f)
            {
@@ -285,8 +290,6 @@ public class PlayerController : MonoBehaviour
         {
             langueControll.isGrappling = false;
             langueControll.wasHoldingTongue = false;
-            Debug.Log("banane noir");
-            Debug.Log(jumpForceLangue);
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
         }
@@ -306,7 +309,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnMove(InputAction.CallbackContext context)
     {
+        
         moveInput = context.ReadValue<Vector2>();
+        
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -329,24 +334,29 @@ public class PlayerController : MonoBehaviour
         {
             if (joystick.magnitude >= 0.1)
             {
-                //Instantiate(lightCursor, pointeur.transform.position, pointeur.transform.rotation);
+                animatorRef.SetBool("isFlashingPointing", true);
+                playerArm.transform.rotation = pointeur.transform.rotation;
                 lightCone.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f,0f,-90f);
                 lightCone.SetActive(true);
             }
             else
             {
+                //animatorRef.SetBool("isFlashingAround", true);
                 lightSphere.SetActive(true);
             }
 
             canLamp = false;
             StartCoroutine(LampOffTimer());
         }
+        
     }
 
     private IEnumerator LampOffTimer()
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
+        //animatorRef.SetBool("isFlashingAround", false);
+        animatorRef.SetBool("isFlashingPointing", false);
         lightSphere.SetActive(false);
         lightCone.SetActive(false);
     }
@@ -366,7 +376,7 @@ public class PlayerController : MonoBehaviour
     {
         bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, groundLayer);
         bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, groundLayer);
-
+         
         isTouchingWall = hitRight || hitLeft;
 
         if (hitRight)
