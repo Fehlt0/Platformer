@@ -8,6 +8,7 @@ public class PlayerController : MonoBehaviour
     
     private float currentmoveSpeed = 1f;
     private float jumpForce= 10f;
+    private float multiplierStaticJump = 1.3f;
     private float groundCheckDistance = 1f;
     private float coyoteTime = 0.2f;
     private float jumpBufferTime = 0.2f;
@@ -17,6 +18,10 @@ public class PlayerController : MonoBehaviour
     private float wallCheckDistance = 0.5f;
     private float wallJumpTired = 2f;
     private float wallJumpTiredMultiplier = 0.5f;
+    public float dryCount = 10f;
+    public float maxDryCount = 10f;
+    private float maxVelocity;
+    private float jumpForceLangue;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -45,8 +50,26 @@ public class PlayerController : MonoBehaviour
     private float lampTimer = 1f;
     
     [SerializeField] private GameObject pointeur;
-    [SerializeField] private GameObject lampCursor;
-    [SerializeField] private GameObject lampCircle;
+    [SerializeField] private GameObject lightCursor;
+    [SerializeField] private GameObject lightSphere;
+    [SerializeField] private GameObject lightCone;
+    [SerializeField] private GameObject playerArm; 
+    
+    private enum State
+    {
+        Idle,
+        Walking,
+        Running,
+        Jumping,
+        OnWall,
+        Falling
+    }
+    private State currentState;
+    [SerializeField] private float switchRunning;
+    public Animator animatorRef;
+    [SerializeField] private LangueControll langueControll;
+
+    private Vector2 joystick = new Vector2();
     
     
     
@@ -56,8 +79,11 @@ public class PlayerController : MonoBehaviour
     void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animatorRef = GetComponent<Animator>();
+        
         currentmoveSpeed = playerData.currentmoveSpeed;
         jumpForce = playerData.jumpForce;
+        multiplierStaticJump =  playerData.multiplierStaticJump;
         groundCheckDistance = playerData.groundCheckDistance;
         coyoteTime = playerData.coyoteTime;
         jumpBufferTime = playerData.jumpBufferTime;
@@ -73,26 +99,106 @@ public class PlayerController : MonoBehaviour
         wallLayer  = playerData.wallLayer;
         distance = playerData.distance;
         lampTimer = playerData.lampTimer;
-        
+        maxDryCount = playerData.dryCount;
+        dryCount = maxDryCount;
+        maxVelocity = playerData.maxVelocity;
+        jumpForceLangue = playerData.jumpForceLangue;
         currentWallJumpY = wallJumpForce.y;
     }
 
     void Update()
     {
-        
         CheckWall();
-        
-
-        jumpBufferTimeCounter -= Time.deltaTime;
-        
-        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
+        JumpBuffer();
+        PointeurPosition();
+        Drying();
+        SwitchState();
+        SwitchAnim();
+    }
+    
+    private void FixedUpdate()
+    {
+        Move();
+        CheckGround();
+        if (isGrounded)
         {
-            Jump();
-            lastJump = Time.time;
-            jumpBufferTimeCounter = 0f;
+            if (rb.linearVelocity.y <= maxVelocity)
+            {
+                Die();
+            }
+            coyoteTimeCounter = coyoteTime;
         }
-        
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
+    }
+
+    private void SwitchAnim()
+    {
+        switch (currentState)
+        {
+            case State.Idle:
+                animatorRef.SetBool("isWalking", false);
+                animatorRef.SetBool("isRunning", false);
+                animatorRef.SetBool("isJumping", false);
+                animatorRef.SetBool("isFalling", false);
+                break;
+            case State.Walking:
+                animatorRef.SetBool("isWalking", true);
+                animatorRef.SetBool("isRunning", false);
+                break;
+            case State.Running:
+                animatorRef.SetBool("isRunning", true);
+                break;
+            case State.Jumping:
+                animatorRef.SetBool("isJumping", true);
+                break;
+            case State.Falling:
+                animatorRef.SetBool("isFalling", true);
+                break;
+        }
+    }
+    
+    private void SwitchState()
+    {
+        if (rb.linearVelocityY < 0 && !isGrounded)
+        {
+            currentState = State.Falling;
+        }
+        else if( rb.linearVelocityY >= 0 && !isGrounded)
+        {
+            currentState = State.Jumping;
+        }
+        else if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
+        {
+            currentState = State.Running;
+        }
+        else if (rb.linearVelocityX != 0 && isGrounded)
+        {
+            currentState = State.Walking;
+        }
+        else
+        {
+            currentState = State.Idle;
+        }
+    }
+
+    private void Drying()
+    {
+        dryCount -= 0.01f;
+        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
+        if (dryCount <= 0)
+        {
+            Die();
+        }
+    }
+
+    private void PointeurPosition()
+    {
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
+        
+        joystick = Gamepad.current.rightStick.ReadValue();
 
         if (joystick.magnitude > 0.2f)
         {
@@ -103,24 +209,23 @@ public class PlayerController : MonoBehaviour
             
             float angle = Mathf.Atan2(decalage.y, decalage.x) * Mathf.Rad2Deg; 
             pointeur.transform.rotation = Quaternion.Euler(0f, 0f, angle +90f);
-        }
-    }
-
-    void FixedUpdate()
-    {
-        Move();
-        CheckGround();
-        if (isGrounded)
-        {
-            if (rb.linearVelocity.y <= -10)
-            {
-                Debug.Log("mort sale nul");
-            }
-            coyoteTimeCounter = coyoteTime;
+            pointeur.SetActive(true);
         }
         else
         {
-            coyoteTimeCounter -= Time.deltaTime;
+            pointeur.SetActive(false);
+        }
+    }
+
+    private void JumpBuffer()
+    {
+        jumpBufferTimeCounter -= Time.deltaTime;
+        
+        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
+        {
+            Jump();
+            lastJump = Time.time;
+            jumpBufferTimeCounter = 0f;
         }
     }
 
@@ -131,8 +236,24 @@ public class PlayerController : MonoBehaviour
            //rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); 
            
            float targetSpeed = moveInput.x * currentmoveSpeed;
+
            float speedDiff = targetSpeed - rb.linearVelocity.x;
            float accelerate;
+           if (isGrounded)
+           {
+               if (Mathf.Abs(moveInput.x) < 0.01f)
+               {
+                   rb.linearDamping = 8f;
+               }
+               else
+               {
+                   rb.linearDamping = 0f;
+               }
+           }
+           else
+           {
+               rb.linearDamping = 0f;
+           }
 
            if (Mathf.Abs(targetSpeed) > 0.01f)
            {
@@ -144,7 +265,8 @@ public class PlayerController : MonoBehaviour
            }
            
            float mouvement = speedDiff * accelerate;
-           rb.AddForce(Vector2.right * mouvement);
+           
+           rb.AddForce(Vector2.right * mouvement, ForceMode2D.Force);
         }
     }
 
@@ -164,6 +286,20 @@ public class PlayerController : MonoBehaviour
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
         }
+        else if (!isGrounded && langueControll.wasHoldingTongue )
+        {
+            langueControll.isGrappling = false;
+            langueControll.wasHoldingTongue = false;
+            rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
+            coyoteTimeCounter = 0f;
+        }
+        else if (isGrounded && Mathf.Abs(moveInput.x) < 0.01f && !langueControll.wasHoldingTongue)
+        {
+
+            rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * multiplierStaticJump);
+            coyoteTimeCounter = 0f;
+        }
+        
         else
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
@@ -175,7 +311,7 @@ public class PlayerController : MonoBehaviour
     {
         
         moveInput = context.ReadValue<Vector2>();
-
+        
     }
 
     public void OnJump(InputAction.CallbackContext context)
@@ -198,23 +334,31 @@ public class PlayerController : MonoBehaviour
         {
             if (joystick.magnitude >= 0.1)
             {
-                Instantiate(lampCursor, pointeur.transform.position, pointeur.transform.rotation);
+                animatorRef.SetBool("isFlashingPointing", true);
+                playerArm.transform.rotation = pointeur.transform.rotation;
+                lightCone.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f,0f,-90f);
+                lightCone.SetActive(true);
             }
             else
             {
-                lampCircle.SetActive(true);
+                //animatorRef.SetBool("isFlashingAround", true);
+                lightSphere.SetActive(true);
             }
 
             canLamp = false;
             StartCoroutine(LampOffTimer());
         }
+        
     }
 
     private IEnumerator LampOffTimer()
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
-        lampCircle.SetActive(false);
+        //animatorRef.SetBool("isFlashingAround", false);
+        animatorRef.SetBool("isFlashingPointing", false);
+        lightSphere.SetActive(false);
+        lightCone.SetActive(false);
     }
     
     private void CheckGround()
@@ -230,9 +374,9 @@ public class PlayerController : MonoBehaviour
 
     private void CheckWall()
     {
-        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, wallLayer);
-        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, wallLayer);
-
+        bool hitRight = Physics2D.Raycast(wallCheckRight.position, Vector2.right, wallCheckDistance, groundLayer);
+        bool hitLeft = Physics2D.Raycast(wallCheckLeft.position, Vector2.left, wallCheckDistance, groundLayer);
+         
         isTouchingWall = hitRight || hitLeft;
 
         if (hitRight)
@@ -247,5 +391,11 @@ public class PlayerController : MonoBehaviour
         Gizmos.DrawWireCube(groundCheck.position, boxSize );
         Gizmos.DrawRay(wallCheckRight.position, Vector2.right * wallCheckDistance);
         Gizmos.DrawRay(wallCheckLeft.position, Vector2.left * wallCheckDistance);
+    }
+
+    public void Die()
+    {
+        Destroy(gameObject);
+        UIManager.instance.SetDeathMenu(true);
     }
 }
