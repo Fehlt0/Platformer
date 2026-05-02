@@ -15,6 +15,9 @@ public class PlayerData : ScriptableObject
     public float jumpCutMultiplier = 0.5f;
     public float acceleration = 1f;
     public float deceleration = 1f;
+    
+    public float wallSlideSpeed = 2f;
+    public float wallJumpControlLockTime = 0.15f;
     public float wallCheckDistance = 0.5f;
     public float wallJumpTired = 2f;
     public float wallJumpTiredMultiplier = 0.5f;

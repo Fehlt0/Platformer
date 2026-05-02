@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 3030294603812312063}
   - component: {fileID: 4044973181221639575}
   - component: {fileID: 816319389713595261}
-  m_Layer: 6
+  m_Layer: 0
   m_Name: Bloc
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -180,10 +180,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbbc9fa60dd94b46a385ca313ae54c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  baseTimeUntilDecay: 1
-  animatorRef: {fileID: 0}
-  isAlive: 0
-  langueAvailable: 0
 --- !u!95 &816319389713595261
 Animator:
   serializedVersion: 7

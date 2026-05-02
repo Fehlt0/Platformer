@@ -15,7 +15,7 @@ public class ChampiBumper : Plant
             
             
             
-            /*
+            
             //Debug.Log(transform.eulerAngles.z);
             switch (transform.eulerAngles.z)
             {
@@ -31,7 +31,7 @@ public class ChampiBumper : Plant
             }
 
             other.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
-            other.GetComponent<Rigidbody2D>().AddForce(direction * strength)*/;
+            other.GetComponent<Rigidbody2D>().AddForce(direction * strength);
         }
     }
 }

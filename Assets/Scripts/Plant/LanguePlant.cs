@@ -3,8 +3,6 @@ using UnityEngine;
 
 public class LanguePlant : MonoBehaviour
 {
-
-    //public bool langueAvailable = true;
     
     public static List<LanguePlant> listPlanteLangue = new List<LanguePlant>();
     
@@ -27,24 +25,5 @@ public class LanguePlant : MonoBehaviour
             sr.color = active ? Color.blue : Color.red;
     }
 
-   /* public override void Start()
-    {
-        foreach (var plante in listPlanteLangue)
-        {
-            DontDestroyOnLoad(plante);
-        }
-    }
-
-    public void OnTriggerEnter2D(Collider2D other)
-    {
-        if (isAlive)
-        {
-
-            langueAvailable = true;
-        }
-        else
-        {
-            langueAvailable = false;
-        }
-    }*/
+   
 }

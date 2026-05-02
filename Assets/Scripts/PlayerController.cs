@@ -43,6 +43,7 @@ public class PlayerController : MonoBehaviour
     private float lastJump;
     private float currentWallJumpY;
     
+    
     private bool isGrounded;
     private bool isTouchingWall;
     private bool lastTouchingIsWall;
@@ -62,6 +63,10 @@ public class PlayerController : MonoBehaviour
     
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
+    
+    private float wallSlideSpeed = 2f;
+    private float wallJumpControlLockTime = 0.15f;
+    private float wallJumpTimer;
     
    
     void Start()
@@ -95,7 +100,9 @@ public class PlayerController : MonoBehaviour
         currentWallJumpY = wallJumpForce.y;
 
         airControlSpeed = playerData.airControlSpeed;
-
+        
+        wallSlideSpeed = playerData.wallSlideSpeed;
+        wallJumpControlLockTime = playerData.wallJumpControlLockTime;
 
     }
 
@@ -162,12 +169,28 @@ public class PlayerController : MonoBehaviour
         {
             coyoteTimeCounter = coyoteTime;
         }
+
+        if (isTouchingWall)
+        {
+            coyoteTimeCounter = coyoteTime;
+        }
+        else
+        {
+            coyoteTimeCounter -= Time.deltaTime;
+        }
         
     }
 
     private void Move()
     {
-        if (!lastTouchingIsWall)
+        
+        if (wallJumpTimer > 0)
+        {
+            wallJumpTimer -= Time.deltaTime;
+            return;
+        }
+        
+        //if (!lastTouchingIsWall)
         {
            //rb.linearVelocity = new Vector2(moveInput.x * currentmoveSpeed, rb.linearVelocity.y); 
            
@@ -208,24 +231,27 @@ public class PlayerController : MonoBehaviour
                
            }
            
+           if (isTouchingWall && !isGrounded && rb.linearVelocity.y < 0f)
+           {
+               rb.linearVelocity = new Vector2(rb.linearVelocity.x, -wallSlideSpeed);
+           }
+           
            
            
            float mouvement = speedDiff * accelerate;
-           
            rb.AddForce(Vector2.right * mouvement, ForceMode2D.Force);
         }
     }
 
     private void Jump()
     {
-        
-        Debug.Log(!isGrounded);
-        Debug.Log(langueControll.wasHoldingTongue);
+
         
         if (isTouchingWall && !isGrounded)
         {
             lastTouchingIsWall = true;
             rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, currentWallJumpY);
+            wallJumpTimer = wallJumpControlLockTime;
             
             currentWallJumpY -= wallJumpTired;
             currentWallJumpY *= wallJumpTiredMultiplier;

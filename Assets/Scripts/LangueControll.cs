@@ -9,6 +9,7 @@ public class LangueControll : MonoBehaviour
     [SerializeField] private float tonguePullForce = 20f;
     
     [SerializeField] private LayerMask grappleLayer;
+    [SerializeField] private LayerMask obstacleLayer;
     
     [SerializeField] private LineRenderer tongueLine;
 
@@ -19,28 +20,85 @@ public class LangueControll : MonoBehaviour
     private Vector2 direction;
     
     private LanguePlant currentTarget;
+    private LanguePlant lockedTarget;
     
     public bool wasHoldingTongue;
     public bool isGrappling;
+    
+    
+    [SerializeField] private float tongueSpeed = 15f;
+    [SerializeField] private Transform tongueTip;
+    
+    private float tongueProgress;
+    private bool tongueGoing;
 
     
-   
-    
-
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        
+        tongueLine.positionCount = 2;
+
+        tongueLine.startWidth = 0.25f;
+        tongueLine.endWidth = 0.18f;
+
+        tongueLine.numCapVertices = 10; 
+        tongueLine.material = new Material(Shader.Find("Sprites/Default"));
+
+        tongueLine.startColor = new Color(0.9f, 0.1f, 0.1f);
+        tongueLine.endColor = new Color(0.6f, 0f, 0f);
+
+        tongueLine.enabled = false;
+        
+        tongueLine.sortingLayerName = "Default"; 
+        tongueLine.sortingOrder = -10;
+        
+        
     }
 
     public void Update()
     {
         UpdateTarget();
+        
+        if (tongueLine.enabled && currentTarget != null)
+        {
+            grapplePoint = currentTarget.transform.position;
+
+
+            if (tongueGoing)
+                tongueProgress += Time.deltaTime * tongueSpeed;
+
+            tongueProgress = Mathf.Clamp01(tongueProgress);
+
+            Vector2 start = transform.position;
+            Vector2 end = grapplePoint;
+
+
+            float t = Mathf.SmoothStep(0f, 1f, tongueProgress);
+            Vector2 currentPoint = Vector2.Lerp(start, end, t);
+
+
+
+            tongueLine.SetPosition(0, start);
+            tongueLine.SetPosition(1, currentPoint);
+            
+            float distToTarget = Vector2.Distance(start, end);
+
+            if (distToTarget < 0.5f)
+            {
+                tongueLine.SetPosition(1, start);
+            }
+            
+            if (tongueTip != null)
+            {
+                tongueTip.position = tongueLine.GetPosition(1);
+                tongueTip.gameObject.SetActive(tongueLine.enabled);
+            }
+        }
+        
+        
     }
 
-    /*private void Update()
-    {
-       ShowAim();
-    }*/
 
     private void FixedUpdate()
     {
@@ -66,7 +124,12 @@ public class LangueControll : MonoBehaviour
         if (context.performed)
         {
             wasHoldingTongue =  false;
-            isGrappling = true; 
+            isGrappling = true;
+            
+            tongueProgress = 0f;
+            tongueGoing = true;
+            tongueLine.enabled = true;
+
 
         }
 
@@ -74,12 +137,18 @@ public class LangueControll : MonoBehaviour
         {
             wasHoldingTongue = false;
             isGrappling = false;
+            
+            tongueLine.enabled = false;
+
         }
     }
     
     
     private void UpdateTarget()
     {
+        
+
+        
         if (LanguePlant.listPlanteLangue.Count == 0) return;
 
         LanguePlant nearest = null;
@@ -115,6 +184,10 @@ public class LangueControll : MonoBehaviour
     
     private void GrappleMove()
     {
+        
+        
+        
+        
         if (LanguePlant.listPlanteLangue.Count == 0) return;
 
         wasHoldingTongue = true;
@@ -151,123 +224,47 @@ public class LangueControll : MonoBehaviour
         
         grapplePoint = langueGrapple.transform.position;
         
+        Vector2 origin = transform.position;
+        Vector2 dir = (grapplePoint - origin).normalized;
+        float distance = Vector2.Distance(origin, grapplePoint);
 
-        if (minDistance <= tongueDistance)
+        RaycastHit2D hit = Physics2D.Raycast(origin, dir, distance, obstacleLayer);
+        
+        if (hit.collider != null)
         {
+            Debug.Log("Mur détecté !");
+            isGrappling = false;
+            rb.linearVelocity = Vector2.zero;
+            return;
+        }
+        
+        Debug.DrawRay(origin, dir * distance, Color.red);
+        
+        
+
+        if (minDistance <= tongueDistance )
+        {
+            
+            
             Vector2 direction = (grapplePoint - (Vector2)transform.position).normalized;
+
             
             rb.linearVelocity = direction * tonguePullForce;
             
             wasHoldingTongue = true;
         }
+        
 
-        if (minDistance < 0.01f)
+        if (minDistance < 0.15f)
         {
-            isGrappling = false;
-            rb.linearVelocity = Vector2.zero;
+            transform.position = grapplePoint;
+            rb.linearVelocity =  Vector2.zero;
+
+            
         }
+        
+
     }
 
-    
-    /*private void GrappleMove()
-    {
-        
-        var langueGrapple = LanguePlant.listPlanteLangue[0];
-        
-        foreach (var plante in LanguePlant.listPlanteLangue)
-        {
-            if (Vector2.Distance(plante.transform.position, transform.position) <=
-                Vector2.Distance(langueGrapple.transform.position, transform.position))
-            {
-                langueGrapple = plante;
-            }
-        }
 
-        if (Vector2.Distance(langueGrapple.transform.position, transform.position) <= tongueDistance )
-        {
-            Vector2 direction = (langueGrapple.transform.position -  transform.position).normalized;
-            rb.linearVelocity = direction * tonguePullForce;
-            wasHoldingTongue = true;
-
-        }
-        float distance = Vector2.Distance(transform.position, grapplePoint);
-        if (distance < 0.01f )
-        {
-            isGrappling = false;
-            rb.linearVelocity = Vector2.zero;
-        }
-        
-    }*/
-    
-    /*private void TryGrapple()
-    {
-        if (aimInput.magnitude < 0.2f)
-        {
-            Debug.Log("Aim: " + aimInput);
-            return;
-        }
-
-        Vector2 direction = aimInput.normalized;
-
-        Debug.DrawRay(transform.position, direction * tongueDistance, Color.red, 1f);
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tongueDistance, grappleLayer);
-
-        Debug.Log(hit.collider);
-
-
-        if (hit.collider != null)
-        {
-            grapplePoint = hit.point;
-            isGrappling = true;
-        }
-    }*/
-    
-    /*private void GrappleMove()
-    {
-        Vector2 direction = (grapplePoint - (Vector2)transform.position).normalized;
-
-        rb.linearVelocity = direction * tonguePullForce;
-        
-        float distance = Vector2.Distance(transform.position, grapplePoint);
-        if (distance < 0.5f)
-        {
-            isGrappling = false;
-            rb.linearVelocity = Vector2.zero;
-        }
-    }*/
-    
-    /*public void OnAim(InputAction.CallbackContext context)
-    {
-
-        aimInput = context.ReadValue<Vector2>();
-
-
-    }*/
-
-    /*private void ShowAim()
-    {
-        if ( !isHoldingTongue || aimInput.magnitude < 0.2f)
-        {
-            tongueLine.enabled = false;
-            return;
-        }
-
-        Vector2 direction = aimInput.normalized;
-
-        RaycastHit2D hit = Physics2D.Raycast(transform.position, direction, tongueDistance, grappleLayer);
-
-        tongueLine.enabled = true;
-        tongueLine.SetPosition(0, transform.position);
-
-        if (hit.collider != null)
-        {
-            tongueLine.material.color = Color.green;
-            tongueLine.SetPosition(1, hit.point);
-        }
-        else
-        {
-            tongueLine.material.color = Color.red;
-            tongueLine.SetPosition(1, (Vector2)transform.position + direction * tongueDistance);
-        }
-    }*/
 }

@@ -22,15 +22,15 @@ MonoBehaviour:
   jumpCutMultiplier: 0.6
   acceleration: 3
   deceleration: 4
-  wallCheckDistance: 0.3
+  wallCheckDistance: 0.5
   wallJumpTired: 0
   wallJumpTiredMultiplier: 0.8
   dryCount: 50
   maxVelocity: -100
   distance: 2
-  lampTimer: 0.5
+  lampTimer: 0.4
   jumpForceLangue: 17
-  wallJumpForce: {x: 4, y: 8}
+  wallJumpForce: {x: 4, y: 12}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:
     serializedVersion: 2

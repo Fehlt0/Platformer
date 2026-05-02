@@ -412,6 +412,7 @@ GameObject:
   - component: {fileID: 9030068658206032383}
   - component: {fileID: 3815535619944118968}
   - component: {fileID: 8947842431380497069}
+  - component: {fileID: -2455956732645949397}
   - component: {fileID: -4433647437144218176}
   m_Layer: 3
   m_Name: Player
@@ -436,6 +437,7 @@ Transform:
   - {fileID: 7502653952159766358}
   - {fileID: 7631586723752552689}
   - {fileID: 8061197306110505905}
+  - {fileID: 1102330226045916877}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &4881165443844574030
@@ -730,6 +732,22 @@ MonoBehaviour:
         m_CallState: 2
     m_ActionId: a66b4c0f-a599-4945-90a4-1661c81208f8
     m_ActionName: 'Player/Aim[/XInputControllerWindows/rightStick]'
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: -2455956732645949397}
+        m_TargetAssemblyTypeName: LaunchLuciole, Assembly-CSharp
+        m_MethodName: OnLaunch
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+    m_ActionId: 0684bfa8-1991-4b14-8e33-a8c76ccd366c
+    m_ActionName: 'Player/Launch[/XInputControllerWindows/leftShoulder]'
   m_NeverAutoSwitchControlSchemes: 0
   m_DefaultControlScheme: Gamepad
   m_DefaultActionMap: Player
@@ -752,9 +770,14 @@ MonoBehaviour:
   grappleLayer:
     serializedVersion: 2
     m_Bits: 512
+  obstacleLayer:
+    serializedVersion: 2
+    m_Bits: 64
   tongueLine: {fileID: -4433647437144218176}
   wasHoldingTongue: 0
   isGrappling: 0
+  tongueSpeed: 15
+  tongueTip: {fileID: 5357453113590400469, guid: 7b3b8e3b5175ac84e8ac58ccb9b60ab8, type: 3}
 --- !u!114 &8947842431380497069
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -777,6 +800,21 @@ MonoBehaviour:
   lightCursor: {fileID: 2555989938054832127, guid: 74ce57491512a9945a2e8b263ea3d00c, type: 3}
   lightSphere: {fileID: 219131457488845381}
   langueControll: {fileID: 3815535619944118968}
+--- !u!114 &-2455956732645949397
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6521004814734928236}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 09d02fcb8ec68454b9b7ab934261f252, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::LaunchLuciole
+  luciolePrefab: {fileID: 708272399311144551, guid: a93f7d75477a7f640b32b9c00ec23b3a, type: 3}
+  firePoint: {fileID: 1102330226045916877}
+  launchSpeed: 10
 --- !u!120 &-4433647437144218176
 LineRenderer:
   serializedVersion: 3
@@ -887,3 +925,34 @@ LineRenderer:
   m_UseWorldSpace: 1
   m_Loop: 0
   m_ApplyActiveColorSpace: 1
+--- !u!1 &7669296747122652116
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1102330226045916877}
+  m_Layer: 0
+  m_Name: LaunchPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &1102330226045916877
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7669296747122652116}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 1.56, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 1028939692511918276}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
