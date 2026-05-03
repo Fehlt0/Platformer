@@ -1067,8 +1067,8 @@ MonoBehaviour:
       - m_Data: 49166
       m_RenameOverlay:
         m_UserAcceptedRename: 0
-        m_Name: 
-        m_OriginalName: 
+        m_Name: BrasRotation
+        m_OriginalName: BrasRotation
         m_EditFieldRect:
           serializedVersion: 2
           x: 0
@@ -1076,10 +1076,10 @@ MonoBehaviour:
           width: 0
           height: 0
         m_UserData:
-          m_Data: 0
+          m_Data: 255544
         m_IsWaitingForDelay: 0
         m_IsRenaming: 0
-        m_OriginalEventType: 11
+        m_OriginalEventType: 0
         m_IsRenamingFilename: 0
         m_TrimLeadingAndTrailingWhitespace: 0
         m_ClientGUIView: {fileID: 11}
