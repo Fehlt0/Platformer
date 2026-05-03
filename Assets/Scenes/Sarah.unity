@@ -20542,6 +20542,7 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1287db4546ea40745ad631703bbc7326, type: 3}
+  m_Name: platformes buches
 --- !u!1 &2033909323
 GameObject:
   m_ObjectHideFlags: 0
