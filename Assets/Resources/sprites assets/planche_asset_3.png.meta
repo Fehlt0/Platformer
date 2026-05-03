@@ -378,7 +378,13 @@ TextureImporter:
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline: []
+      outline:
+      - - {x: -164.5, y: 123.5}
+        - {x: -101.5, y: 98.5}
+        - {x: -108.5, y: -174.5}
+        - {x: 164.5, y: -174.5}
+        - {x: 164.5, y: 174.5}
+        - {x: -164.5, y: 174.5}
       physicsShape: []
       tessellationDetail: 0
       bones: []
