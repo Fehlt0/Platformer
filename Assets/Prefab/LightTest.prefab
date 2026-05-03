@@ -156,4 +156,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LampControll
   playerData: {fileID: 11400000, guid: 08a37d93ce031684c9494e71d31bfa63, type: 2}
-  distance: 3
+  distance: 3.5

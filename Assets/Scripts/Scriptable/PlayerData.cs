@@ -3,17 +3,17 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "PlayerData", menuName = "Scriptable Objects/PlayerData")]
 public class PlayerData : ScriptableObject
 {
-    public float currentmoveSpeed = 1f;
+    public float currentmoveSpeed = 6f;
     
     public float jumpForce = 10f;
     public float multiplierStaticJump = 1.3f;
-    public float groundCheckDistance = 1f;
+    public float groundCheckDistance = 0.18f;
     public float coyoteTime = 0.2f;
     public float jumpBufferTime = 0.2f;
-    public float jumpCutMultiplier = 0.5f;
-    public float acceleration = 1f;
-    public float deceleration = 1f;
-    public float wallCheckDistance = 0.5f;
+    public float jumpCutMultiplier = 0.6f;
+    public float acceleration = 2f;
+    public float deceleration = 3f;
+    public float wallCheckDistance = 0.22f;
     public float wallJumpTired = 2f;
     public float wallJumpTiredMultiplier = 0.5f;
     public float dryCount = 10f;
