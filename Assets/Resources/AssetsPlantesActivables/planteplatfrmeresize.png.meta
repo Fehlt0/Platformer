@@ -1,25 +1,34 @@
 fileFormatVersion: 2
-guid: 1cd63cb79cc2d994da1d31250a225795
+guid: 16dccedbc87e698499bdd07e53c1db68
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 6002110230590439508
-    second: arbre_platform_0
+      213: 1168026709339456389
+    second: planteplatfrmeresize_0
   - first:
-      213: -7821779945999957384
-    second: arbre_platform_1
+      213: -6780202467739511210
+    second: planteplatfrmeresize_1
   - first:
-      213: 1123996810497936883
-    second: arbre_platform_2
+      213: -817676154178177083
+    second: planteplatfrmeresize_2
   - first:
-      213: -5330551794709963511
-    second: arbre_platform_3
+      213: -6641070299517438248
+    second: planteplatfrmeresize_3
   - first:
-      213: -6537345442665066859
-    second: arbre_platform_4
+      213: 1374380437208863708
+    second: planteplatfrmeresize_4
   - first:
-      213: -340918403909178513
-    second: arbre_platform_5
+      213: 2597718661162732749
+    second: planteplatfrmeresize_5
+  - first:
+      213: -4037556103866595474
+    second: planteplatfrmeresize_6
+  - first:
+      213: -7100746329147467713
+    second: planteplatfrmeresize_7
+  - first:
+      213: -5534742438348625170
+    second: planteplatfrmeresize_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -115,137 +124,199 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: arbre_platform_0
+      name: planteplatfrmeresize_0
       rect:
         serializedVersion: 2
-        x: 3389
-        y: 2090
-        width: 264
-        height: 260
+        x: 278
+        y: 845
+        width: 346
+        height: 96
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 450c4154477cb4350800000000000000
-      internalID: 6002110230590439508
+      spriteID: 583c85a8a1aa53010800000000000000
+      internalID: 1168026709339456389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arbre_platform_1
+      name: planteplatfrmeresize_1
       rect:
         serializedVersion: 2
-        x: 3391
-        y: 1769
-        width: 264
-        height: 255
+        x: 363
+        y: 145
+        width: 48
+        height: 237
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 132, y: 123.5}
-        - {x: -132, y: 123.5}
-        - {x: -132, y: -125.5}
-        - {x: 131, y: -125.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8720667a494737390800000000000000
-      internalID: -7821779945999957384
+      spriteID: 656d82557c1e7e1a0800000000000000
+      internalID: -6780202467739511210
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arbre_platform_2
+      name: planteplatfrmeresize_2
       rect:
         serializedVersion: 2
-        x: 3397
-        y: 1409
-        width: 269
-        height: 255
+        x: 622
+        y: 307
+        width: 26
+        height: 26
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 3fdc66ad42d399f00800000000000000
-      internalID: 1123996810497936883
+      spriteID: 5c7f6e8bed707a4f0800000000000000
+      internalID: -817676154178177083
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arbre_platform_3
+      name: planteplatfrmeresize_3
       rect:
         serializedVersion: 2
-        x: 3403
-        y: 1011
-        width: 262
-        height: 255
+        x: 625
+        y: 276
+        width: 22
+        height: 21
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 90ddd7b92631606b0800000000000000
-      internalID: -5330551794709963511
+      spriteID: 8d6bddc9fbd26d3a0800000000000000
+      internalID: -6641070299517438248
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arbre_platform_4
+      name: planteplatfrmeresize_4
       rect:
         serializedVersion: 2
-        x: 3405
-        y: 602
-        width: 262
-        height: 255
+        x: 658
+        y: 276
+        width: 25
+        height: 19
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 59e0eebc4fea645a0800000000000000
-      internalID: -6537345442665066859
+      spriteID: cd39412d9b7c21310800000000000000
+      internalID: 1374380437208863708
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: arbre_platform_5
+      name: planteplatfrmeresize_5
       rect:
         serializedVersion: 2
-        x: 3398
-        y: 176
-        width: 263
-        height: 254
+        x: 623
+        y: 245
+        width: 24
+        height: 22
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: f6ba9959480d44bf0800000000000000
-      internalID: -340918403909178513
+      spriteID: dcc0209eb53fc0420800000000000000
+      internalID: 2597718661162732749
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planteplatfrmeresize_6
+      rect:
+        serializedVersion: 2
+        x: 344
+        y: 55
+        width: 96
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e67425c8d18b7f7c0800000000000000
+      internalID: -4037556103866595474
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planteplatfrmeresize_7
+      rect:
+        serializedVersion: 2
+        x: 429
+        y: 122
+        width: 17
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f389103c5d4157d90800000000000000
+      internalID: -7100746329147467713
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planteplatfrmeresize_8
+      rect:
+        serializedVersion: 2
+        x: 434
+        y: 80
+        width: 19
+        height: 18
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eea63fe9315a033b0800000000000000
+      internalID: -5534742438348625170
       vertices: []
       indices: 
       edges: []
@@ -254,7 +325,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 7cf3f7f5d154a8344a0c9cad4b37d343
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -264,12 +335,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      arbre_platform_0: 6002110230590439508
-      arbre_platform_1: -7821779945999957384
-      arbre_platform_2: 1123996810497936883
-      arbre_platform_3: -5330551794709963511
-      arbre_platform_4: -6537345442665066859
-      arbre_platform_5: -340918403909178513
+      planteplatfrmeresize_0: 1168026709339456389
+      planteplatfrmeresize_1: -6780202467739511210
+      planteplatfrmeresize_2: -817676154178177083
+      planteplatfrmeresize_3: -6641070299517438248
+      planteplatfrmeresize_4: 1374380437208863708
+      planteplatfrmeresize_5: 2597718661162732749
+      planteplatfrmeresize_6: -4037556103866595474
+      planteplatfrmeresize_7: -7100746329147467713
+      planteplatfrmeresize_8: -5534742438348625170
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
