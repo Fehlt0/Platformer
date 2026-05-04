@@ -1,43 +1,37 @@
 fileFormatVersion: 2
-guid: f507710f30ffbfd469200925c4a9594b
+guid: 348bd79ec6b9e364993847f919578ac5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 5002833966559900653
-    second: planche_asset_2_0
+      213: 8848420757347933563
+    second: planche asset 5_0
   - first:
-      213: -302837592961298466
-    second: planche_asset_2_1
+      213: 8181043162204482793
+    second: planche asset 5_1
   - first:
-      213: 7749043348404757075
-    second: planche_asset_2_2
+      213: -4816634632768774347
+    second: planche asset 5_2
   - first:
-      213: -3254068120242077950
-    second: planche_asset_2_3
+      213: 2431828128588632989
+    second: planche asset 5_3
   - first:
-      213: -7564216733435120832
-    second: planche_asset_2_4
+      213: -5385696049986279811
+    second: planche asset 5_4
   - first:
-      213: -3676713885295730961
-    second: planche_asset_2_5
+      213: 6117392245719936852
+    second: planche asset 5_5
   - first:
-      213: -372041654481017093
-    second: planche_asset_2_6
+      213: 637605186215385389
+    second: planche asset 5_6
   - first:
-      213: -7836351621417210807
-    second: planche_asset_2_7
+      213: 1903907728032470056
+    second: planche asset 5_7
   - first:
-      213: 5639253051875487915
-    second: planche_asset_2_8
+      213: -4973505785780648638
+    second: planche asset 5_8
   - first:
-      213: 879541527501615303
-    second: planche_asset_2_9
-  - first:
-      213: 628818508825928875
-    second: planche_asset_2_10
-  - first:
-      213: -8266621502259908003
-    second: planche_asset_2_11
+      213: 2127122185194178228
+    second: planche asset 5_9
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -133,68 +127,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: planche_asset_2_0
+      name: planche asset 5_0
       rect:
         serializedVersion: 2
-        x: 35
-        y: 800
-        width: 680
-        height: 237
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: -340, y: -45.5}
-        - {x: -229, y: -118.5}
-        - {x: 135, y: -118.5}
-        - {x: 340, y: -50.5}
-        - {x: 340, y: 118.5}
-        - {x: -340, y: 118.5}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: de3bf078cf2ad6540800000000000000
-      internalID: 5002833966559900653
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: planche_asset_2_1
-      rect:
-        serializedVersion: 2
-        x: 65
-        y: 636
-        width: 638
-        height: 196
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: -319, y: -98}
-        - {x: 319, y: -98}
-        - {x: 319, y: 98}
-        - {x: -15, y: 35}
-        - {x: -319, y: 98}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: edf48ee40da1ccbf0800000000000000
-      internalID: -302837592961298466
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: planche_asset_2_2
-      rect:
-        serializedVersion: 2
-        x: 793
-        y: 802
-        width: 528
-        height: 249
+        x: 1224
+        y: 683
+        width: 73
+        height: 179
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -203,20 +142,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 352e4c28ed12a8b60800000000000000
-      internalID: 7749043348404757075
+      spriteID: b7d9ae04cc7ebca70800000000000000
+      internalID: 8848420757347933563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_3
+      name: planche asset 5_1
       rect:
         serializedVersion: 2
-        x: 1351
-        y: 800
-        width: 569
-        height: 186
+        x: 1578
+        y: 758
+        width: 123
+        height: 194
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -225,20 +164,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 20f3c02194a37d2d0800000000000000
-      internalID: -3254068120242077950
+      spriteID: 9ec26573967e88170800000000000000
+      internalID: 8181043162204482793
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_4
+      name: planche asset 5_2
       rect:
         serializedVersion: 2
-        x: 105
-        y: 169
-        width: 281
-        height: 380
+        x: 407
+        y: 132
+        width: 343
+        height: 417
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -247,20 +186,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 043b88735f0860790800000000000000
-      internalID: -7564216733435120832
+      spriteID: 53f19f43250e72db0800000000000000
+      internalID: -4816634632768774347
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_5
+      name: planche asset 5_3
       rect:
         serializedVersion: 2
-        x: 419
-        y: 157
-        width: 299
-        height: 313
+        x: 1213
+        y: 314
+        width: 463
+        height: 406
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -269,46 +208,41 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: fee933e8330b9fcc0800000000000000
-      internalID: -3676713885295730961
+      spriteID: d93145f6cc69fb120800000000000000
+      internalID: 2431828128588632989
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_6
+      name: planche asset 5_4
       rect:
         serializedVersion: 2
-        x: 881
-        y: 23
-        width: 319
-        height: 447
+        x: 1235
+        y: 548
+        width: 126
+        height: 181
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -159.5, y: -223.5}
-        - {x: 159.5, y: -223.5}
-        - {x: 159.5, y: 26.5}
-        - {x: 20.5, y: 223.5}
-        - {x: -159.5, y: 223.5}
+      outline: []
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: bf6a20f161e36daf0800000000000000
-      internalID: -372041654481017093
+      spriteID: d76e7582af92245b0800000000000000
+      internalID: -5385696049986279811
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_7
+      name: planche asset 5_5
       rect:
         serializedVersion: 2
-        x: 1070
-        y: 408
-        width: 181
+        x: 163
+        y: 132
+        width: 187
         height: 295
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
@@ -318,48 +252,91 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 94cee5618bfaf3390800000000000000
-      internalID: -7836351621417210807
+      spriteID: 45faddd06d755e450800000000000000
+      internalID: 6117392245719936852
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_8
+      name: planche asset 5_6
       rect:
         serializedVersion: 2
-        x: 1246
-        y: 44
-        width: 273
-        height: 413
+        x: 775
+        y: 132
+        width: 112
+        height: 201
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline:
-      - - {x: -136.5, y: 15.5}
-        - {x: -136.5, y: -206.5}
-        - {x: 136.5, y: -206.5}
-        - {x: 136.5, y: 92.5}
-        - {x: 72.5, y: 206.5}
-        - {x: -108.5, y: 206.5}
+      - - {x: 22, y: 100.5}
+        - {x: -33, y: 23.5}
+        - {x: -35, y: -11.5}
+        - {x: -33, y: -28.5}
+        - {x: -32, y: -29.5}
+        - {x: -32, y: -39.5}
+        - {x: -33, y: -34.5}
+        - {x: -40, y: 13.5}
+        - {x: -11, y: 96.5}
+        - {x: -11, y: 100.5}
+        - {x: -29, y: 100.5}
+        - {x: -45, y: 94.5}
+        - {x: -56, y: 77.5}
+        - {x: -56, y: -54.5}
+        - {x: -46, y: -100.5}
+        - {x: 56, y: -100.5}
+        - {x: 41, y: -3.5}
+        - {x: 56, y: 96.5}
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba0739bc5c6a24e40800000000000000
-      internalID: 5639253051875487915
+      spriteID: d299057e98a39d800800000000000000
+      internalID: 637605186215385389
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_9
+      name: planche asset 5_7
       rect:
         serializedVersion: 2
-        x: 1486
-        y: 388
-        width: 307
-        height: 355
+        x: 875
+        y: 146
+        width: 251
+        height: 336
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline:
+      - - {x: 125.5, y: 143}
+        - {x: 43.5, y: 168}
+        - {x: -125.5, y: 168}
+        - {x: -95.5, y: 0}
+        - {x: -122.5, y: -40}
+        - {x: -121.5, y: -158}
+        - {x: -107.5, y: -168}
+        - {x: -94.5, y: -168}
+        - {x: 125.5, y: -168}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 8241f76cdf90c6a10800000000000000
+      internalID: 1903907728032470056
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planche asset 5_8
+      rect:
+        serializedVersion: 2
+        x: 1289
+        y: 261
+        width: 334
+        height: 196
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -368,20 +345,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: 7c030f7fb52c43c00800000000000000
-      internalID: 879541527501615303
+      spriteID: 245c13ea6de8afab0800000000000000
+      internalID: -4973505785780648638
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: planche_asset_2_10
+      name: planche asset 5_9
       rect:
         serializedVersion: 2
-        x: 416
-        y: 399
-        width: 6
-        height: 6
+        x: 1608
+        y: 283
+        width: 20
+        height: 8
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -390,30 +367,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: 0
       bones: []
-      spriteID: ba4a2c62a130ab800800000000000000
-      internalID: 628818508825928875
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: planche_asset_2_11
-      rect:
-        serializedVersion: 2
-        x: 1585
-        y: 49
-        width: 265
-        height: 333
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d523139ca8f074d80800000000000000
-      internalID: -8266621502259908003
+      spriteID: 4b60a528b5e058d10800000000000000
+      internalID: 2127122185194178228
       vertices: []
       indices: 
       edges: []
@@ -422,7 +377,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: c5ab6d82ea07c1248885fdee962b9c9f
+    spriteID: 9dd1abae20644a7498c14688d18a47d6
     internalID: 0
     vertices: []
     indices: 
@@ -432,18 +387,16 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      planche_asset_2_0: 5002833966559900653
-      planche_asset_2_1: -302837592961298466
-      planche_asset_2_10: 628818508825928875
-      planche_asset_2_11: -8266621502259908003
-      planche_asset_2_2: 7749043348404757075
-      planche_asset_2_3: -3254068120242077950
-      planche_asset_2_4: -7564216733435120832
-      planche_asset_2_5: -3676713885295730961
-      planche_asset_2_6: -372041654481017093
-      planche_asset_2_7: -7836351621417210807
-      planche_asset_2_8: 5639253051875487915
-      planche_asset_2_9: 879541527501615303
+      planche asset 5_0: 8848420757347933563
+      planche asset 5_1: 8181043162204482793
+      planche asset 5_2: -4816634632768774347
+      planche asset 5_3: 2431828128588632989
+      planche asset 5_4: -5385696049986279811
+      planche asset 5_5: 6117392245719936852
+      planche asset 5_6: 637605186215385389
+      planche asset 5_7: 1903907728032470056
+      planche asset 5_8: -4973505785780648638
+      planche asset 5_9: 2127122185194178228
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
