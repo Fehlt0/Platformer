@@ -135,10 +135,11 @@ public class PlayerController : MonoBehaviour
         CheckGround();
         if (isGrounded)
         {
-            
-            Jump();
-            lastJump = Time.time;
-            jumpBufferTimeCounter = 0f;
+            if (rb.linearVelocity.y <= maxVelocity)
+            {
+                Die();
+            }
+            coyoteTimeCounter = coyoteTime;
         }
         else
         {
@@ -231,10 +232,9 @@ public class PlayerController : MonoBehaviour
 
     private void JumpBuffer()
     {
-        Move();
-        CheckGround();
+        jumpBufferTimeCounter -= Time.deltaTime;
         
-        if (isGrounded)
+        if (jumpBufferTimeCounter > 0f && (coyoteTimeCounter > 0f || isTouchingWall) && Time.time -lastJump > 0.5f)
         {
             Jump();
             lastJump = Time.time;
