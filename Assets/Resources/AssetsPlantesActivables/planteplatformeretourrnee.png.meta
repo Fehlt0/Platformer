@@ -1,10 +1,19 @@
 fileFormatVersion: 2
-guid: 860564c4350be66468c9ebe6fe0225be
+guid: df73eec665406ed42a9bd5362e054427
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7169206676688870399
-    second: Accroche_langue_0
+      213: 8849650016076419920
+    second: planteplatformeretourrnee_0
+  - first:
+      213: 991341839547675793
+    second: planteplatformeretourrnee_1
+  - first:
+      213: 1742263127086186005
+    second: planteplatformeretourrnee_2
+  - first:
+      213: 4290966329928674704
+    second: planteplatformeretourrnee_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,13 +109,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Accroche_langue_0
+      name: planteplatformeretourrnee_0
       rect:
         serializedVersion: 2
-        x: 1238
-        y: 94
-        width: 407
-        height: 1822
+        x: 591
+        y: 383
+        width: 16
+        height: 17
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -115,8 +124,74 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 104e99af28cd18c90800000000000000
-      internalID: -7169206676688870399
+      spriteID: 053d3ca5dc540da70800000000000000
+      internalID: 8849650016076419920
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planteplatformeretourrnee_1
+      rect:
+        serializedVersion: 2
+        x: 554
+        y: 360
+        width: 18
+        height: 16
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 194b8359624f1cd00800000000000000
+      internalID: 991341839547675793
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planteplatformeretourrnee_2
+      rect:
+        serializedVersion: 2
+        x: 560
+        y: 288
+        width: 103
+        height: 93
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 51ebb3b4513cd2810800000000000000
+      internalID: 1742263127086186005
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: planteplatformeretourrnee_3
+      rect:
+        serializedVersion: 2
+        x: 546
+        y: 315
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 09d6f8e74239c8b30800000000000000
+      internalID: 4290966329928674704
       vertices: []
       indices: 
       edges: []
@@ -135,7 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Accroche_langue_0: -7169206676688870399
+      planteplatformeretourrnee_0: 8849650016076419920
+      planteplatformeretourrnee_1: 991341839547675793
+      planteplatformeretourrnee_2: 1742263127086186005
+      planteplatformeretourrnee_3: 4290966329928674704
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
