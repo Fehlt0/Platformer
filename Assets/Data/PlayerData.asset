@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b434843ce11836b46afbe0a04191ca27, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  currentmoveSpeed: 10
-  airControlSpeed: 10
+  currentmoveSpeed: 7
+  airControlSpeed: 7
   jumpForce: 10
   multiplierStaticJump: 1.3
   groundCheckDistance: 0.18
@@ -22,14 +22,16 @@ MonoBehaviour:
   jumpCutMultiplier: 0.6
   acceleration: 3
   deceleration: 4
-  wallCheckDistance: 0.5
+  wallSlideSpeed: 3
+  wallJumpControlLockTime: 0.5
+  wallCheckDistance: 0.4
   wallJumpTired: 0
-  wallJumpTiredMultiplier: 0.8
-  dryCount: 50
+  wallJumpTiredMultiplier: 0.5
+  dryCount: 35
   maxVelocity: -100
-  distance: 2
+  distance: 4
   lampTimer: 0.4
-  jumpForceLangue: 17
+  jumpForceLangue: 10
   wallJumpForce: {x: 4, y: 12}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:

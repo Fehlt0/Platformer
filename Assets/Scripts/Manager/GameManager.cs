@@ -24,7 +24,7 @@ public class GameManager : MonoBehaviour
 
     public int lastCheckpoint;
     public int lastCamTarget;
-    [SerializeField] private List<Transform> listCheckPoint;
+    public List<Transform> listCheckPoint;
     [SerializeField] private GameObject player;
     
 
