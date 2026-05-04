@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 860564c4350be66468c9ebe6fe0225be
+guid: 697eab7851a290f4d8bc65abcf808789
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -7169206676688870399
-    second: Accroche_langue_0
+      213: -3913958958311206193
+    second: Liane_langue_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,23 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Accroche_langue_0
+      name: Liane_langue_0
       rect:
         serializedVersion: 2
-        x: 1238
-        y: 94
-        width: 407
-        height: 1822
+        x: 1372
+        y: 1380
+        width: 135
+        height: 536
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 7}
       customData: 
       outline: []
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 104e99af28cd18c90800000000000000
-      internalID: -7169206676688870399
+      spriteID: fc217608013dea9c0800000000000000
+      internalID: -3913958958311206193
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 0f1ff91c698bc9c499a49d28f95c4246
     internalID: 0
     vertices: []
     indices: 
@@ -135,7 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Accroche_langue_0: -7169206676688870399
+      Liane_langue_0: -3913958958311206193
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
