@@ -18311,7 +18311,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1444640880}
+  m_GameObject: {fileID: 1434223967}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
@@ -19630,6 +19630,11 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 1287db4546ea40745ad631703bbc7326, type: 3}
+--- !u!4 &1507941809 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 9064706205349680896, guid: 1287db4546ea40745ad631703bbc7326, type: 3}
+  m_PrefabInstance: {fileID: 1507941808}
+  m_PrefabAsset: {fileID: 0}
 --- !u!4 &1512499578 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 9064706205349680896, guid: 1287db4546ea40745ad631703bbc7326, type: 3}
@@ -27050,6 +27055,10 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4941910910659740164, guid: 48ed34deb1451dc4eaafa2a6bf044444, type: 3}
+      propertyPath: m_SpriteTilingProperty.newSize.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 4941910910659740164, guid: 48ed34deb1451dc4eaafa2a6bf044444, type: 3}
       propertyPath: m_SpriteTilingProperty.oldSize.x
       value: 1
       objectReference: {fileID: 0}
@@ -29880,6 +29889,7 @@ SceneRoots:
   - {fileID: 1024147701}
   - {fileID: 541655406}
   - {fileID: 1022403179}
+  - {fileID: 1873989124}
   - {fileID: 162134587}
   - {fileID: 1067931674}
   - {fileID: 334927639}
@@ -29912,7 +29922,6 @@ SceneRoots:
   - {fileID: 565249150}
   - {fileID: 635886590}
   - {fileID: 709804000}
-  - {fileID: 1873989124}
   - {fileID: 620204898}
   - {fileID: 633271453}
   - {fileID: 1151379098}
