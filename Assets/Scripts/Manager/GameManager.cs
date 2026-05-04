@@ -42,7 +42,6 @@ public class GameManager : MonoBehaviour
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
         Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
-        Debug.Log(CameraManager.instance.targetPos[lastCheckpoint].transform.position);
         CameraManager.instance.SetNewTarget(lastCamTarget);
     }
 }
