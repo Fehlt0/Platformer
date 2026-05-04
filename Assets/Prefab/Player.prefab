@@ -220,8 +220,13 @@ Transform:
   m_GameObject: {fileID: 2378635752514104430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 2, y: 0, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
+<<<<<<<<< Temporary merge branch 1
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 6, z: 1}
+  m_ConstrainProportionsScale: 0
+=========
+  m_LocalPosition: {x: 2.0549998, y: 0.029999971, z: 0}
+  m_LocalScale: {x: 0.6999998, y: 0.6999998, z: 0.7}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1028939692511918276}
@@ -276,7 +281,8 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 0.87058824, b: 0, a: 1}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+>>>>>>>>> Temporary merge branch 2
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -547,8 +553,8 @@ Transform:
   m_GameObject: {fileID: 4635398423584647679}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 1.45, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 2, z: 0.33333334}
+  m_LocalPosition: {x: 3, y: 0.0000003576278, z: 0}
+  m_LocalScale: {x: 3, y: 6, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8775504591825879731}
@@ -1145,8 +1151,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerData: {fileID: 11400000, guid: 08a37d93ce031684c9494e71d31bfa63, type: 2}
-  dryCount: 10
-  maxDryCount: 10
+>>>>>>>>> Temporary merge branch 2
   groundCheck: {fileID: 6449905647274443778}
   wallCheckRight: {fileID: 739658565774027413}
   wallCheckLeft: {fileID: 6750413823159471417}
