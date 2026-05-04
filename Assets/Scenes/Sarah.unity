@@ -28451,7 +28451,7 @@ MonoBehaviour:
   lastCamTarget: 0
   listCheckPoint:
   - {fileID: 1501946250}
-  player: {fileID: 6521004814734928236, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
+  player: {fileID: 6521004814734928236, guid: b2dc42eebe1dc72459cffe60b4aa0023, type: 3}
 --- !u!1001 &815231479
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -29814,7 +29814,6 @@ Transform:
   - {fileID: 1220312967}
   - {fileID: 1358107825}
   - {fileID: 1495603803}
-  - {fileID: 1513137769}
   - {fileID: 946813005}
   - {fileID: 532313536}
   - {fileID: 424648747}
@@ -30014,7 +30013,6 @@ Transform:
   - {fileID: 2035593472}
   - {fileID: 402773132}
   - {fileID: 2030487974}
-  - {fileID: 663082870}
   - {fileID: 1022547633}
   - {fileID: 2058835664}
   - {fileID: 1084320181}
@@ -35153,6 +35151,7 @@ Transform:
   - {fileID: 1669712174}
   - {fileID: 342358211}
   - {fileID: 1894638019}
+  - {fileID: 1619929311}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1032122493
@@ -76088,15 +76087,16 @@ SceneRoots:
   - {fileID: 2116222989}
   - {fileID: 187573816}
   - {fileID: 1027068755}
-  - {fileID: 1006721935}
   - {fileID: 1092273216}
   - {fileID: 1141871290}
   - {fileID: 1260373781}
   - {fileID: 1427037598}
   - {fileID: 1549930988}
-  - {fileID: 1336531924}
   - {fileID: 524060426}
   - {fileID: 1594810820}
   - {fileID: 780716421}
   - {fileID: 1901339177}
   - {fileID: 1032826790}
+  - {fileID: 1196223596}
+  - {fileID: 1341846546}
+  - {fileID: 1599496843}
