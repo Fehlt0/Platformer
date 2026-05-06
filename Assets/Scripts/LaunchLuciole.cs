@@ -15,10 +15,7 @@ public class LaunchLuciole : MonoBehaviour
 
     public void Update()
     {
-
         aimDirection = Gamepad.current.rightStick.ReadValue();
-        Debug.Log(aimDirection);
-        
     }
 
 
@@ -26,7 +23,6 @@ public class LaunchLuciole : MonoBehaviour
     {
         if (context.performed)
         {
-
             Launch();
         }
     }

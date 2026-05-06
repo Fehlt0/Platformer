@@ -1986,8 +1986,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58deed159c6bbf45a68644e84e3fd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  lastCheckpoint: 20
-  lastCamTarget: 12
+  lastCheckpoint: 0
+  lastCamTarget: 0
   listCheckPoint:
   - {fileID: 2824270233456344253}
   - {fileID: 4649575442926475091}
@@ -402996,7 +402996,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
+  m_Offset: {x: 0, y: 1.3606954}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -403006,7 +403006,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 0.1, y: 10}
+  m_Size: {x: 0.1, y: 2.8023024}
   m_EdgeRadius: 0
 --- !u!212 &9124446153077256048
 SpriteRenderer:
