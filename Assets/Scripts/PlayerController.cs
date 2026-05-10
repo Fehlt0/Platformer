@@ -160,9 +160,13 @@ public class PlayerController : MonoBehaviour
             case State.Walking:
                 animatorRef.SetBool("isWalking", true);
                 animatorRef.SetBool("isRunning", false);
+                animatorRef.SetBool("isFalling", false);
+                animatorRef.SetBool("isJumping", false);
                 break;
             case State.Running:
                 animatorRef.SetBool("isRunning", true);
+                animatorRef.SetBool("isFalling", false);
+                animatorRef.SetBool("isJumping", false);
                 break;
             case State.Jumping:
                 animatorRef.SetBool("isJumping", true);
@@ -179,7 +183,7 @@ public class PlayerController : MonoBehaviour
         {
             currentState = State.Falling;
         }
-        else if( rb.linearVelocityY >= 0 && !isGrounded)
+        else if( rb.linearVelocityY > 0 && !isGrounded)
         {
             currentState = State.Jumping;
         }
@@ -187,7 +191,7 @@ public class PlayerController : MonoBehaviour
         {
             currentState = State.Running;
         }
-        else if (rb.linearVelocityX != 0 && isGrounded)
+        else if ((rb.linearVelocityX > 0 || rb.linearVelocityX < 0) && isGrounded)
         {
             currentState = State.Walking;
         }
