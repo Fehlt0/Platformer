@@ -12,23 +12,10 @@ public class ChampiBumper : Plant
     {
         if (isAlive && other.CompareTag("Player"))
         {
-            
-            
-            
-            
-            //Debug.Log(transform.eulerAngles.z);
-            switch (transform.eulerAngles.z)
-            {
-                case 0:
-                    direction =  new Vector2(0,1);
-                    break;
-                case >= 270:
-                    direction = new Vector2(1,1);
-                    break;
-                case <= 90:
-                    direction = new Vector2(-1, 1);
-                    break;
-            }
+            float rotation = transform.eulerAngles.z;
+            rotation *= Mathf.Deg2Rad;
+
+            Vector2 direction = new Vector2(-Mathf.Sin(rotation), Mathf.Cos(rotation));
 
             other.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             other.GetComponent<Rigidbody2D>().AddForce(direction * strength);

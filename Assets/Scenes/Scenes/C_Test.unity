@@ -920,10 +920,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   lastCheckpoint: 0
+  lastCamTarget: 0
   listCheckPoint:
   - {fileID: 1523319632}
   - {fileID: 1501946250}
-  player: {fileID: 6521004814734928236, guid: edc077678a4fc9f4d8d222f6fba8222e, type: 3}
+  player: {fileID: 6521004814734928236, guid: b2dc42eebe1dc72459cffe60b4aa0023, type: 3}
 --- !u!1 &1250204827
 GameObject:
   m_ObjectHideFlags: 0
@@ -1488,6 +1489,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckPoint
   id: 1
+  idCam: 0
 --- !u!212 &1501946249
 SpriteRenderer:
   serializedVersion: 2
@@ -1701,6 +1703,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::CheckPoint
   id: 0
+  idCam: 0
 --- !u!212 &1523319635
 SpriteRenderer:
   serializedVersion: 2
@@ -1882,7 +1885,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0920e90729db53045861e8f143f27fba, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::MoveCamera
-  target: {fileID: 0}
+  target: {fileID: 1596521706}
   camera: {fileID: 1899744056}
   targetPos:
   - {fileID: 1596521706}
@@ -2277,7 +2280,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303868552970595819, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_LocalRotation.w
-      value: 0.92387956
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4303868552970595819, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_LocalRotation.x
@@ -2289,7 +2292,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303868552970595819, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0.38268343
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4303868552970595819, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
@@ -2301,7 +2304,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4303868552970595819, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
-      value: 45
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8632155052844384070, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_Name
