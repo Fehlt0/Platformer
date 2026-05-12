@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4443516597929512614}
   - component: {fileID: 4762729133679958907}
   - component: {fileID: 6300767432769583086}
-  - component: {fileID: 7236581469743948148}
+  - component: {fileID: 4965284566519920517}
   m_Layer: 0
   m_Name: ChampiTest
   m_TagString: plant
@@ -29,13 +29,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8632155052844384070}
   serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0.38268343, w: 0.92387956}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 0.6024, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!212 &5202760383352612495
 SpriteRenderer:
   serializedVersion: 2
@@ -160,8 +160,8 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!68 &7236581469743948148
-EdgeCollider2D:
+--- !u!70 &4965284566519920517
+CapsuleCollider2D:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -190,28 +190,10 @@ EdgeCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 1
+  m_IsTrigger: 0
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0, y: 0}
-  m_EdgeRadius: 0
-  m_Points:
-  - {x: -0.5, y: -0.073879085}
-  - {x: -0.48353195, y: 0.12494075}
-  - {x: -0.44277287, y: 0.2268168}
-  - {x: -0.37786627, y: 0.32455993}
-  - {x: -0.31957865, y: 0.3837195}
-  - {x: -0.2081728, y: 0.45369637}
-  - {x: -0.0679059, y: 0.4975448}
-  - {x: 0.06572008, y: 0.49439973}
-  - {x: 0.2072444, y: 0.45607403}
-  - {x: 0.32819653, y: 0.38340247}
-  - {x: 0.42499733, y: 0.26065373}
-  - {x: 0.47945833, y: 0.14161777}
-  - {x: 0.5019765, y: 0.008511428}
-  - {x: 0.5, y: -0.07935136}
-  m_AdjacentStartPoint: {x: 0, y: 0}
-  m_AdjacentEndPoint: {x: 0, y: 0}
-  m_UseAdjacentStartPoint: 0
-  m_UseAdjacentEndPoint: 0
+  m_Offset: {x: 0.0030846898, y: 0.0000005930614}
+  m_Size: {x: 0.9006719, y: 0.8438026}
+  m_Direction: 1
