@@ -220,13 +220,8 @@ Transform:
   m_GameObject: {fileID: 2378635752514104430}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-<<<<<<<<< Temporary merge branch 1
-  m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 3, y: 6, z: 1}
-  m_ConstrainProportionsScale: 0
-=========
-  m_LocalPosition: {x: 2.0549998, y: 0.029999971, z: 0}
-  m_LocalScale: {x: 0.6999998, y: 0.6999998, z: 0.7}
+  m_LocalPosition: {x: 2, y: 0, z: 0}
+  m_LocalScale: {x: 0.2, y: 0.2, z: 0.2}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 1028939692511918276}
@@ -281,8 +276,7 @@ SpriteRenderer:
   m_SortingOrder: 0
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: ebe73ca9363db456bacf42c025bb4847, type: 3}
-  m_Color: {r: 1, g: 1, b: 1, a: 1}
->>>>>>>>> Temporary merge branch 2
+  m_Color: {r: 1, g: 0.87058824, b: 0, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
@@ -461,7 +455,7 @@ Transform:
   m_GameObject: {fileID: 4622777047495124181}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0.031759594, w: -0.9994956}
-  m_LocalPosition: {x: 0.028, y: -0.437, z: 0}
+  m_LocalPosition: {x: -0.11599999, y: 0.118, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -514,7 +508,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 4865024754243725408, guid: a651664d7fa55ca4db7ec4e95784a6a8, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -553,8 +547,8 @@ Transform:
   m_GameObject: {fileID: 4635398423584647679}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 3, y: 0.0000003576278, z: 0}
-  m_LocalScale: {x: 3, y: 6, z: 1}
+  m_LocalPosition: {x: 1.45, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 2, z: 0.33333334}
   m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 8775504591825879731}
@@ -824,7 +818,7 @@ Transform:
   m_GameObject: {fileID: 6521004814734928236}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -0.056, y: -0.302, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -884,9 +878,9 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: 16
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -2627524844825121003, guid: 3bfaee93e1aea014a8790551e7bb0247, type: 3}
+  m_Sprite: {fileID: 3521857748441208835, guid: bbcce7100373db346bc2d36e243e4ae1, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -1125,8 +1119,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 13b7874093ab8c740a188293e7ffce42, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::LangueControll
-  tongueDistance: 10
-  tonguePullForce: 10
+  tongueDistance: 7
+  tonguePullForce: 15
   grappleLayer:
     serializedVersion: 2
     m_Bits: 512
@@ -1151,7 +1145,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   playerData: {fileID: 11400000, guid: 08a37d93ce031684c9494e71d31bfa63, type: 2}
->>>>>>>>> Temporary merge branch 2
+  dryCount: 10
+  maxDryCount: 10
   groundCheck: {fileID: 6449905647274443778}
   wallCheckRight: {fileID: 739658565774027413}
   wallCheckLeft: {fileID: 6750413823159471417}
@@ -1326,7 +1321,7 @@ BoxCollider2D:
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 1.2213334, y: 1.776}
+    oldSize: {x: 1.6133333, y: 2.4466667}
     newSize: {x: 1, y: 2}
     adaptiveTilingThreshold: 0.5
     drawMode: 0
@@ -1382,7 +1377,7 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 2}
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 630070066835434848}

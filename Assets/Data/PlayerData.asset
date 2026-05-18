@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b434843ce11836b46afbe0a04191ca27, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  currentmoveSpeed: 7
+  currentmoveSpeed: 10
   airControlSpeed: 7
   jumpForce: 10
   multiplierStaticJump: 1.3
