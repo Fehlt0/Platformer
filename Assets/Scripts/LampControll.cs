@@ -5,13 +5,13 @@ using UnityEngine.InputSystem;
 public class LampControll : MonoBehaviour
 {
     [SerializeField] private PlayerData playerData;
-    
-    private GameObject player;
+
+    private Transform playerTransform;
     private Vector3 decalage;
     [SerializeField] private float distance;
     private void Start()
     {
-        player = GameObject.Find("Player(Clone)");
+        playerTransform = GetComponent<Transform>();
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
         joystick.Normalize();
         decalage = new Vector3(joystick.x, joystick.y, 0f) * distance;
@@ -20,6 +20,6 @@ public class LampControll : MonoBehaviour
 
     private void Update()
     {
-        transform.position = player.transform.position + decalage;
+        transform.position = playerTransform.position + decalage;
     }
 }
