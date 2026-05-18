@@ -46,7 +46,6 @@ public class PlayerController : MonoBehaviour
     
     private bool isGrounded;
     private bool isTouchingWall;
-    private bool lastTouchingIsWall;
     
     private float distance = 2f;
     private bool canLamp = true;
@@ -70,11 +69,10 @@ public class PlayerController : MonoBehaviour
     private State currentState;
     [SerializeField] private float switchRunning;
     public Animator animatorRef;
+    private bool facingRight = true;
+    private SpriteRenderer spriteRef;
+    
     [SerializeField] private LangueControll langueControll;
-
-    private Vector2 joystick = new Vector2();
-    
-    
     
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
@@ -87,6 +85,7 @@ public class PlayerController : MonoBehaviour
     {
         rb = GetComponent<Rigidbody2D>();
         animatorRef = GetComponent<Animator>();
+        spriteRef = GetComponent<SpriteRenderer>();
         
         currentmoveSpeed = playerData.currentmoveSpeed;
         jumpForce = playerData.jumpForce;
@@ -121,6 +120,7 @@ public class PlayerController : MonoBehaviour
 
     void Update()
     {
+        CheckRotate();
         CheckWall();
         JumpBuffer();
         PointeurPosition();
@@ -176,6 +176,24 @@ public class PlayerController : MonoBehaviour
                 break;
         }
     }
+
+    private void CheckRotate()
+    {
+        if (!facingRight && rb.linearVelocityX > 0)
+        {
+            RotateAnim();
+        }
+        else if (facingRight && rb.linearVelocityX < 0)
+        {
+            RotateAnim();
+        }
+    }
+
+    private void RotateAnim()
+    {
+        spriteRef.flipX = facingRight;
+        facingRight = !facingRight;
+    }   
     
     private void SwitchState()
     {
@@ -312,7 +330,6 @@ public class PlayerController : MonoBehaviour
            else
            {
                accelerate = airControlSpeed;
-               
            }
            
            if (isTouchingWall && !isGrounded && rb.linearVelocity.y < 0f)
@@ -333,7 +350,6 @@ public class PlayerController : MonoBehaviour
         
         if (isTouchingWall && !isGrounded)
         {
-            lastTouchingIsWall = true;
             rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, currentWallJumpY);
             wallJumpTimer = wallJumpControlLockTime;
             
@@ -431,7 +447,6 @@ public class PlayerController : MonoBehaviour
         isGrounded =  hitGround.collider != null;
         if (isGrounded)
         {
-            lastTouchingIsWall = false;
             currentWallJumpY = wallJumpForce.y;
         }
     }
