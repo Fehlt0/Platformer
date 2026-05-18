@@ -42,10 +42,10 @@ Material:
     m_Ints: []
     m_Floats:
     - _MaskFromBottom: 1
-    - _WindIntensity: 0.2
-    - _WindScale: 0.89
-    - _WindSpeed: 0.78
-    - _YMaskInfluence: 3.21
+    - _WindIntensity: 0.07
+    - _WindScale: 0.3
+    - _WindSpeed: 2.63
+    - _YMaskInfluence: 4
     m_Colors:
     - White: {r: 1, g: 1, b: 1, a: 1}
   m_BuildTextureStacks: []
