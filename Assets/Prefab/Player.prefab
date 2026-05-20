@@ -1155,7 +1155,7 @@ MonoBehaviour:
   lightSphere: {fileID: 219131457488845381}
   lightCone: {fileID: 9048021264145302179}
   playerArm: {fileID: 3403127948130966426}
-  switchRunning: 2
+  switchRunning: 1
   animatorRef: {fileID: 0}
   langueControll: {fileID: 3815535619944118968}
 --- !u!114 &-2455956732645949397
