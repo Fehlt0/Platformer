@@ -149,7 +149,7 @@ public class PlayerController : MonoBehaviour
     
     private void SwitchState()
     {
-        if (isTouchingWall && rb.linearVelocityY <= 0)
+        if (isTouchingWall && !isGrounded && rb.linearVelocityY <= 0)
         {
             currentState = State.OnWall;
         }
