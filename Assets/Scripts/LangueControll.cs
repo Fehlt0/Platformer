@@ -31,6 +31,7 @@ public class LangueControll : MonoBehaviour
     
     private float tongueProgress;
     private bool tongueGoing;
+    private bool hasLatched;
 
     
     private void Start()
@@ -51,7 +52,7 @@ public class LangueControll : MonoBehaviour
         tongueLine.enabled = false;
         
         tongueLine.sortingLayerName = "Default"; 
-        tongueLine.sortingOrder = -10;
+        tongueLine.sortingOrder = -2;
         
         
     }
@@ -64,9 +65,17 @@ public class LangueControll : MonoBehaviour
         {
             grapplePoint = currentTarget.transform.position;
 
-
             if (tongueGoing)
+            {
                 tongueProgress += Time.deltaTime * tongueSpeed;
+            }
+
+            if (tongueProgress >= 1f && tongueGoing)
+            {
+                tongueGoing = false;
+                hasLatched = true;
+            }
+                
 
             tongueProgress = Mathf.Clamp01(tongueProgress);
 
@@ -123,21 +132,25 @@ public class LangueControll : MonoBehaviour
         
         if (context.performed)
         {
-            wasHoldingTongue =  false;
-            isGrappling = true;
-            
-            tongueProgress = 0f;
-            tongueGoing = true;
-            tongueLine.enabled = true;
+
+           
+           wasHoldingTongue = false;
+           hasLatched = false; 
+           isGrappling = true;
+           tongueProgress = 0f;
+           tongueGoing = true;
+           tongueLine.enabled = true;
 
 
         }
 
         if (context.canceled)
         {
+
+            
             wasHoldingTongue = false;
             isGrappling = false;
-            
+            hasLatched = false;
             tongueLine.enabled = false;
 
         }
@@ -184,13 +197,7 @@ public class LangueControll : MonoBehaviour
     
     private void GrappleMove()
     {
-        
-        
-        
-        
         if (LanguePlant.listPlanteLangue.Count == 0) return;
-
-        wasHoldingTongue = true;
         
         LanguePlant langueGrapple = null;
         float minDistance = Mathf.Infinity;
@@ -234,8 +241,9 @@ public class LangueControll : MonoBehaviour
         {
             Debug.Log("Mur détecté !");
             isGrappling = false;
-            rb.linearVelocity = Vector2.zero;
             return;
+
+            
         }
         
         Debug.DrawRay(origin, dir * distance, Color.red);
@@ -245,13 +253,20 @@ public class LangueControll : MonoBehaviour
         if (minDistance <= tongueDistance )
         {
             
-            
+            wasHoldingTongue = true;
             Vector2 direction = (grapplePoint - (Vector2)transform.position).normalized;
 
             
-            rb.linearVelocity = direction * tonguePullForce;
+            //rb.linearVelocity = direction * tonguePullForce;
+            rb.linearVelocity = new Vector2(direction.x * tonguePullForce, direction.y * tonguePullForce);
             
-            wasHoldingTongue = true;
+        }
+        else
+        {
+            isGrappling = false;
+            wasHoldingTongue = false;
+            tongueLine.enabled = false;
+            return;
         }
         
 
