@@ -146,6 +146,34 @@ public class PlayerController : MonoBehaviour
             coyoteTimeCounter -= Time.deltaTime;
         }
     }
+    
+    private void SwitchState()
+    {
+        if (isTouchingWall && !isGrounded && rb.linearVelocityY <= 0)
+        {
+            currentState = State.OnWall;
+        }
+        else if (rb.linearVelocityY <= 0 && !isGrounded)
+        {
+            currentState = State.Falling;
+        }
+        else if( rb.linearVelocityY >= 0 && !isGrounded)
+        {
+            currentState = State.Jumping;
+        }
+        else if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded && !isTouchingWall)
+        {
+            currentState = State.Running;
+        }
+        else if ((rb.linearVelocityX > 0 || rb.linearVelocityX < 0) && isGrounded && !isTouchingWall)
+        {
+            currentState = State.Walking;
+        }
+        else
+        {
+            currentState = State.Idle;
+        }
+    }
 
     private void SwitchAnim()
     {
@@ -156,23 +184,34 @@ public class PlayerController : MonoBehaviour
                 animatorRef.SetBool("isRunning", false);
                 animatorRef.SetBool("isJumping", false);
                 animatorRef.SetBool("isFalling", false);
+                animatorRef.SetBool("isOnWall", false);
                 break;
             case State.Walking:
                 animatorRef.SetBool("isWalking", true);
                 animatorRef.SetBool("isRunning", false);
                 animatorRef.SetBool("isFalling", false);
                 animatorRef.SetBool("isJumping", false);
+                animatorRef.SetBool("isOnWall", false);
                 break;
             case State.Running:
                 animatorRef.SetBool("isRunning", true);
+                animatorRef.SetBool("isWalking", false);
                 animatorRef.SetBool("isFalling", false);
-                animatorRef.SetBool("isJumping", false);
+                animatorRef.SetBool("isJumping", false);       
+                animatorRef.SetBool("isOnWall", false);
                 break;
             case State.Jumping:
                 animatorRef.SetBool("isJumping", true);
+                animatorRef.SetBool("isOnWall", false);
                 break;
             case State.Falling:
                 animatorRef.SetBool("isFalling", true);
+                animatorRef.SetBool("isOnWall", false);
+                break;
+            case State.OnWall:
+                animatorRef.SetBool("isOnWall", true);
+                animatorRef.SetBool("isFalling", false);
+                animatorRef.SetBool("isJumping", false);
                 break;
         }
     }
@@ -195,29 +234,6 @@ public class PlayerController : MonoBehaviour
         facingRight = !facingRight;
     }   
     
-    private void SwitchState()
-    {
-        if (rb.linearVelocityY < 0 && !isGrounded)
-        {
-            currentState = State.Falling;
-        }
-        else if( rb.linearVelocityY > 0 && !isGrounded)
-        {
-            currentState = State.Jumping;
-        }
-        else if ((rb.linearVelocityX >= switchRunning || rb.linearVelocityX < -switchRunning) && isGrounded)
-        {
-            currentState = State.Running;
-        }
-        else if ((rb.linearVelocityX > 0 || rb.linearVelocityX < 0) && isGrounded)
-        {
-            currentState = State.Walking;
-        }
-        else
-        {
-            currentState = State.Idle;
-        }
-    }
 
     private void Drying()
     {
@@ -280,7 +296,6 @@ public class PlayerController : MonoBehaviour
         {
             coyoteTimeCounter -= Time.deltaTime;
         }
-        
     }
 
     private void Move()
