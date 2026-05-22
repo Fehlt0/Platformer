@@ -6,6 +6,9 @@ public class CameraChange : MonoBehaviour
     [SerializeField] private int id;
     private void OnTriggerEnter2D(Collider2D other)
     {
-        CameraManager.instance.SetNewTarget(id);
+        if (other.CompareTag("Player"))
+        {
+            CameraManager.instance.SetNewTarget(id);
+        }
     }
 }
