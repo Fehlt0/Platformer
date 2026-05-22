@@ -3,14 +3,15 @@ using UnityEngine;
 
 public abstract class Plant : MonoBehaviour
 {
-    [SerializeField] private float baseTimeUntilDecay;
-    private float timeUntilDecay;
+    public float baseTimeUntilDecay;
+    public float timeUntilDecay;
     
     private bool isHitByLuciole;
 
     public Animator animatorRef;
     
     public bool isAlive;
+    public bool hasBulb;
 
     public virtual void Start()
     {
@@ -18,16 +19,21 @@ public abstract class Plant : MonoBehaviour
         timeUntilDecay = 0;
     }
 
-    public void OnTriggerStay2D(Collider2D other)
+    public virtual void OnTriggerEnter2D(Collider2D other)
     {
-
-        if (other.CompareTag("Light"))
+        if (other.CompareTag("Light") && !hasBulb)
         {
             timeUntilDecay = baseTimeUntilDecay;
         }
     }
     
     private void Update()
+    {
+        Decaying();
+        IfIsAlive();
+    }
+
+    private void Decaying()
     {
         if (isHitByLuciole)
         {
@@ -38,28 +44,9 @@ public abstract class Plant : MonoBehaviour
             timeUntilDecay -= Time.deltaTime;
             timeUntilDecay = Mathf.Max(0, timeUntilDecay);
         }
-
         isAlive = timeUntilDecay > 0;
-        IfIsAlive();
     }
-
-    /*private void Update()
-    {
-        if (isHitByLuciole)
-        {
-            timeUntilDecay = baseTimeUntilDecay;
-        }
-        else
-        {
-            timeUntilDecay -= 0.01f;
-            isAlive = timeUntilDecay > 0;
-            if (timeUntilDecay <= 0)
-            {
-                timeUntilDecay = 0;
-            }
-            IfIsAlive();
-        }  
-    }*/
+    
 
     public virtual void IfIsAlive()
     {
