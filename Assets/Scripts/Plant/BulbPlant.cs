@@ -5,7 +5,6 @@ public class BulbPlant : Plant
 {
     public override void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("détecté");
         if (other.CompareTag("Light"))
         {
             Plant[] childPlants = GetComponentsInChildren<Plant>();
@@ -14,7 +13,6 @@ public class BulbPlant : Plant
             {
                 if (childPlant.gameObject != this.gameObject)
                 {
-                    Debug.Log(childPlant.baseTimeUntilDecay);
                     childPlant.timeUntilDecay = childPlant.baseTimeUntilDecay;
                     break;
                 }
