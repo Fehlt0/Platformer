@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 3124407608020094098}
   - component: {fileID: 252089732450055513}
   m_Layer: 0
-  m_Name: LightTubes
+  m_Name: GodRays
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
