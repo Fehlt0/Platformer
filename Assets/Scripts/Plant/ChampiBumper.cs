@@ -8,8 +8,9 @@ public class ChampiBumper : Plant
     [SerializeField] private float strength;
     private Vector2 direction;
     
-    private void OnTriggerEnter2D(Collider2D other)
+    public override void OnTriggerEnter2D(Collider2D other)
     {
+        base.OnTriggerEnter2D(other);
         if (isAlive && other.CompareTag("Player"))
         {
             float rotation = transform.eulerAngles.z;
