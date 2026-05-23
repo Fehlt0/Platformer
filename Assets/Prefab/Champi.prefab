@@ -135,8 +135,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
+  timeUntilDecay: 0
   animatorRef: {fileID: 0}
   isAlive: 0
+  hasBulb: 0
   strength: 500
 --- !u!95 &6300767432769583086
 Animator:
@@ -190,7 +192,7 @@ CapsuleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0

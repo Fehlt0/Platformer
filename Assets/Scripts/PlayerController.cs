@@ -413,7 +413,6 @@ public class PlayerController : MonoBehaviour
 
         if (context.started)
         {
-            Debug.Log("Jump");
             jumpBufferTimeCounter = jumpBufferTime;
         }
         
@@ -436,7 +435,6 @@ public class PlayerController : MonoBehaviour
             }
             else
             {
-                //animatorRef.SetBool("isFlashingAround", true);
                 lightSphere.SetActive(true);
             }
 
@@ -450,7 +448,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
-        //animatorRef.SetBool("isFlashingAround", false);
         animatorRef.SetBool("isFlashingPointing", false);
         lightSphere.SetActive(false);
         lightCone.SetActive(false);
