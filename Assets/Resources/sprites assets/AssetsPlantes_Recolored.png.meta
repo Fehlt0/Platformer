@@ -1,0 +1,611 @@
+fileFormatVersion: 2
+guid: f1468e88ad4d0fb40a746a5a20ab4c1f
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -4852831138993185987
+    second: AssetsPlantes_Recolored_0
+  - first:
+      213: -3347341709493911773
+    second: AssetsPlantes_Recolored_1
+  - first:
+      213: 7101532687156455266
+    second: AssetsPlantes_Recolored_2
+  - first:
+      213: -1810943651676051915
+    second: AssetsPlantes_Recolored_3
+  - first:
+      213: 6203761960162759654
+    second: AssetsPlantes_Recolored_4
+  - first:
+      213: 3954383282530380507
+    second: AssetsPlantes_Recolored_5
+  - first:
+      213: -7114142641005408748
+    second: AssetsPlantes_Recolored_6
+  - first:
+      213: 4025598100613839727
+    second: AssetsPlantes_Recolored_7
+  - first:
+      213: 3498980768420481895
+    second: AssetsPlantes_Recolored_8
+  - first:
+      213: 4355360397059653642
+    second: AssetsPlantes_Recolored_9
+  - first:
+      213: 5182440138167098194
+    second: AssetsPlantes_Recolored_10
+  - first:
+      213: 8496329020241738877
+    second: AssetsPlantes_Recolored_11
+  - first:
+      213: -1646879692046631616
+    second: AssetsPlantes_Recolored_12
+  - first:
+      213: -1875700383581797652
+    second: AssetsPlantes_Recolored_13
+  - first:
+      213: 5053145956018076614
+    second: AssetsPlantes_Recolored_14
+  - first:
+      213: -783086916016126309
+    second: AssetsPlantes_Recolored_15
+  - first:
+      213: 5825093489743752782
+    second: AssetsPlantes_Recolored_16
+  - first:
+      213: -3083116320105602918
+    second: AssetsPlantes_Recolored_17
+  - first:
+      213: 2099844880874646782
+    second: AssetsPlantes_Recolored_18
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_0
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 1358
+        width: 200
+        height: 215
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d3b5b5d5ac747acb0800000000000000
+      internalID: -4852831138993185987
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_1
+      rect:
+        serializedVersion: 2
+        x: 193
+        y: 1356
+        width: 109
+        height: 94
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 32f34cf337adb81d0800000000000000
+      internalID: -3347341709493911773
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_2
+      rect:
+        serializedVersion: 2
+        x: 647
+        y: 1061
+        width: 446
+        height: 507
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 26729ca7a56bd8260800000000000000
+      internalID: 7101532687156455266
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_3
+      rect:
+        serializedVersion: 2
+        x: 1173
+        y: 1303
+        width: 112
+        height: 255
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 536a995f75c3ed6e0800000000000000
+      internalID: -1810943651676051915
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_4
+      rect:
+        serializedVersion: 2
+        x: 1431
+        y: 1124
+        width: 247
+        height: 459
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6e3159242a0381650800000000000000
+      internalID: 6203761960162759654
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_5
+      rect:
+        serializedVersion: 2
+        x: 1798
+        y: 1092
+        width: 510
+        height: 479
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: bda67fce4aac0e630800000000000000
+      internalID: 3954383282530380507
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_6
+      rect:
+        serializedVersion: 2
+        x: 29
+        y: 972
+        width: 511
+        height: 347
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 41ec969d5fc754d90800000000000000
+      internalID: -7114142641005408748
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_7
+      rect:
+        serializedVersion: 2
+        x: 884
+        y: 759
+        width: 510
+        height: 435
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: f6b339bd42ccdd730800000000000000
+      internalID: 4025598100613839727
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_8
+      rect:
+        serializedVersion: 2
+        x: 1450
+        y: 493
+        width: 290
+        height: 500
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76b40a17870ee8030800000000000000
+      internalID: 3498980768420481895
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_9
+      rect:
+        serializedVersion: 2
+        x: 1846
+        y: 778
+        width: 236
+        height: 254
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a008b879439517c30800000000000000
+      internalID: 4355360397059653642
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_10
+      rect:
+        serializedVersion: 2
+        x: 59
+        y: 423
+        width: 274
+        height: 508
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 25b1d2119d9bbe740800000000000000
+      internalID: 5182440138167098194
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_11
+      rect:
+        serializedVersion: 2
+        x: 449
+        y: 514
+        width: 438
+        height: 412
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: d7cf95a7a3609e570800000000000000
+      internalID: 8496329020241738877
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_12
+      rect:
+        serializedVersion: 2
+        x: 937
+        y: 190
+        width: 271
+        height: 409
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 04d71c745ab1529e0800000000000000
+      internalID: -1646879692046631616
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_13
+      rect:
+        serializedVersion: 2
+        x: 1685
+        y: 486
+        width: 109
+        height: 192
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: ce20b83607c28f5e0800000000000000
+      internalID: -1875700383581797652
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_14
+      rect:
+        serializedVersion: 2
+        x: 2077
+        y: 451
+        width: 187
+        height: 377
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6cbb8aa6971602640800000000000000
+      internalID: 5053145956018076614
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_15
+      rect:
+        serializedVersion: 2
+        x: 274
+        y: 128
+        width: 506
+        height: 308
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: b964a9e499ae125f0800000000000000
+      internalID: -783086916016126309
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_16
+      rect:
+        serializedVersion: 2
+        x: 1286
+        y: 120
+        width: 367
+        height: 294
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e4eed9f8aa3e6d050800000000000000
+      internalID: 5825093489743752782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_17
+      rect:
+        serializedVersion: 2
+        x: 1787
+        y: 47
+        width: 348
+        height: 417
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a9065eaba029635d0800000000000000
+      internalID: -3083116320105602918
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes_Recolored_18
+      rect:
+        serializedVersion: 2
+        x: 2095
+        y: 55
+        width: 196
+        height: 234
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: efca4ff2bc5242d10800000000000000
+      internalID: 2099844880874646782
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AssetsPlantes_Recolored_0: -4852831138993185987
+      AssetsPlantes_Recolored_1: -3347341709493911773
+      AssetsPlantes_Recolored_10: 5182440138167098194
+      AssetsPlantes_Recolored_11: 8496329020241738877
+      AssetsPlantes_Recolored_12: -1646879692046631616
+      AssetsPlantes_Recolored_13: -1875700383581797652
+      AssetsPlantes_Recolored_14: 5053145956018076614
+      AssetsPlantes_Recolored_15: -783086916016126309
+      AssetsPlantes_Recolored_16: 5825093489743752782
+      AssetsPlantes_Recolored_17: -3083116320105602918
+      AssetsPlantes_Recolored_18: 2099844880874646782
+      AssetsPlantes_Recolored_2: 7101532687156455266
+      AssetsPlantes_Recolored_3: -1810943651676051915
+      AssetsPlantes_Recolored_4: 6203761960162759654
+      AssetsPlantes_Recolored_5: 3954383282530380507
+      AssetsPlantes_Recolored_6: -7114142641005408748
+      AssetsPlantes_Recolored_7: 4025598100613839727
+      AssetsPlantes_Recolored_8: 3498980768420481895
+      AssetsPlantes_Recolored_9: 4355360397059653642
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
