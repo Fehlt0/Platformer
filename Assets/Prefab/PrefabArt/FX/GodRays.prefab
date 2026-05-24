@@ -169,7 +169,7 @@ ParticleSystem:
     startSpeed:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0
+      scalar: 0.34
       minScalar: 5
       maxCurve:
         serializedVersion: 2
@@ -552,7 +552,7 @@ ParticleSystem:
     startRotation:
       serializedVersion: 2
       minMaxState: 0
-      scalar: -0.5305801
+      scalar: -0.43633232
       minScalar: 0
       maxCurve:
         serializedVersion: 2
@@ -870,7 +870,7 @@ ParticleSystem:
     rateOverTime:
       serializedVersion: 2
       minMaxState: 0
-      scalar: 0.8
+      scalar: 0.89
       minScalar: 10
       maxCurve:
         serializedVersion: 2
@@ -1312,7 +1312,7 @@ ParticleSystem:
         key1: {r: 1, g: 1, b: 1, a: 0.19215687}
         key2: {r: 1, g: 1, b: 1, a: 0.101960786}
         key3: {r: 1, g: 1, b: 1, a: 0}
-        key4: {r: 0, g: 0, b: 0, a: 0.14117648}
+        key4: {r: 0, g: 0, b: 0, a: 0}
         key5: {r: 0, g: 0, b: 0, a: 0}
         key6: {r: 0, g: 0, b: 0, a: 0}
         key7: {r: 0, g: 0, b: 0, a: 0}
@@ -1496,7 +1496,7 @@ ParticleSystem:
       serializedVersion: 2
       minMaxState: 3
       scalar: -0.1
-      minScalar: 0.29
+      minScalar: 1.06
       maxCurve:
         serializedVersion: 2
         m_Curve:
