@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Luciole : MonoBehaviour
 {
-    public float speed;
+
     public float bounceForce;
     
     public bool hasBounce = false;
@@ -18,8 +18,6 @@ public class Luciole : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.linearVelocity = direction.normalized * speed;
-        
         
     }
 
@@ -34,10 +32,16 @@ public class Luciole : MonoBehaviour
     
     private void OnCollisionEnter2D(Collision2D collision)
     {
-        if (currentPlant != null)
+        BulbPlant bulb = currentPlant as BulbPlant;
+        if (bulb != null)
+            bulb.SetHit(false);
+        else
         {
-            currentPlant.SetHit(false);
-            currentPlant = null;
+            if (currentPlant != null)
+            {
+                currentPlant.SetHit(false);
+                currentPlant = null;
+            }
         }
         
         if (hasBounce)
@@ -51,21 +55,27 @@ public class Luciole : MonoBehaviour
         }
         
     }
-
     private void StickToTarget(Transform target)
     {
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
-
         transform.parent = target;
-        
-        currentPlant = target.GetComponent<Plant>();
 
-        if (currentPlant != null)
+        
+        BulbPlant bulb = target.GetComponent<BulbPlant>();
+        if (bulb != null)
         {
-            currentPlant.SetHit(true);
+            currentPlant = bulb;
+            bulb.SetHit(true); 
+        }
+        else
+        {
+            currentPlant = target.GetComponent<Plant>();
+            if (currentPlant != null)
+                currentPlant.SetHit(true);
         }
     }
+    
     private void Bounce(Collision2D collision)
     {
         Vector2 normal = collision.contacts[0].normal;
@@ -77,10 +87,16 @@ public class Luciole : MonoBehaviour
 
     private void StopProjectile()
     {
-        if (currentPlant != null)
+        BulbPlant bulb = currentPlant as BulbPlant;
+        if (bulb != null)
+            bulb.SetHit(false);
+        else
         {
-            currentPlant.SetHit(false);
-            currentPlant = null;
+            if (currentPlant != null)
+            {
+                currentPlant.SetHit(false);
+                currentPlant = null;
+            }
         }
         
         rb.linearVelocity = Vector2.zero;
@@ -89,11 +105,21 @@ public class Luciole : MonoBehaviour
     
     private void OnDestroy()
     {
-        if (currentPlant != null)
+        
+        BulbPlant bulb = currentPlant as BulbPlant;
+        if (bulb != null)
+            bulb.SetHit(false);
+        else
         {
-            currentPlant.SetHit(false);
-            currentPlant = null;
+            if (currentPlant != null)
+            {
+                currentPlant.SetHit(false);
+                currentPlant = null;
+            }
         }
+            
+        
+        
     }
 
     

@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 6433476692792801821}
   m_Layer: 0
   m_Name: BulbChampi
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -84,7 +84,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 21
   m_MaskInteraction: 0
   m_Sprite: {fileID: -2413806693520163455, guid: a86470a33a6bf42c4b3595704624658b, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: a8397ce8ee959e241a2a22a40c794f79, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  baseTimeUntilDecay: 0
+  baseTimeUntilDecay: 10
   timeUntilDecay: 0
   animatorRef: {fileID: 0}
   isAlive: 0
@@ -214,7 +214,7 @@ GameObject:
   - component: {fileID: 995442144370474650}
   m_Layer: 0
   m_Name: Champi
-  m_TagString: plant
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
