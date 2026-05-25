@@ -1172,8 +1172,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaunchLuciole
   luciolePrefab: {fileID: 708272399311144551, guid: a93f7d75477a7f640b32b9c00ec23b3a, type: 3}
   firePoint: {fileID: 141112127335099985}
-  launchSpeed: 20
-  returnSpeed: 30
+  launchSpeed: 25
+  returnSpeed: 40
 --- !u!120 &-4433647437144218176
 LineRenderer:
   serializedVersion: 3
