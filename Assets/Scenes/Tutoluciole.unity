@@ -321,7 +321,13 @@ MonoBehaviour:
   lastCamTarget: 0
   listCheckPoint:
   - {fileID: 533598180}
+  - {fileID: 922052484}
   player: {fileID: 6521004814734928236, guid: b2dc42eebe1dc72459cffe60b4aa0023, type: 3}
+--- !u!4 &922052484 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 6401211353063800571, guid: 29a0cf96e6ca4bb48a4f90325586c2dd, type: 3}
+  m_PrefabInstance: {fileID: 4317017142423533918}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1061909679
 GameObject:
   m_ObjectHideFlags: 0
@@ -1295,11 +1301,11 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 4295642727887686057, guid: 29a0cf96e6ca4bb48a4f90325586c2dd, type: 3}
       propertyPath: m_LocalPosition.x
-      value: 0.28396
+      value: 5.28396
       objectReference: {fileID: 0}
     - target: {fileID: 4295642727887686057, guid: 29a0cf96e6ca4bb48a4f90325586c2dd, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 3.13659
+      value: -3.86341
       objectReference: {fileID: 0}
     - target: {fileID: 4295642727887686057, guid: 29a0cf96e6ca4bb48a4f90325586c2dd, type: 3}
       propertyPath: m_LocalPosition.z
