@@ -1,19 +1,16 @@
 fileFormatVersion: 2
-guid: cc7b210eb5ddea748ba1687215276f81
+guid: c0094a9f9f5d5b04fbe37231cd5a1c6b
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -970037049324597150
-    second: lilwalk04_0
+      213: 6825088576557159876
+    second: TeteNeutral_0
   - first:
-      213: -1499942471860093036
-    second: lilwalk04_1
+      213: -7885737642126891543
+    second: TeteNeutral_1
   - first:
-      213: 4958144825098787829
-    second: lilwalk04_2
-  - first:
-      213: 1645230363849413974
-    second: lilwalk04_3
+      213: 565954712025725725
+    second: TeteNeutral_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -109,13 +106,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: lilwalk04_1
+      name: TeteNeutral_1
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 484
-        height: 739
+        x: 17
+        y: 24
+        width: 244
+        height: 212
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -124,8 +121,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 49ff145d4422f2be0800000000000000
-      internalID: -1499942471860093036
+      spriteID: 9e5a919156b309290800000000000000
+      internalID: -7885737642126891543
       vertices: []
       indices: 
       edges: []
@@ -134,7 +131,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 0a1cca80939d2fc4a8631720e2cd6824
+    spriteID: ff506a6b86f723648b5a9f4eace9c541
     internalID: 0
     vertices: []
     indices: 
@@ -144,10 +141,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      lilwalk04_0: -970037049324597150
-      lilwalk04_1: -1499942471860093036
-      lilwalk04_2: 4958144825098787829
-      lilwalk04_3: 1645230363849413974
+      TeteNeutral_0: 6825088576557159876
+      TeteNeutral_1: -7885737642126891543
+      TeteNeutral_2: 565954712025725725
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
