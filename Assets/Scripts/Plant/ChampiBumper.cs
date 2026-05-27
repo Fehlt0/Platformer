@@ -21,5 +21,8 @@ public class ChampiBumper : Plant
             other.GetComponent<Rigidbody2D>().linearVelocity = Vector2.zero;
             other.GetComponent<Rigidbody2D>().AddForce(direction * strength);
         }
+
+        gameObject.GetComponent<Collider2D>().enabled = false;
+        gameObject.GetComponent<Collider2D>().enabled = true;
     }
 }
