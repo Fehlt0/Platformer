@@ -8,7 +8,7 @@ public abstract class Plant : MonoBehaviour
     
     private bool isHitByLuciole;
 
-    public Animator animatorRef;
+    private Animator animatorRef;
     
     public bool isAlive;
     public bool hasBulb;

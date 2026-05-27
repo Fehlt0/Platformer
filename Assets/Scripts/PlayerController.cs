@@ -68,7 +68,7 @@ public class PlayerController : MonoBehaviour
     }
     private State currentState;
     [SerializeField] private float switchRunning;
-    public Animator animatorRef;
+    private Animator animatorRef;
     private bool facingRight = true;
     private SpriteRenderer spriteRef;
     
@@ -488,6 +488,6 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
-        UIManager.instance.SetDeathMenu(true);
+        UIManager.instance.ReloadScene();
     }
 }
