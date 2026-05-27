@@ -107,7 +107,7 @@ GameObject:
   - component: {fileID: 9030301918532956678}
   m_Layer: 6
   m_Name: SeedPlatformTest
-  m_TagString: Untagged
+  m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -268,8 +268,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
+  timeUntilDecay: 0
   animatorRef: {fileID: 0}
   isAlive: 0
+  hasBulb: 0
 --- !u!50 &9030301918532956678
 Rigidbody2D:
   serializedVersion: 5
