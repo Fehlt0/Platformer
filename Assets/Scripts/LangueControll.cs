@@ -45,6 +45,7 @@ public class LangueControll : MonoBehaviour
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
+        animatorRef = GetComponent<Animator>();
         
         tongueLine.positionCount = 2;
 
@@ -114,6 +115,8 @@ public class LangueControll : MonoBehaviour
         }
         
         
+        
+        
     }
 
 
@@ -163,6 +166,7 @@ public class LangueControll : MonoBehaviour
             isGrappling = false;
             hasLatched = false;
             tongueLine.enabled = false;
+            animatorRef.SetBool("isOnTongue", false);
 
         }
     }
@@ -170,17 +174,21 @@ public class LangueControll : MonoBehaviour
     
     private void UpdateTarget()
     {
-        
 
-        
-        if (LanguePlant.listPlanteLangue.Count == 0) return;
+        if (LanguePlant.listPlanteLangue.Count == 0)
+        {
+            return;
+        }
 
         LanguePlant nearest = null;
         float minDistance = Mathf.Infinity;
 
         foreach (var plante in LanguePlant.listPlanteLangue)
         {
-            if (plante == null) continue;
+            if (plante == null)
+            {
+                continue;
+            }
 
             float dist = Vector2.Distance(plante.transform.position, transform.position);
 
@@ -241,7 +249,7 @@ public class LangueControll : MonoBehaviour
         }
         
         grapplePoint = langueGrapple.transform.position;
-        
+        AnimLangue(grapplePoint);
         Vector2 origin = transform.position;
         Vector2 dir = (grapplePoint - origin).normalized;
         float distance = Vector2.Distance(origin, grapplePoint);
@@ -263,7 +271,6 @@ public class LangueControll : MonoBehaviour
 
         if (minDistance <= tongueDistance )
         {
-            
             wasHoldingTongue = true;
             Vector2 direction = (grapplePoint - (Vector2)transform.position).normalized;
 
@@ -288,18 +295,17 @@ public class LangueControll : MonoBehaviour
 
             
         }
-        
-
     }
 
-    private void AnimLangue(Vector2 grapplePoint)
+   private void AnimLangue(Vector2 grapplePoint)
     {
-        //animatorRef.SetBool("isFlashingPointing", true);
-        playerHead.transform.LookAt(grapplePoint);
-        
-        
+        Vector2 joystick = Gamepad.current.rightStick.ReadValue();
+        animatorRef.SetBool("isOnTongue", true);
 
+        if (joystick.magnitude < 0.5f)
+        {
+            //playerHead.transform.eulerAngles = new Vector3(0, 90, -90f);
+        }
+        
     }
-
-
 }
