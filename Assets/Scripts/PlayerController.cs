@@ -230,8 +230,11 @@ public class PlayerController : MonoBehaviour
 
     private void RotateAnim()
     {
-        spriteRef.flipX = facingRight;
-        facingRight = !facingRight;
+        if (!animatorRef.GetBool("isOnWall"))
+        {
+            spriteRef.flipX = facingRight;
+            facingRight = !facingRight;
+        }
     }   
     
 
@@ -361,8 +364,6 @@ public class PlayerController : MonoBehaviour
 
     private void Jump()
     {
-
-        
         if (isTouchingWall && !isGrounded)
         {
             rb.linearVelocity = new Vector2(-wallDirection * wallJumpForce.x, currentWallJumpY);
