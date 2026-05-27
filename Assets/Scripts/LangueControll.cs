@@ -12,6 +12,8 @@ public class LangueControll : MonoBehaviour
     [SerializeField] private LayerMask obstacleLayer;
     
     [SerializeField] private LineRenderer tongueLine;
+    
+    public Animator animatorRef;
 
     private Rigidbody2D rb;
     
@@ -24,14 +26,20 @@ public class LangueControll : MonoBehaviour
     
     public bool wasHoldingTongue;
     public bool isGrappling;
+    private bool tongueGoing;
+    private bool hasLatched;
     
     
     [SerializeField] private float tongueSpeed = 15f;
     [SerializeField] private Transform tongueTip;
     
+    
+    [SerializeField] private GameObject playerHead;
+    [SerializeField] private GameObject playerArm;
+    
     private float tongueProgress;
-    private bool tongueGoing;
-    private bool hasLatched;
+    
+
 
     
     private void Start()
@@ -140,6 +148,9 @@ public class LangueControll : MonoBehaviour
            tongueProgress = 0f;
            tongueGoing = true;
            tongueLine.enabled = true;
+           
+           
+           
 
 
         }
@@ -277,6 +288,15 @@ public class LangueControll : MonoBehaviour
 
             
         }
+        
+
+    }
+
+    private void AnimLangue(Vector2 grapplePoint)
+    {
+        //animatorRef.SetBool("isFlashingPointing", true);
+        playerHead.transform.LookAt(grapplePoint);
+        
         
 
     }
