@@ -26,6 +26,7 @@ public class CameraManager : MonoBehaviour
     public void Start()
     {
         camera = GameObject.Find("MainCamera");
+        SetNewTarget(GameManager.instance.lastCamTarget);
     }
     
     void Update()

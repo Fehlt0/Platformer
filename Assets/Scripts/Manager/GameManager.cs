@@ -18,29 +18,38 @@ public class GameManager : MonoBehaviour
             Destroy(this);
         }
         transform.SetParent(null);
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
         
     }
+
+    private void Start()
+    {
+        Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
+    }
+
+    public List<Plant> listPlant;
 
     public int lastCheckpoint;
     public int lastCamTarget;
     public List<Transform> listCheckPoint;
     [SerializeField] private GameObject player;
-    
 
-    private void OnEnable()
+    public void AddPlant(Plant plant)
     {
-        SceneManager.sceneLoaded += OnSceneLoaded;
-    }
-    
-    private void OnDisable()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded;
+        listPlant.Add(plant);
     }
 
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
+    public void RemovePlant(Plant plant)
     {
+        listPlant.Remove(plant);
+    }
+
+    public void ResetScene()
+    {
+        foreach (var plant in listPlant)
+        {
+            plant.ResetPlant();
+        }
         Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
         CameraManager.instance.SetNewTarget(lastCamTarget);
     }
