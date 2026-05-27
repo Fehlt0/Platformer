@@ -49,7 +49,7 @@ public class PlayerController : MonoBehaviour
     
     private float distance = 2f;
     private bool canLamp = true;
-    private float lampTimer = 1f;
+    private float lampTimer = 0.3f;
     
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject lightCursor;
