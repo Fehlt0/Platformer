@@ -11296,10 +11296,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b58deed159c6bbf45a68644e84e3fd84, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
+  listPlant: []
   lastCheckpoint: 0
   lastCamTarget: 0
   listCheckPoint:
-  - {fileID: 2824270233456344253}
+  - {fileID: 1287210117}
   - {fileID: 4649575442926475091}
   - {fileID: 8006112670426220735}
   - {fileID: 8328005383757428982}
@@ -17800,6 +17801,11 @@ Transform:
   m_CorrespondingSourceObject: {fileID: 5364946284899789948, guid: 2453476f08eeaca4fb0df26189b0e9fb, type: 3}
   m_PrefabInstance: {fileID: 1285321429}
   m_PrefabAsset: {fileID: 0}
+--- !u!4 &1287210117 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+  m_PrefabInstance: {fileID: 1818495310}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1289221809
 GameObject:
   m_ObjectHideFlags: 0
@@ -23675,6 +23681,63 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!1001 &1818495310
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 481186860299107917, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_Name
+      value: Checkpoint
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: -372.58585
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 29.343433
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 520341497076106708, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: f31ced335a671c148ba1cb15b4398ba7, type: 3}
 --- !u!1 &1822794039
 GameObject:
   m_ObjectHideFlags: 0
@@ -34045,7 +34108,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!212 &172599939201991639
@@ -38614,7 +38676,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 4
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!60 &281830576553435190
@@ -47285,7 +47346,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -47379,7 +47439,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 900
@@ -50835,7 +50894,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -59639,7 +59697,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 1000
@@ -60782,7 +60839,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -62856,7 +62912,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 4
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!1 &849363304844680561
@@ -65698,7 +65753,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!1 &923052171937802259
@@ -73588,7 +73642,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -74011,7 +74064,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!114 &1127248020763771726
@@ -74028,7 +74080,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!4 &1128495431139004599
@@ -78791,7 +78842,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 400
@@ -79607,7 +79657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -86419,7 +86468,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!4 &1414654992534694875
@@ -89400,7 +89448,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -95060,7 +95107,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -101874,7 +101920,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!4 &1766609215419278182
@@ -114478,7 +114523,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 600
@@ -118530,7 +118574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 700
@@ -120052,7 +120095,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 800
@@ -142972,7 +143014,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!212 &2758883671339978351
@@ -144324,7 +144365,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -156734,7 +156774,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 1000
@@ -156752,7 +156791,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 1000
@@ -159957,7 +159995,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!114 &3114990095577596577
@@ -169580,7 +169617,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 800
@@ -171465,7 +171501,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -178256,7 +178291,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -185478,7 +185512,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -195832,7 +195865,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -203120,7 +203152,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -203992,7 +204023,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 600
@@ -206162,7 +206192,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 700
@@ -213258,7 +213287,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 1500
@@ -218229,7 +218257,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 600
@@ -221076,7 +221103,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 700
@@ -223351,7 +223377,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -223461,7 +223486,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 1500
@@ -227345,7 +227369,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 700
@@ -246514,7 +246537,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 800
@@ -266192,7 +266214,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 600
@@ -267984,7 +268005,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -271717,7 +271737,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!212 &5745727484211465565
@@ -292080,7 +292099,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -297184,7 +297202,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -298150,7 +298167,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -300148,7 +300164,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -303231,7 +303246,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!4 &6497710700185271462
@@ -305635,7 +305649,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!212 &6567267204818408733
@@ -309772,7 +309785,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -310092,7 +310104,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 300
@@ -320071,7 +320082,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 4
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!212 &6962366133721405493
@@ -324243,7 +324253,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!1 &7057909003801763781
@@ -343696,7 +343705,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500
@@ -361649,7 +361657,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 4
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!4 &7893440648101400509
@@ -370800,7 +370807,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!114 &8121302768004259732
@@ -381604,7 +381610,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 1600
@@ -400608,7 +400613,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
 --- !u!1 &8836261047751253539
@@ -415634,7 +415638,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
-  animatorRef: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 1500
@@ -418117,3 +418120,4 @@ SceneRoots:
   - {fileID: 6159023097924233405}
   - {fileID: 1690106600}
   - {fileID: 1357883239}
+  - {fileID: 1818495310}

@@ -9,7 +9,7 @@ public class CheckPoint : MonoBehaviour
     private void Start()
     {
         transform.SetParent(null);
-        DontDestroyOnLoad(gameObject);
+        //DontDestroyOnLoad(gameObject);
     }
 
     private void OnTriggerEnter2D(Collider2D other)

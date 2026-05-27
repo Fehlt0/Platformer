@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -42,7 +43,6 @@ public class PlayerController : MonoBehaviour
     private float jumpBufferTimeCounter;
     private float lastJump;
     private float currentWallJumpY;
-    
     
     private bool isGrounded;
     private bool isTouchingWall;
@@ -488,6 +488,10 @@ public class PlayerController : MonoBehaviour
     public void Die()
     {
         Destroy(gameObject);
-        UIManager.instance.ReloadScene();
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.ResetScene();
     }
 }

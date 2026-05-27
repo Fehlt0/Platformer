@@ -1,7 +1,7 @@
 using System;
 using UnityEngine;
 
-public abstract class Plant : MonoBehaviour
+public abstract class Plant : MonoBehaviour, IPlant
 {
     public float baseTimeUntilDecay;
     public float timeUntilDecay;
@@ -12,6 +12,16 @@ public abstract class Plant : MonoBehaviour
     
     public bool isAlive;
     public bool hasBulb;
+
+    private void Awake()
+    {
+        GameManager.instance.AddPlant(this);
+    }
+
+    private void OnDestroy()
+    {
+        GameManager.instance.RemovePlant(this);
+    }
 
     public virtual void Start()
     {
@@ -56,5 +66,12 @@ public abstract class Plant : MonoBehaviour
     public void SetHit(bool value)
     {
         isHitByLuciole = value;
+    }
+
+    public void ResetPlant()
+    {
+        timeUntilDecay = 0;
+        isAlive = false;
+        animatorRef.SetBool("isAlive", false);
     }
 }
