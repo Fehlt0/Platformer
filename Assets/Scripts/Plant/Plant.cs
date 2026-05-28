@@ -15,7 +15,7 @@ public abstract class Plant : MonoBehaviour, IPlant
 
     private void Awake()
     {
-        GameManager.instance.AddPlant(this);
+        //GameManager.instance.AddPlant(this);
     }
 
     private void OnDestroy()
@@ -27,6 +27,7 @@ public abstract class Plant : MonoBehaviour, IPlant
     {
         animatorRef = GetComponent<Animator>();
         timeUntilDecay = 0;
+        GameManager.instance.AddPlant(this);
     }
 
     public virtual void OnTriggerEnter2D(Collider2D other)

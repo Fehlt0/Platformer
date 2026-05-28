@@ -17,7 +17,6 @@ public class GameManager : MonoBehaviour
         {
             Destroy(this);
         }
-        transform.SetParent(null);
         //DontDestroyOnLoad(gameObject);
         
     }
@@ -27,7 +26,7 @@ public class GameManager : MonoBehaviour
         Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
     }
 
-    public List<Plant> listPlant;
+    public List<Plant> listPlant = new List<Plant>();
 
     public int lastCheckpoint;
     public int lastCamTarget;
