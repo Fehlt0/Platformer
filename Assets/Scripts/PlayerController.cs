@@ -68,8 +68,8 @@ public class PlayerController : MonoBehaviour
     }
     private State currentState;
     [SerializeField] private float switchRunning;
-    private Animator animatorRef;
-    private bool facingRight = true;
+    public Animator animatorRef;
+    public bool facingRight = true;
     private SpriteRenderer spriteRef;
     
     [SerializeField] private LangueControll langueControll;
@@ -234,6 +234,11 @@ public class PlayerController : MonoBehaviour
         {
             spriteRef.flipX = facingRight;
             facingRight = !facingRight;
+
+            Vector3 tetePos = langueControll.playerHead.transform.localPosition;
+            tetePos.x = facingRight ? 0.242f : -0.242f;
+            langueControll.playerHead.transform.localPosition = tetePos;
+
         }
     }   
     
