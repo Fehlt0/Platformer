@@ -1037,6 +1037,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 64
   tongueLine: {fileID: -4433647437144218176}
+  mouthPoint: {fileID: 4191907138082063214}
   animatorRef: {fileID: 0}
   wasHoldingTongue: 0
   isGrappling: 0
@@ -1069,6 +1070,7 @@ MonoBehaviour:
   playerArm: {fileID: 3403127948130966426}
   switchRunning: 1
   animatorRef: {fileID: 0}
+  facingRight: 1
   langueControll: {fileID: 3815535619944118968}
 --- !u!114 &-2455956732645949397
 MonoBehaviour:
@@ -1264,6 +1266,37 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
+--- !u!1 &7167056880697653646
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4191907138082063214}
+  m_Layer: 0
+  m_Name: MouthPoint
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4191907138082063214
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7167056880697653646}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.324, y: 0.36900002, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 7072401641967469857}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &7510957043132189119
 GameObject:
   m_ObjectHideFlags: 0
@@ -1385,6 +1418,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children:
   - {fileID: 4305408732600097913}
+  - {fileID: 4191907138082063214}
   m_Father: {fileID: 1028939692511918276}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &9048021264145302179
