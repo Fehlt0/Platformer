@@ -97,7 +97,7 @@ MonoBehaviour:
   m_MinSize: {x: 50, y: 76}
   m_MaxSize: {x: 4000, y: 4026}
   vertical: 0
-  controlID: 173
+  controlID: 17
   draggingID: 0
 --- !u!114 &5
 MonoBehaviour:
@@ -150,7 +150,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 78
+  controlID: 101
   draggingID: 0
 --- !u!114 &7
 MonoBehaviour:
@@ -202,7 +202,7 @@ MonoBehaviour:
   m_MinSize: {x: 300, y: 112}
   m_MaxSize: {x: 24288, y: 16192}
   vertical: 0
-  controlID: 36
+  controlID: 99
   draggingID: 0
 --- !u!114 &9
 MonoBehaviour:
@@ -351,7 +351,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 112}
   m_MaxSize: {x: 16192, y: 16192}
   vertical: 1
-  controlID: 37
+  controlID: 100
   draggingID: 0
 --- !u!114 &15
 MonoBehaviour:
@@ -377,7 +377,7 @@ MonoBehaviour:
   m_MinSize: {x: 200, y: 56}
   m_MaxSize: {x: 16192, y: 8096}
   vertical: 0
-  controlID: 38
+  controlID: 192
   draggingID: 0
 --- !u!114 &16
 MonoBehaviour:
@@ -475,10 +475,10 @@ MonoBehaviour:
     m_VAllowExceedBaseRangeMin: 1
     m_VAllowExceedBaseRangeMax: 1
     m_ScaleWithWindow: 0
-    m_HSlider: 1
-    m_VSlider: 1
+    m_HSlider: 0
+    m_VSlider: 0
     m_IgnoreScrollWheelUntilClicked: 0
-    m_EnableMouseInput: 0
+    m_EnableMouseInput: 1
     m_EnableSliderZoomHorizontal: 0
     m_EnableSliderZoomVertical: 0
     m_UniformScale: 1
@@ -571,10 +571,10 @@ MonoBehaviour:
     m_TextWithWhitespace: "Animator\u200B"
   m_Pos:
     serializedVersion: 2
-    x: 348
-    y: 79.200005
-    width: 1086
-    height: 570
+    x: 353
+    y: 79
+    width: 1133
+    height: 575
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -592,14 +592,14 @@ MonoBehaviour:
     m_KeySerializationHelper:
     - {fileID: 8321156122540228614, guid: 7d04774a2fd399a4691006474d5e5137, type: 2}
     m_ValueSerializationHelper:
-    - e00: 0.5570847
+    - e00: 0.15245216
       e01: 0
       e02: 0
-      e03: 276.6388
+      e03: 250.86026
       e10: 0
-      e11: 0.5570847
+      e11: 0.15245216
       e12: 0
-      e13: 400.30872
+      e13: 196.32382
       e20: 0
       e21: 0
       e22: 1
@@ -980,7 +980,7 @@ MonoBehaviour:
     m_SkipHidden: 0
     m_SearchArea: 1
     m_Folders:
-    - Assets
+    - Packages/com.unity.2d.common/Path/Editor/Selection
     m_Globs: []
     m_ProductIds: 
     m_AnyWithAssetOrigin: 0
@@ -990,18 +990,18 @@ MonoBehaviour:
   m_ViewMode: 1
   m_StartGridSize: 64
   m_LastFolders:
-  - Assets
+  - Packages/com.unity.2d.common/Path/Editor/Selection
   m_LastFoldersGridSize: -1
-  m_LastProjectPath: C:\Users\marga\Desktop\github\platformer
+  m_LastProjectPath: C:\Users\jb.delbove\Desktop\Unity Projects\Platformer
   m_LockTracker:
     m_IsLocked: 0
   m_LastLocalAssetsSearchArea: 1
   m_FolderTreeState:
-    scrollPos: {x: 0, y: 0}
+    scrollPos: {x: 0, y: 242}
     m_SelectedIDs:
-    - m_Data: 75960
+    - m_Data: 78132
     m_LastClickedID:
-      m_Data: 75960
+      m_Data: 78132
     m_ExpandedIDs:
     - m_Data: 0
     - m_Data: 103872
@@ -1156,7 +1156,7 @@ MonoBehaviour:
       m_Icon: {fileID: 0}
       m_ResourceFile: 
     m_NewAssetIndexInList: -1
-    m_ScrollPosition: {x: 0, y: 926}
+    m_ScrollPosition: {x: 0, y: 0}
     m_GridSize: 64
   m_SkipHiddenPackages: 0
   m_DirectoriesAreaWidth: 207
@@ -1257,12 +1257,7 @@ MonoBehaviour:
       m_LastClickedID:
         m_Data: 0
       m_ExpandedIDs:
-      - m_Data: -1590
-      - m_Data: 56660
-      - m_Data: 64498
-      - m_Data: 64962
-      - m_Data: 68792
-      - m_Data: 69368
+      - m_Data: -1592
       m_RenameOverlay:
         m_UserAcceptedRename: 0
         m_Name: 
@@ -1801,7 +1796,7 @@ MonoBehaviour:
   m_Position:
     m_Target: {x: -177.25159, y: 33.133896, z: 0.008979857}
     speed: 2
-    m_Value: {x: 0, y: 0, z: 0}
+    m_Value: {x: -360.39145, y: 34.28981, z: -0.024800712}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1853,7 +1848,7 @@ MonoBehaviour:
   m_Size:
     m_Target: 10.411487
     speed: 2
-    m_Value: 10
+    m_Value: 13.087976
   m_Ortho:
     m_Target: 1
     speed: 2
