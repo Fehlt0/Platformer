@@ -38,10 +38,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ContainerWindow
   m_PixelRect:
     serializedVersion: 2
-    x: 0
-    y: 23
+    x: -1920
+    y: 28
     width: 1920
-    height: 1057
+    height: 1009
   m_ShowMode: 0
   m_Title: Game
   m_RootView: {fileID: 4}
@@ -431,7 +431,7 @@ MonoBehaviour:
     x: 0
     y: 26
     width: 1920
-    height: 1031
+    height: 983
   m_SerializedDataModeController:
     m_DataMode: 0
     m_PreferredDataMode: 0
@@ -451,7 +451,7 @@ MonoBehaviour:
   m_ShowGizmos: 0
   m_TargetDisplay: 0
   m_ClearColor: {r: 0, g: 0, b: 0, a: 0}
-  m_TargetSize: {x: 1920, y: 1010}
+  m_TargetSize: {x: 1920, y: 962}
   m_TextureFilterMode: 0
   m_TextureHideFlags: 61
   m_RenderIMGUI: 1
@@ -468,8 +468,8 @@ MonoBehaviour:
     vZoomLockedByDefault: 0
     m_HBaseRangeMin: -960
     m_HBaseRangeMax: 960
-    m_VBaseRangeMin: -505
-    m_VBaseRangeMax: 505
+    m_VBaseRangeMin: -481
+    m_VBaseRangeMax: 481
     m_HAllowExceedBaseRangeMin: 1
     m_HAllowExceedBaseRangeMax: 1
     m_VAllowExceedBaseRangeMin: 1
@@ -488,9 +488,9 @@ MonoBehaviour:
       x: 0
       y: 21
       width: 1920
-      height: 1010
+      height: 962
     m_Scale: {x: 1, y: 1}
-    m_Translation: {x: 960, y: 505}
+    m_Translation: {x: 960, y: 481}
     m_MarginLeft: 0
     m_MarginRight: 0
     m_MarginTop: 0
@@ -498,12 +498,12 @@ MonoBehaviour:
     m_LastShownAreaInsideMargins:
       serializedVersion: 2
       x: -960
-      y: -505
+      y: -481
       width: 1920
-      height: 1010
+      height: 962
     m_MinimalGUI: 1
   m_defaultScale: 1
-  m_LastWindowPixelSize: {x: 1920, y: 1031}
+  m_LastWindowPixelSize: {x: 1920, y: 983}
   m_ClearInEditMode: 1
   m_NoCameraWarning: 1
   m_LowResolutionForAspectRatios: 00000000000000000000
@@ -1004,34 +1004,20 @@ MonoBehaviour:
       m_Data: 78132
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 103872
-    - m_Data: 103874
-    - m_Data: 103876
-    - m_Data: 103878
-    - m_Data: 103880
-    - m_Data: 103882
-    - m_Data: 103884
-    - m_Data: 103886
-    - m_Data: 103888
-    - m_Data: 103890
-    - m_Data: 103892
-    - m_Data: 103894
-    - m_Data: 103896
-    - m_Data: 103898
-    - m_Data: 103900
-    - m_Data: 103902
-    - m_Data: 103904
-    - m_Data: 103906
-    - m_Data: 103908
-    - m_Data: 103910
-    - m_Data: 103912
-    - m_Data: 103914
-    - m_Data: 103916
-    - m_Data: 103918
-    - m_Data: 103920
-    - m_Data: 103922
-    - m_Data: 103924
-    - m_Data: 103926
+    - m_Data: 77940
+    - m_Data: 77942
+    - m_Data: 77944
+    - m_Data: 77946
+    - m_Data: 77948
+    - m_Data: 77950
+    - m_Data: 77952
+    - m_Data: 77954
+    - m_Data: 77956
+    - m_Data: 77958
+    - m_Data: 77960
+    - m_Data: 77962
+    - m_Data: 77964
+    - m_Data: 77966
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1064,34 +1050,20 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 103872
-    - m_Data: 103874
-    - m_Data: 103876
-    - m_Data: 103878
-    - m_Data: 103880
-    - m_Data: 103882
-    - m_Data: 103884
-    - m_Data: 103886
-    - m_Data: 103888
-    - m_Data: 103890
-    - m_Data: 103892
-    - m_Data: 103894
-    - m_Data: 103896
-    - m_Data: 103898
-    - m_Data: 103900
-    - m_Data: 103902
-    - m_Data: 103904
-    - m_Data: 103906
-    - m_Data: 103908
-    - m_Data: 103910
-    - m_Data: 103912
-    - m_Data: 103914
-    - m_Data: 103916
-    - m_Data: 103918
-    - m_Data: 103920
-    - m_Data: 103922
-    - m_Data: 103924
-    - m_Data: 103926
+    - m_Data: 77940
+    - m_Data: 77942
+    - m_Data: 77944
+    - m_Data: 77946
+    - m_Data: 77948
+    - m_Data: 77950
+    - m_Data: 77952
+    - m_Data: 77954
+    - m_Data: 77956
+    - m_Data: 77958
+    - m_Data: 77960
+    - m_Data: 77962
+    - m_Data: 77964
+    - m_Data: 77966
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1794,7 +1766,7 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: -177.25159, y: 33.133896, z: 0.008979857}
+    m_Target: {x: -360.39145, y: 34.28981, z: -0.024800712}
     speed: 2
     m_Value: {x: -360.39145, y: 34.28981, z: -0.024800712}
   m_RenderMode: 0
@@ -1846,7 +1818,7 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10.411487
+    m_Target: 13.087976
     speed: 2
     m_Value: 13.087976
   m_Ortho:
