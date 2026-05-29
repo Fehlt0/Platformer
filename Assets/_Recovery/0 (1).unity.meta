@@ -1,5 +1,9 @@
 fileFormatVersion: 2
+<<<<<<<< HEAD:Assets/Scenes/Tuto-marre.unity.meta
+guid: a663902d058d6494ca6939c4da2b02b5
+========
 guid: 9b4db537d67f66949ae3bb5c9f62bcf5
+>>>>>>>> b4f8f57 (assemblage fini):Assets/_Recovery/0 (1).unity.meta
 DefaultImporter:
   externalObjects: {}
   userData: 
