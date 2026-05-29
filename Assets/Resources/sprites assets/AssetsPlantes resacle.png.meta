@@ -1,0 +1,559 @@
+fileFormatVersion: 2
+guid: a6bbb0e896521064ca37317d4383454a
+TextureImporter:
+  internalIDToNameTable:
+  - first:
+      213: -7063051977938819274
+    second: AssetsPlantes resacle_0
+  - first:
+      213: -5497035036011799375
+    second: AssetsPlantes resacle_1
+  - first:
+      213: 6446484751474334394
+    second: AssetsPlantes resacle_2
+  - first:
+      213: 7050420023756432308
+    second: AssetsPlantes resacle_3
+  - first:
+      213: -5704805341949465106
+    second: AssetsPlantes resacle_4
+  - first:
+      213: -5330261931992734105
+    second: AssetsPlantes resacle_5
+  - first:
+      213: -6674299735282319879
+    second: AssetsPlantes resacle_6
+  - first:
+      213: 4007661690713130870
+    second: AssetsPlantes resacle_7
+  - first:
+      213: -1699633568297605279
+    second: AssetsPlantes resacle_8
+  - first:
+      213: 3024430785186409959
+    second: AssetsPlantes resacle_9
+  - first:
+      213: 3254844689842274993
+    second: AssetsPlantes resacle_10
+  - first:
+      213: -2826211005413287062
+    second: AssetsPlantes resacle_11
+  - first:
+      213: -3127583772983395038
+    second: AssetsPlantes resacle_12
+  - first:
+      213: 2278212746710349493
+    second: AssetsPlantes resacle_13
+  - first:
+      213: 8917403201388641650
+    second: AssetsPlantes resacle_14
+  - first:
+      213: 2965404458437537603
+    second: AssetsPlantes resacle_15
+  - first:
+      213: 8748083316010232225
+    second: AssetsPlantes resacle_16
+  externalObjects: {}
+  serializedVersion: 13
+  mipmaps:
+    mipMapMode: 0
+    enableMipMap: 0
+    sRGBTexture: 1
+    linearTexture: 0
+    fadeOut: 0
+    borderMipMap: 0
+    mipMapsPreserveCoverage: 0
+    alphaTestReferenceValue: 0.5
+    mipMapFadeDistanceStart: 1
+    mipMapFadeDistanceEnd: 3
+  bumpmap:
+    convertToNormalMap: 0
+    externalNormalMap: 0
+    heightScale: 0.25
+    normalMapFilter: 0
+    flipGreenChannel: 0
+  isReadable: 0
+  streamingMipmaps: 0
+  streamingMipmapsPriority: 0
+  vTOnly: 0
+  ignoreMipmapLimit: 0
+  grayScaleToAlpha: 0
+  generateCubemap: 6
+  cubemapConvolution: 0
+  seamlessCubemap: 0
+  textureFormat: 1
+  maxTextureSize: 2048
+  textureSettings:
+    serializedVersion: 2
+    filterMode: 1
+    aniso: 1
+    mipBias: 0
+    wrapU: 1
+    wrapV: 1
+    wrapW: 1
+  nPOTScale: 0
+  lightmap: 0
+  compressionQuality: 50
+  spriteMode: 2
+  spriteExtrude: 1
+  spriteMeshType: 1
+  alignment: 0
+  spritePivot: {x: 0.5, y: 0.5}
+  spritePixelsToUnits: 100
+  spriteBorder: {x: 0, y: 0, z: 0, w: 0}
+  spriteGenerateFallbackPhysicsShape: 1
+  alphaUsage: 1
+  alphaIsTransparency: 1
+  spriteTessellationDetail: -1
+  textureType: 8
+  textureShape: 1
+  singleChannelComponent: 0
+  flipbookRows: 1
+  flipbookColumns: 1
+  maxTextureSizeSet: 0
+  compressionQualitySet: 0
+  textureFormatSet: 0
+  ignorePngGamma: 0
+  applyGammaDecoding: 0
+  swizzle: 50462976
+  cookieLightType: 0
+  platformSettings:
+  - serializedVersion: 4
+    buildTarget: DefaultTexturePlatform
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  - serializedVersion: 4
+    buildTarget: Standalone
+    maxTextureSize: 2048
+    resizeAlgorithm: 0
+    textureFormat: -1
+    textureCompression: 1
+    compressionQuality: 50
+    crunchedCompression: 0
+    allowsAlphaSplitting: 0
+    overridden: 0
+    ignorePlatformSupport: 0
+    androidETC2FallbackOverride: 0
+    forceMaximumCompressionQuality_BC6H_BC7: 0
+  spriteSheet:
+    serializedVersion: 2
+    sprites:
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_0
+      rect:
+        serializedVersion: 2
+        x: 3
+        y: 360
+        width: 58
+        height: 63
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 63726d0d5affafd90800000000000000
+      internalID: -7063051977938819274
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_1
+      rect:
+        serializedVersion: 2
+        x: 44
+        y: 360
+        width: 32
+        height: 29
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1bcd3a062cb96b3b0800000000000000
+      internalID: -5497035036011799375
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_2
+      rect:
+        serializedVersion: 2
+        x: 169
+        y: 278
+        width: 126
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: aba999df9b3867950800000000000000
+      internalID: 6446484751474334394
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_3
+      rect:
+        serializedVersion: 2
+        x: 314
+        y: 345
+        width: 34
+        height: 74
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4b3ad4928af18d160800000000000000
+      internalID: 7050420023756432308
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_4
+      rect:
+        serializedVersion: 2
+        x: 386
+        y: 296
+        width: 71
+        height: 128
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: eede95054c574d0b0800000000000000
+      internalID: -5704805341949465106
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_5
+      rect:
+        serializedVersion: 2
+        x: 487
+        y: 287
+        width: 142
+        height: 135
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 76629c7830b1706b0800000000000000
+      internalID: -5330261931992734105
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_6
+      rect:
+        serializedVersion: 2
+        x: 0
+        y: 254
+        width: 142
+        height: 99
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9fd7302b0cf1063a0800000000000000
+      internalID: -6674299735282319879
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_7
+      rect:
+        serializedVersion: 2
+        x: 234
+        y: 195
+        width: 144
+        height: 123
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 677c5eef2131e9730800000000000000
+      internalID: 4007661690713130870
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_8
+      rect:
+        serializedVersion: 2
+        x: 391
+        y: 119
+        width: 98
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 167aa415640b968e0800000000000000
+      internalID: -1699633568297605279
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_9
+      rect:
+        serializedVersion: 2
+        x: 500
+        y: 200
+        width: 68
+        height: 73
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 7edaac666cfe8f920800000000000000
+      internalID: 3024430785186409959
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_10
+      rect:
+        serializedVersion: 2
+        x: 7
+        y: 102
+        width: 78
+        height: 144
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1b28d1120088b2d20800000000000000
+      internalID: 3254844689842274993
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_11
+      rect:
+        serializedVersion: 2
+        x: 114
+        y: 127
+        width: 124
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: a6b9a02801847c8d0800000000000000
+      internalID: -2826211005413287062
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_12
+      rect:
+        serializedVersion: 2
+        x: 249
+        y: 37
+        width: 78
+        height: 117
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 22d7c0e01279894d0800000000000000
+      internalID: -3127583772983395038
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_13
+      rect:
+        serializedVersion: 2
+        x: 564
+        y: 110
+        width: 55
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5b6ff623c66dd9f10800000000000000
+      internalID: 2278212746710349493
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_14
+      rect:
+        serializedVersion: 2
+        x: 66
+        y: 20
+        width: 143
+        height: 89
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 27d73b917faf0cb70800000000000000
+      internalID: 8917403201388641650
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_15
+      rect:
+        serializedVersion: 2
+        x: 345
+        y: 18
+        width: 105
+        height: 85
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 34f6780c4ab372920800000000000000
+      internalID: 2965404458437537603
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsPlantes resacle_16
+      rect:
+        serializedVersion: 2
+        x: 484
+        y: 0
+        width: 142
+        height: 116
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 1a9af443d6f676970800000000000000
+      internalID: 8748083316010232225
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    outline: []
+    customData: 
+    physicsShape: []
+    bones: []
+    spriteID: 
+    internalID: 0
+    vertices: []
+    indices: 
+    edges: []
+    weights: []
+    secondaryTextures: []
+    spriteCustomMetadata:
+      entries: []
+    nameFileIdTable:
+      AssetsPlantes resacle_0: -7063051977938819274
+      AssetsPlantes resacle_1: -5497035036011799375
+      AssetsPlantes resacle_10: 3254844689842274993
+      AssetsPlantes resacle_11: -2826211005413287062
+      AssetsPlantes resacle_12: -3127583772983395038
+      AssetsPlantes resacle_13: 2278212746710349493
+      AssetsPlantes resacle_14: 8917403201388641650
+      AssetsPlantes resacle_15: 2965404458437537603
+      AssetsPlantes resacle_16: 8748083316010232225
+      AssetsPlantes resacle_2: 6446484751474334394
+      AssetsPlantes resacle_3: 7050420023756432308
+      AssetsPlantes resacle_4: -5704805341949465106
+      AssetsPlantes resacle_5: -5330261931992734105
+      AssetsPlantes resacle_6: -6674299735282319879
+      AssetsPlantes resacle_7: 4007661690713130870
+      AssetsPlantes resacle_8: -1699633568297605279
+      AssetsPlantes resacle_9: 3024430785186409959
+  mipmapLimitGroupName: 
+  pSDRemoveMatte: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

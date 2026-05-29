@@ -1,16 +1,13 @@
 fileFormatVersion: 2
-guid: 9618157f2dba3844aa78f15678c3cf5b
+guid: 88eb325ff527a7b4fb5d154893628069
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1722011616221225217
-    second: Deco_bas_3_0
+      213: 5889287224946676233
+    second: liane_0
   - first:
-      213: 4344952549612124960
-    second: Deco_bas_3_1
-  - first:
-      213: 1875945393173420368
-    second: Deco_bas_3_2
+      213: -7093449091614026985
+    second: liane_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,75 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Deco_bas_3_0
+      name: liane_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 187
-        width: 597
-        height: 298
+        x: 83
+        y: 385
+        width: 150
+        height: 216
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 10166fbf070d5e710800000000000000
-      internalID: 1722011616221225217
+      spriteID: 902513f3783fab150800000000000000
+      internalID: 5889287224946676233
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_bas_3_1
+      name: liane_1
       rect:
         serializedVersion: 2
-        x: 483
-        y: 348
-        width: 922
-        height: 400
+        x: 298
+        y: 415
+        width: 117
+        height: 99
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: 461, y: 84}
-        - {x: 461, y: 104}
-        - {x: 430, y: 117}
-        - {x: -399, y: 200}
-        - {x: -461, y: 200}
-        - {x: -461, y: 65}
-        - {x: -175, y: -200}
-        - {x: 257, y: -200}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02bfe85c25f5c4c30800000000000000
-      internalID: 4344952549612124960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Deco_bas_3_2
-      rect:
-        serializedVersion: 2
-        x: 858
-        y: 0
-        width: 753
-        height: 230
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 059d12a5562b80a10800000000000000
-      internalID: 1875945393173420368
+      spriteID: 713570642a10f8d90800000000000000
+      internalID: -7093449091614026985
       vertices: []
       indices: 
       edges: []
@@ -183,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 10aa3190aa0fcfa4b8ed5941e7a3e455
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -193,9 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Deco_bas_3_0: 1722011616221225217
-      Deco_bas_3_1: 4344952549612124960
-      Deco_bas_3_2: 1875945393173420368
+      liane_0: 5889287224946676233
+      liane_1: -7093449091614026985
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

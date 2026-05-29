@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 9618157f2dba3844aa78f15678c3cf5b
+guid: d7549584a0050a1479fff8a2740db01e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1722011616221225217
-    second: Deco_bas_3_0
+      213: 8053155818043775563
+    second: Transition v2_0
   - first:
-      213: 4344952549612124960
-    second: Deco_bas_3_1
+      213: 8153837737306618702
+    second: Transition v2_1
   - first:
-      213: 1875945393173420368
-    second: Deco_bas_3_2
+      213: 8527025691118192160
+    second: Transition v2_2
+  - first:
+      213: 3770896211336230672
+    second: Transition v2_3
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,75 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Deco_bas_3_0
+      name: Transition v2_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 187
-        width: 597
-        height: 298
+        y: 540
+        width: 400
+        height: 275
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 10166fbf070d5e710800000000000000
-      internalID: 1722011616221225217
+      spriteID: b4a9e5f8c8e82cf60800000000000000
+      internalID: 8053155818043775563
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_bas_3_1
+      name: Transition v2_1
       rect:
         serializedVersion: 2
-        x: 483
-        y: 348
-        width: 922
-        height: 400
+        x: 632
+        y: 603
+        width: 287
+        height: 207
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 461, y: 84}
-        - {x: 461, y: 104}
-        - {x: 430, y: 117}
-        - {x: -399, y: 200}
-        - {x: -461, y: 200}
-        - {x: -461, y: 65}
-        - {x: -175, y: -200}
-        - {x: 257, y: -200}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 02bfe85c25f5c4c30800000000000000
-      internalID: 4344952549612124960
+      spriteID: e4bf550a830482170800000000000000
+      internalID: 8153837737306618702
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_bas_3_2
+      name: Transition v2_2
       rect:
         serializedVersion: 2
-        x: 858
-        y: 0
-        width: 753
-        height: 230
+        x: 0
+        y: 181
+        width: 290
+        height: 240
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 059d12a5562b80a10800000000000000
-      internalID: 1875945393173420368
+      spriteID: 026cabd10b4165670800000000000000
+      internalID: 8527025691118192160
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Transition v2_3
+      rect:
+        serializedVersion: 2
+        x: 617
+        y: 181
+        width: 289
+        height: 233
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 017ff89002ae45430800000000000000
+      internalID: 3770896211336230672
       vertices: []
       indices: 
       edges: []
@@ -183,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 10aa3190aa0fcfa4b8ed5941e7a3e455
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -193,9 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Deco_bas_3_0: 1722011616221225217
-      Deco_bas_3_1: 4344952549612124960
-      Deco_bas_3_2: 1875945393173420368
+      Transition v2_0: 8053155818043775563
+      Transition v2_1: 8153837737306618702
+      Transition v2_2: 8527025691118192160
+      Transition v2_3: 3770896211336230672
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

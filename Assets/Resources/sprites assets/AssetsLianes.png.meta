@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: 9618157f2dba3844aa78f15678c3cf5b
+guid: 60bac7c6115cc934ba316563172e51c5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1722011616221225217
-    second: Deco_bas_3_0
+      213: 2513280919146349087
+    second: AssetsLianes_0
   - first:
-      213: 4344952549612124960
-    second: Deco_bas_3_1
+      213: -7627210852190314725
+    second: AssetsLianes_1
   - first:
-      213: 1875945393173420368
-    second: Deco_bas_3_2
+      213: -8114549366349025384
+    second: AssetsLianes_2
+  - first:
+      213: -4319505861060855889
+    second: AssetsLianes_3
+  - first:
+      213: -4320807732058806752
+    second: AssetsLianes_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,75 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Deco_bas_3_0
+      name: AssetsLianes_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 187
-        width: 597
-        height: 298
+        x: 44
+        y: 2032
+        width: 2807
+        height: 2965
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 10166fbf070d5e710800000000000000
-      internalID: 1722011616221225217
+      spriteID: f124c761ea7f0e220800000000000000
+      internalID: 2513280919146349087
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_bas_3_1
+      name: AssetsLianes_1
       rect:
         serializedVersion: 2
-        x: 483
-        y: 348
-        width: 922
-        height: 400
+        x: 1193
+        y: 117
+        width: 1926
+        height: 2320
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: 461, y: 84}
-        - {x: 461, y: 104}
-        - {x: 430, y: 117}
-        - {x: -399, y: 200}
-        - {x: -461, y: 200}
-        - {x: -461, y: 65}
-        - {x: -175, y: -200}
-        - {x: 257, y: -200}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 02bfe85c25f5c4c30800000000000000
-      internalID: 4344952549612124960
+      spriteID: b1f11300424b62690800000000000000
+      internalID: -7627210852190314725
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Deco_bas_3_2
+      name: AssetsLianes_2
       rect:
         serializedVersion: 2
-        x: 858
-        y: 0
-        width: 753
-        height: 230
+        x: 2667
+        y: 222
+        width: 1103
+        height: 3978
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 059d12a5562b80a10800000000000000
-      internalID: 1875945393173420368
+      spriteID: 89f25621854536f80800000000000000
+      internalID: -8114549366349025384
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsLianes_3
+      rect:
+        serializedVersion: 2
+        x: 3078
+        y: 1142
+        width: 1218
+        height: 3753
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: fa7ff3a1e480e04c0800000000000000
+      internalID: -4319505861060855889
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: AssetsLianes_4
+      rect:
+        serializedVersion: 2
+        x: 3819
+        y: 1019
+        width: 1161
+        height: 3981
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 026afd3a2486904c0800000000000000
+      internalID: -4320807732058806752
       vertices: []
       indices: 
       edges: []
@@ -183,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 10aa3190aa0fcfa4b8ed5941e7a3e455
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -193,9 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Deco_bas_3_0: 1722011616221225217
-      Deco_bas_3_1: 4344952549612124960
-      Deco_bas_3_2: 1875945393173420368
+      AssetsLianes_0: 2513280919146349087
+      AssetsLianes_1: -7627210852190314725
+      AssetsLianes_2: -8114549366349025384
+      AssetsLianes_3: -4319505861060855889
+      AssetsLianes_4: -4320807732058806752
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
