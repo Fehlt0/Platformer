@@ -22,6 +22,7 @@ public class ChampiBumper : Plant
             other.GetComponent<Rigidbody2D>().AddForce(direction * strength);
         }
 
+        // y'a ptet moyen de le stocker dans le start, là chaque ontriggerenter va couter cher
         gameObject.GetComponent<Collider2D>().enabled = false;
         gameObject.GetComponent<Collider2D>().enabled = true;
     }

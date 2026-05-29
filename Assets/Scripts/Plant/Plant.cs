@@ -69,6 +69,8 @@ public abstract class Plant : MonoBehaviour, IPlant
         isHitByLuciole = value;
     }
 
+    // enfaite cette fonction est jamais modifiée, déclarée qu'ici, du coup l'avoir dans l'interface n'apporte rien,
+    // tu pourrais directement utiliser Plant tu aurais le meme resultat
     public void ResetPlant()
     {
         timeUntilDecay = 0;

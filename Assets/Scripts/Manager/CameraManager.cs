@@ -31,6 +31,7 @@ public class CameraManager : MonoBehaviour
     
     void Update()
     {
+        // du coup la caméra suit sans effet du tout la cible? peut etre qu'un petit tween / lerp pourrait la rendre plus smoothie
         camera.transform.position = new Vector3(target.position.x, target.position.y, -1) ;
     }
     

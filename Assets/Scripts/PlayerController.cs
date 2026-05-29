@@ -236,7 +236,7 @@ public class PlayerController : MonoBehaviour
             facingRight = !facingRight;
 
             Vector3 tetePos = langueControll.playerHead.transform.localPosition;
-            tetePos.x = facingRight ? 0.242f : -0.242f;
+            tetePos.x = facingRight ? 0.242f : -0.242f; // le petit chiffre magique qu'on aime
             langueControll.playerHead.transform.localPosition = tetePos;
 
         }

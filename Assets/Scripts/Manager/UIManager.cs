@@ -19,6 +19,7 @@ public class UIManager : MonoBehaviour
         }
     }
 
+    // inutile?
     public GameObject pauseMenu;
     public GameObject deathMenu;
 

@@ -15,6 +15,8 @@ public class LampControll : MonoBehaviour
         Vector2 joystick = Gamepad.current.rightStick.ReadValue();
         joystick.Normalize();
         decalage = new Vector3(joystick.x, joystick.y, 0f) * distance;
+        
+        // c'est pas du tout réutilisable?
         Destroy(gameObject, playerData.lampTimer);
     }
 

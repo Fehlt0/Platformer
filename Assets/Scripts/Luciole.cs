@@ -3,11 +3,12 @@ using UnityEngine;
 
 public class Luciole : MonoBehaviour
 {
-
+// inutile
     public float bounceForce;
     
     public bool hasBounce = false;
 
+    // inutile
     public Vector2 direction;
 
     public Plant currentPlant;

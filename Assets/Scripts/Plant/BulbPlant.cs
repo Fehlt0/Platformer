@@ -8,6 +8,9 @@ public class BulbPlant : Plant
     public override void Start()
     {
         base.Start();
+        
+        // j'suis pas sur de comprendre ce que tu veux faire, tu veux récupérer la premiere
+        // plante de ta liste d'enfants ? tu pouvais pas simplement faire un serializefield?
         foreach (Plant plante in GetComponentsInChildren<Plant>())
         {
             if (plante.gameObject != this.gameObject)

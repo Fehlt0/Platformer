@@ -57,6 +57,9 @@ public class LaunchLuciole : MonoBehaviour
         
         currentLuciole = Instantiate(luciolePrefab, firePoint.position, Quaternion.identity);
 
+        // pour ta luciole, j'aurais surement mis tous ces composants ( rb2d, CircleCollider, etc ) directement accessible dedans
+        // pour te permettre d'y accéder sans les get component, et ici je serais parti pour changer le type de currentLuciole en Luciole directement
+        // comme ca tu l'instancies, tu get component luciole, et t'as accès à tout
         
         Rigidbody2D rb = currentLuciole.GetComponent<Rigidbody2D>();
         rb.linearVelocity = direction * launchSpeed;
