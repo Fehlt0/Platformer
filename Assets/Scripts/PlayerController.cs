@@ -70,7 +70,7 @@ public class PlayerController : MonoBehaviour
     public Animator animatorRef;
     public bool facingRight = true;
     private SpriteRenderer spriteRef;
-    private bool isDead = true;
+    private bool isDead = false;
     
     [SerializeField] private LangueControll langueControll;
     
