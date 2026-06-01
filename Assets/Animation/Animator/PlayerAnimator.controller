@@ -690,7 +690,7 @@ AnimatorState:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: FlashingPointingGround
+  m_Name: Flashing
   m_Speed: 1
   m_CycleOffset: 0
   m_Transitions:
@@ -1363,7 +1363,7 @@ AnimatorStateMachine:
     m_Position: {x: 1270, y: -300, z: 0}
   - serializedVersion: 1
     m_State: {fileID: 162645867669919363}
-    m_Position: {x: 520, y: 710, z: 0}
+    m_Position: {x: 560, y: 730, z: 0}
   - serializedVersion: 1
     m_State: {fileID: -9031377465062345081}
     m_Position: {x: 800, y: -620, z: 0}

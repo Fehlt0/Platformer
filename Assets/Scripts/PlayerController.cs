@@ -54,7 +54,6 @@ public class PlayerController : MonoBehaviour
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject lightCursor;
     [SerializeField] private GameObject lightSphere;
-    [SerializeField] private GameObject lightCone;
     [SerializeField] private GameObject playerArm; 
     
     private enum State
@@ -71,6 +70,7 @@ public class PlayerController : MonoBehaviour
     public Animator animatorRef;
     public bool facingRight = true;
     private SpriteRenderer spriteRef;
+    private bool isDead = true;
     
     [SerializeField] private LangueControll langueControll;
     
@@ -429,21 +429,9 @@ public class PlayerController : MonoBehaviour
 
     public void OnInteract(InputAction.CallbackContext context)
     {
-        Vector2 joystick = Gamepad.current.rightStick.ReadValue();
         if (context.ReadValueAsButton() && canLamp)
         {
-            if (joystick.magnitude >= 0.1)
-            {
-                animatorRef.SetBool("isFlashingPointing", true);
-                playerArm.transform.rotation = pointeur.transform.rotation;
-                lightCone.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f,0f,-90f);
-                lightCone.SetActive(true);
-            }
-            else
-            {
-                lightSphere.SetActive(true);
-            }
-
+            lightSphere.SetActive(true);
             canLamp = false;
             StartCoroutine(LampOffTimer());
         }
@@ -456,7 +444,6 @@ public class PlayerController : MonoBehaviour
         canLamp = true;
         animatorRef.SetBool("isFlashingPointing", false);
         lightSphere.SetActive(false);
-        lightCone.SetActive(false);
     }
     
     private void CheckGround()
@@ -492,11 +479,12 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.instance.ResetScene();
+        if (!isDead)
+        {
+            isDead = true;
+            Destroy(gameObject);
+            GameManager.instance.ResetScene();
+        }
+        
     }
 }
