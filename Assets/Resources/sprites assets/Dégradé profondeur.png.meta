@@ -1,16 +1,19 @@
 fileFormatVersion: 2
-guid: 9618157f2dba3844aa78f15678c3cf5b
+guid: 6a959ac9e40554c469646830a54ea273
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1722011616221225217
-    second: Deco_bas_3_0
+      213: 4796636870757655527
+    second: "D\xE9grad\xE9 profondeur_0"
   - first:
-      213: 4344952549612124960
-    second: Deco_bas_3_1
+      213: -6509642074000104082
+    second: "D\xE9grad\xE9 profondeur_1"
   - first:
-      213: 1875945393173420368
-    second: Deco_bas_3_2
+      213: 8707775294159293350
+    second: "D\xE9grad\xE9 profondeur_2"
+  - first:
+      213: 5096492577780605650
+    second: "D\xE9grad\xE9 profondeur_3"
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,75 +109,89 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Deco_bas_3_0
+      name: "D\xE9grad\xE9 profondeur_0"
       rect:
         serializedVersion: 2
         x: 0
-        y: 187
-        width: 597
-        height: 298
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 10166fbf070d5e710800000000000000
-      internalID: 1722011616221225217
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Deco_bas_3_1
-      rect:
-        serializedVersion: 2
-        x: 483
-        y: 348
-        width: 922
-        height: 400
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: 461, y: 84}
-        - {x: 461, y: 104}
-        - {x: 430, y: 117}
-        - {x: -399, y: 200}
-        - {x: -461, y: 200}
-        - {x: -461, y: 65}
-        - {x: -175, y: -200}
-        - {x: 257, y: -200}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 02bfe85c25f5c4c30800000000000000
-      internalID: 4344952549612124960
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: Deco_bas_3_2
-      rect:
-        serializedVersion: 2
-        x: 858
         y: 0
-        width: 753
-        height: 230
+        width: 1455
+        height: 789
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 059d12a5562b80a10800000000000000
-      internalID: 1875945393173420368
+      spriteID: 7e32d0ef1d3119240800000000000000
+      internalID: 4796636870757655527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "D\xE9grad\xE9 profondeur_1"
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 767
+        width: 6
+        height: 10
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e656944f50b19a5a0800000000000000
+      internalID: -6509642074000104082
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "D\xE9grad\xE9 profondeur_2"
+      rect:
+        serializedVersion: 2
+        x: 1036
+        y: 769
+        width: 7
+        height: 7
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 6ab89488e7b38d870800000000000000
+      internalID: 8707775294159293350
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: "D\xE9grad\xE9 profondeur_3"
+      rect:
+        serializedVersion: 2
+        x: 1151
+        y: 769
+        width: 6
+        height: 6
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 2d227034ff06ab640800000000000000
+      internalID: 5096492577780605650
       vertices: []
       indices: 
       edges: []
@@ -183,7 +200,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 10aa3190aa0fcfa4b8ed5941e7a3e455
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -193,9 +210,10 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Deco_bas_3_0: 1722011616221225217
-      Deco_bas_3_1: 4344952549612124960
-      Deco_bas_3_2: 1875945393173420368
+      "D\xE9grad\xE9 profondeur_0": 4796636870757655527
+      "D\xE9grad\xE9 profondeur_1": -6509642074000104082
+      "D\xE9grad\xE9 profondeur_2": 8707775294159293350
+      "D\xE9grad\xE9 profondeur_3": 5096492577780605650
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
