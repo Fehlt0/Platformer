@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using UnityEngine;
 using UnityEngine.InputSystem;
@@ -7,20 +8,38 @@ public class LaunchLuciole : MonoBehaviour
 
     public GameObject luciolePrefab;
     public Transform firePoint;
+    
+    
+    public Animator animatorRef;
+    
+    public SpriteRenderer RefpropulsionLuciole;
+    
     public float launchSpeed = 10f;
     public float returnSpeed = 20f;
+
+    private SpriteRenderer sprite;
+    
+    [SerializeField] private GameObject pointeur;
 
     private Vector2 aimDirection;
     
     private GameObject currentLuciole;
     private bool lucioleAlreadyLaunched = false;
-    
 
+    public void Awake()
+    {
+        sprite = currentLuciole.GetComponent<SpriteRenderer>();
+    }
 
 
     public void Update()
     {
         aimDirection = Gamepad.current.rightStick.ReadValue();
+
+        if (gameObject == null)
+        {
+            Destroy(currentLuciole);
+        }
     }
 
 
@@ -51,7 +70,8 @@ public class LaunchLuciole : MonoBehaviour
             Debug.Log("Launching Luciole");
             return;
         }
-
+        
+        sprite.color = Color.yellow;
 
         Vector2 direction = aimDirection.normalized;
         
@@ -67,6 +87,7 @@ public class LaunchLuciole : MonoBehaviour
         {
             script.direction = direction;
         }
+        AnimLucioleLaunch();
     }
     private void GoBack()
     {
@@ -75,6 +96,9 @@ public class LaunchLuciole : MonoBehaviour
         Rigidbody2D rb = currentLuciole.GetComponent<Rigidbody2D>();
         Luciole script = currentLuciole.GetComponent<Luciole>();
         CircleCollider2D collider = currentLuciole.GetComponent<CircleCollider2D>();
+        
+        
+        sprite.color = Color.darkRed;
 
         rb.bodyType = RigidbodyType2D.Dynamic;
 
@@ -109,4 +133,11 @@ public class LaunchLuciole : MonoBehaviour
             yield return null; 
         }
     }
+    
+    private void AnimLucioleLaunch()
+    {
+        //animatorRef.SetBool("isOnTongue", true);
+        RefpropulsionLuciole.transform.rotation = pointeur.transform.rotation;
+    }
+
 }
