@@ -188,13 +188,13 @@ TextureImporter:
       name: arbre_platform_3
       rect:
         serializedVersion: 2
-        x: 3403
-        y: 1011
-        width: 262
+        x: 3410
+        y: 1016
+        width: 248
         height: 255
       alignment: 0
       pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      border: {x: 0, y: 0, z: 0, w: 8}
       customData: 
       outline: []
       physicsShape: []
