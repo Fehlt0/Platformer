@@ -485,6 +485,5 @@ public class PlayerController : MonoBehaviour
             Destroy(gameObject);
             GameManager.instance.ResetScene();
         }
-        
     }
 }
