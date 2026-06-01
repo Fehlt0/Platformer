@@ -70,6 +70,7 @@ public class PlayerController : MonoBehaviour
     public Animator animatorRef;
     public bool facingRight = true;
     private SpriteRenderer spriteRef;
+    private bool isDead = true;
     
     [SerializeField] private LangueControll langueControll;
     
@@ -478,11 +479,12 @@ public class PlayerController : MonoBehaviour
 
     public void Die()
     {
-        Destroy(gameObject);
-    }
-
-    private void OnDestroy()
-    {
-        GameManager.instance.ResetScene();
+        if (!isDead)
+        {
+            isDead = true;
+            Destroy(gameObject);
+            GameManager.instance.ResetScene();
+        }
+        
     }
 }
