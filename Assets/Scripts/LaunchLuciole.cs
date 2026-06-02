@@ -12,7 +12,7 @@ public class LaunchLuciole : MonoBehaviour
     
     public Animator animatorRef;
     
-    public SpriteRenderer RefpropulsionLuciole;
+    
     
     public float launchSpeed = 10f;
     public float returnSpeed = 20f;
@@ -20,16 +20,14 @@ public class LaunchLuciole : MonoBehaviour
     private SpriteRenderer sprite;
     
     [SerializeField] private GameObject pointeur;
+    [SerializeField] private GameObject RefpropulsionLuciole;
 
     private Vector2 aimDirection;
     
     private GameObject currentLuciole;
     private bool lucioleAlreadyLaunched = false;
 
-    public void Awake()
-    {
-        sprite = currentLuciole.GetComponent<SpriteRenderer>();
-    }
+
 
 
     public void Update()
@@ -71,12 +69,17 @@ public class LaunchLuciole : MonoBehaviour
             return;
         }
         
-        sprite.color = Color.yellow;
+        
 
         Vector2 direction = aimDirection.normalized;
         
         currentLuciole = Instantiate(luciolePrefab, firePoint.position, Quaternion.identity);
-
+        
+        sprite = currentLuciole.GetComponent<SpriteRenderer>();
+        if (sprite != null)
+        {
+            sprite.color = Color.yellow;
+        }
         
         Rigidbody2D rb = currentLuciole.GetComponent<Rigidbody2D>();
         rb.linearVelocity = direction * launchSpeed;
@@ -87,19 +90,27 @@ public class LaunchLuciole : MonoBehaviour
         {
             script.direction = direction;
         }
+        
+        
         AnimLucioleLaunch();
     }
     private void GoBack()
     {
-        if (currentLuciole == null) return;
+        if (currentLuciole == null)
+        {
+            return;
+        }
 
         Rigidbody2D rb = currentLuciole.GetComponent<Rigidbody2D>();
         Luciole script = currentLuciole.GetComponent<Luciole>();
         CircleCollider2D collider = currentLuciole.GetComponent<CircleCollider2D>();
+        sprite = currentLuciole.GetComponent<SpriteRenderer>();
         
+        if (sprite != null)
+        {
+            sprite.color = Color.red;
+        }
         
-        sprite.color = Color.darkRed;
-
         rb.bodyType = RigidbodyType2D.Dynamic;
 
         if (script != null)
@@ -111,6 +122,8 @@ public class LaunchLuciole : MonoBehaviour
         {
             collider.enabled = false;
         }
+        
+
 
         StartCoroutine(ReturnToPlayer(rb));
     }
@@ -136,8 +149,26 @@ public class LaunchLuciole : MonoBehaviour
     
     private void AnimLucioleLaunch()
     {
-        //animatorRef.SetBool("isOnTongue", true);
-        RefpropulsionLuciole.transform.rotation = pointeur.transform.rotation;
+        animatorRef = GetComponent<Animator>();
+        RefpropulsionLuciole.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f, 0f, 180f);;
+
+        StartCoroutine(PlayAnimReset());
+
+
+    }
+    
+    private IEnumerator PlayAnimReset()
+    {
+        
+        
+        animatorRef.SetBool("isOnLuciole", true);
+
+        yield return null;
+    
+
+        yield return new WaitForSeconds(animatorRef.GetCurrentAnimatorStateInfo(0).length);
+    
+        animatorRef.SetBool("isOnLuciole", false);
     }
 
 }
