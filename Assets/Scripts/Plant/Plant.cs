@@ -69,7 +69,7 @@ public abstract class Plant : MonoBehaviour, IPlant
         isHitByLuciole = value;
     }
 
-    public void ResetPlant()
+    public virtual void ResetPlant()
     {
         timeUntilDecay = 0;
         isAlive = false;

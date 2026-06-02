@@ -35,4 +35,11 @@ public class BulbPlant : Plant
         if (childPlant != null)
             childPlant.SetHit(value);
     }
+
+    public override void IfIsAlive(){}
+    public override void ResetPlant()
+    {
+        timeUntilDecay = 0;
+        isAlive = false;
+    }
 }
