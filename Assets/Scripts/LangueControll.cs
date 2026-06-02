@@ -173,8 +173,18 @@ public class LangueControll : MonoBehaviour
             return;
         }
 
+
+
         LanguePlant nearest = GetNearestPlant(out float minDistance);
-        if (nearest == null) return;
+        if (nearest == null)
+        {
+            return;
+        }
+
+        if (minDistance > tongueDistance)
+        {
+            return;
+        }
 
         grapplePoint = nearest.transform.position;
         AnimLangue();
