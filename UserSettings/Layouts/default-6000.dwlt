@@ -62,8 +62,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ContainerWindow
   m_PixelRect:
     serializedVersion: 2
-    x: -1920
-    y: 28
+    x: 0
+    y: 23
     width: 1920
     height: 1009
   m_ShowMode: 0
@@ -1126,20 +1126,16 @@ MonoBehaviour:
       m_Data: 49408
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 81580
-    - m_Data: 81582
-    - m_Data: 81584
-    - m_Data: 81586
-    - m_Data: 81588
-    - m_Data: 81590
-    - m_Data: 81592
-    - m_Data: 81594
-    - m_Data: 81596
-    - m_Data: 81598
-    - m_Data: 81600
-    - m_Data: 81602
-    - m_Data: 81604
-    - m_Data: 81606
+    - m_Data: 82194
+    - m_Data: 82196
+    - m_Data: 82198
+    - m_Data: 82200
+    - m_Data: 82202
+    - m_Data: 82204
+    - m_Data: 82206
+    - m_Data: 82208
+    - m_Data: 82210
+    - m_Data: 82212
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1172,20 +1168,16 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 81580
-    - m_Data: 81582
-    - m_Data: 81584
-    - m_Data: 81586
-    - m_Data: 81588
-    - m_Data: 81590
-    - m_Data: 81592
-    - m_Data: 81594
-    - m_Data: 81596
-    - m_Data: 81598
-    - m_Data: 81600
-    - m_Data: 81602
-    - m_Data: 81604
-    - m_Data: 81606
+    - m_Data: 82194
+    - m_Data: 82196
+    - m_Data: 82198
+    - m_Data: 82200
+    - m_Data: 82202
+    - m_Data: 82204
+    - m_Data: 82206
+    - m_Data: 82208
+    - m_Data: 82210
+    - m_Data: 82212
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1884,9 +1876,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 0, y: 0, z: 0}
+    m_Target: {x: 16.350441, y: 35.293232, z: -0.27617016}
     speed: 2
-    m_Value: {x: -247.94473, y: -1.3569038, z: -0.97933394}
+    m_Value: {x: 0, y: 0, z: 0}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1936,9 +1928,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 10
+    m_Target: 37.616776
     speed: 2
-    m_Value: 108.41614
+    m_Value: 10
   m_Ortho:
     m_Target: 1
     speed: 2
