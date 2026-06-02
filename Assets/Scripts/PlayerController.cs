@@ -434,6 +434,7 @@ public class PlayerController : MonoBehaviour
             lightSphere.SetActive(true);
             canLamp = false;
             StartCoroutine(LampOffTimer());
+            animatorRef.SetBool("isFlashing", true);
         }
         
     }
@@ -442,7 +443,7 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
-        animatorRef.SetBool("isFlashingPointing", false);
+        animatorRef.SetBool("isFlashing", false);
         lightSphere.SetActive(false);
     }
     
