@@ -25,13 +25,13 @@ MonoBehaviour:
   wallSlideSpeed: 3
   wallJumpControlLockTime: 0.5
   wallCheckDistance: 0.4
-  wallJumpTired: 0
-  wallJumpTiredMultiplier: 0.5
+  wallJumpTired: 1
+  wallJumpTiredMultiplier: 1
   dryCount: 35
   maxVelocity: -100
   distance: 4
   lampTimer: 0.4
-  jumpForceLangue: 10
+  jumpForceLangue: 14
   wallJumpForce: {x: 6, y: 16}
   boxSize: {x: 0.5, y: 0.05}
   groundLayer:
