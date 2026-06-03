@@ -483,6 +483,7 @@ public class PlayerController : MonoBehaviour
         if (!isDead)
         {
             isDead = true;
+            Destroy(LaunchLuciole.currentLuciole);
             Destroy(gameObject);
             GameManager.instance.ResetScene();
         }

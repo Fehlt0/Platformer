@@ -24,7 +24,7 @@ public class LaunchLuciole : MonoBehaviour
 
     private Vector2 aimDirection;
     
-    private GameObject currentLuciole;
+    public static GameObject currentLuciole;
     private bool lucioleAlreadyLaunched = false;
 
 
@@ -33,11 +33,7 @@ public class LaunchLuciole : MonoBehaviour
     public void Update()
     {
         aimDirection = Gamepad.current.rightStick.ReadValue();
-
-        if (gameObject == null)
-        {
-            Destroy(currentLuciole);
-        }
+        
     }
 
 
