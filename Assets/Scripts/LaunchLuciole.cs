@@ -27,9 +27,7 @@ public class LaunchLuciole : MonoBehaviour
     private GameObject currentLuciole;
     private bool lucioleAlreadyLaunched = false;
 
-
-
-
+    
     public void Update()
     {
         aimDirection = Gamepad.current.rightStick.ReadValue();
@@ -153,14 +151,10 @@ public class LaunchLuciole : MonoBehaviour
         RefpropulsionLuciole.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f, 0f, 180f);;
 
         StartCoroutine(PlayAnimReset());
-
-
     }
     
     private IEnumerator PlayAnimReset()
     {
-        
-        
         animatorRef.SetBool("isOnLuciole", true);
 
         yield return null;

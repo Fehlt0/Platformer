@@ -55,6 +55,7 @@ public class Luciole : MonoBehaviour
         }
         
     }
+    
     private void StickToTarget(Transform target)
     {
         rb.linearVelocity = Vector2.zero;
@@ -105,7 +106,6 @@ public class Luciole : MonoBehaviour
     
     private void OnDestroy()
     {
-        
         BulbPlant bulb = currentPlant as BulbPlant;
         if (bulb != null)
             bulb.SetHit(false);
@@ -117,11 +117,5 @@ public class Luciole : MonoBehaviour
                 currentPlant = null;
             }
         }
-            
-        
-        
     }
-
-
-    
 }
