@@ -385,10 +385,8 @@ public class PlayerController : MonoBehaviour
         }
         else if (!isGrounded && langueControll.wasHoldingTongue )
         {
-            Debug.Log("je debug un truc");
             langueControll.isGrappling = false;
             langueControll.wasHoldingTongue = false;
-            Debug.Log(jumpForceLangue);
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
         }
