@@ -101,6 +101,8 @@ public class LangueControll : MonoBehaviour
                 tongueProgress = 1f;
                 tongueGoing = false;
                 hasLatched = true;
+
+                currentTarget?.SetSpriteHanging(true);
             }
         }
 
@@ -127,7 +129,7 @@ public class LangueControll : MonoBehaviour
             return;
         }
         
-        currentTarget.SetColorOnTarget(false);
+        currentTarget.SetSpriteOnTarget(false);
         currentTarget = null;
     }
 
@@ -161,9 +163,9 @@ public class LangueControll : MonoBehaviour
             return;
         }
         
-        currentTarget?.SetColorOnTarget(false);
+        currentTarget?.SetSpriteOnTarget(false);
         currentTarget = nearest;
-        currentTarget?.SetColorOnTarget(true);
+        currentTarget?.SetSpriteOnTarget(true);
     }
 
     private void GrappleMove()
@@ -270,6 +272,8 @@ public class LangueControll : MonoBehaviour
 
         if (context.canceled)
         {
+            currentTarget?.SetSpriteHanging(false);
+            
             StopGrapple();
             hasLatched = false;
             animatorRef.SetBool("isOnTongue", false);
