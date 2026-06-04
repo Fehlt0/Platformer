@@ -21,7 +21,6 @@ public class CameraChange : MonoBehaviour
 
     private void OnTriggerExit2D(Collider2D other)
     {
-        Debug.Log("gsrhgrshr");
         if (other.CompareTag("Player"))
         {
             collider2D.isTrigger = false;
