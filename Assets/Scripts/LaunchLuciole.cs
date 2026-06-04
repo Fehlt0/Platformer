@@ -117,8 +117,6 @@ public class LaunchLuciole : MonoBehaviour
             collider.enabled = false;
         }
         
-
-
         StartCoroutine(ReturnToPlayer(rb));
     }
 
