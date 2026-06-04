@@ -6,11 +6,17 @@ public class LanguePlant : MonoBehaviour
     
     public static List<LanguePlant> listPlanteLangue = new List<LanguePlant>();
     
-    private SpriteRenderer sr;
+    [SerializeField] private Sprite spriteDefault;
+    [SerializeField] private Sprite spriteInRange;
+    [SerializeField] private Sprite spriteHanging;
+    
+    private SpriteRenderer spriteR;
+    
+    private bool ishanging;
 
     public void Awake()
     {
-        sr = GetComponent<SpriteRenderer>();
+        spriteR = GetComponent<SpriteRenderer>();
         listPlanteLangue.Add(this);
     }
 
@@ -19,10 +25,34 @@ public class LanguePlant : MonoBehaviour
         listPlanteLangue.Remove(this);
     }
 
-    public void SetColorOnTarget(bool active)
+    public void SetSpriteOnTarget(bool active)
     {
-        if (sr != null)
-            sr.color = active ? Color.blue : Color.red;
+        if (spriteR == null)
+        {
+            return;
+        }
+
+        if (!active)
+        {
+            ishanging = false;
+            spriteR.sprite = spriteDefault;
+        }
+        else
+        {
+            spriteR.sprite = ishanging ? spriteHanging : spriteInRange;
+        }
+            
+    }
+
+    public void SetSpriteHanging(bool hanging)
+    {
+        ishanging = hanging;
+        if (spriteR == null)
+        {
+            return;
+        }
+        
+        spriteR.sprite = hanging ? spriteHanging : spriteDefault;
     }
 
    

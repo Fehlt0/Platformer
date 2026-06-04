@@ -6,9 +6,14 @@ using UnityEngine.SceneManagement;
 public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
+    
+    private bool isPaused = false;
+    
+    [SerializeField] private GameObject pauseMenuUI;
 
     private void Awake()
     {
+        Time .timeScale = 1;
         if (instance == null)
         {
             instance = this;
@@ -51,5 +56,42 @@ public class GameManager : MonoBehaviour
         }
         Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
         CameraManager.instance.SetNewTarget(lastCamTarget);
+    }
+
+    public void Pause()
+    {
+        Time.timeScale = 0;
+        pauseMenuUI.SetActive(true);
+        Debug.Log("Canvas actif : " + pauseMenuUI.activeSelf);
+        
+        
+    }
+
+    public void Resume()
+    {
+        Time.timeScale = 1;
+        pauseMenuUI.SetActive(false);
+        
+    }
+
+    public void OnPauseMenu()
+    {
+        Debug.Log("OnPauseMenu");
+        
+        if (isPaused)
+        {
+            Resume();
+        }
+        else
+        {
+            Pause();
+        }
+        
+        isPaused = !isPaused;
+    }
+
+    public void Quit()
+    {
+        Application.Quit();
     }
 }
