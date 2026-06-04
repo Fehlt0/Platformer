@@ -32,7 +32,57 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
-  m_EditorHideFlags: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12004, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: 
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.ContainerWindow
+  m_PixelRect:
+    serializedVersion: 2
+    x: -1920
+    y: -61
+    width: 1920
+    height: 1009
+  m_ShowMode: 0
+  m_Title: Game
+  m_RootView: {fileID: 4}
+  m_MinSize: {x: 50, y: 76}
+  m_MaxSize: {x: 4000, y: 4026}
+  m_Maximized: 1
+--- !u!114 &3
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 12006, guid: 0000000000000000e000000000000000, type: 0}
+  m_Name: GameView
+  m_EditorClassIdentifier: UnityEditor.dll::UnityEditor.DockArea
+  m_Children: []
+  m_Position:
+    serializedVersion: 2
+    x: 0
+    y: 0
+    width: 1920
+    height: 1009
+  m_MinSize: {x: 50, y: 76}
+  m_MaxSize: {x: 4000, y: 4026}
+  m_ActualView: {fileID: 17}
+  m_Panes:
+  - {fileID: 17}
+  m_Selected: 0
+  m_LastSelected: 0
+--- !u!114 &4
+MonoBehaviour:
+  m_ObjectHideFlags: 52
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
   m_Script: {fileID: 12010, guid: 0000000000000000e000000000000000, type: 0}
   m_Name: 
   m_EditorClassIdentifier: 
@@ -618,7 +668,16 @@ MonoBehaviour:
       m_Data: 205654
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 80606
+    - m_Data: 80608
+    - m_Data: 80610
+    - m_Data: 80612
+    - m_Data: 80614
+    - m_Data: 80616
+    - m_Data: 80618
+    - m_Data: 80620
+    - m_Data: 80622
+    - m_Data: 80624
+    - m_Data: 80626
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -651,7 +710,16 @@ MonoBehaviour:
       m_Data: 0
     m_ExpandedIDs:
     - m_Data: 0
-    - m_Data: 80606
+    - m_Data: 80608
+    - m_Data: 80610
+    - m_Data: 80612
+    - m_Data: 80614
+    - m_Data: 80616
+    - m_Data: 80618
+    - m_Data: 80620
+    - m_Data: 80622
+    - m_Data: 80624
+    - m_Data: 80626
     m_RenameOverlay:
       m_UserAcceptedRename: 0
       m_Name: 
@@ -1353,9 +1421,9 @@ MonoBehaviour:
   m_AudioPlay: 0
   m_DebugDrawModesUseInteractiveLightBakingData: 0
   m_Position:
-    m_Target: {x: 296.62488, y: 69.36266, z: -0.14720081}
+    m_Target: {x: 362.8628, y: 119.645706, z: -0.6881403}
     speed: 2
-    m_Value: {x: 296.62488, y: 69.36266, z: -0.14720081}
+    m_Value: {x: -363.35468, y: 29.903397, z: -0.030550329}
   m_RenderMode: 0
   m_CameraMode:
     drawMode: 0
@@ -1405,9 +1473,9 @@ MonoBehaviour:
     speed: 2
     m_Value: {x: 0, y: 0, z: 0, w: 1}
   m_Size:
-    m_Target: 35.284374
+    m_Target: 88.383675
     speed: 2
-    m_Value: 35.284374
+    m_Value: 3.921065
   m_Ortho:
     m_Target: 1
     speed: 2
