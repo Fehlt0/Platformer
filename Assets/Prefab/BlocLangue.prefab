@@ -180,9 +180,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ebbbc9fa60dd94b46a385ca313ae54c3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: '::'
-  spriteDefault: {fileID: 2749061298113785705, guid: 0bddd319f2f7ec04fab3eeb3318bbaee, type: 3}
-  spriteInRange: {fileID: -331196399236608487, guid: f38eba85e4137bd4c8966ebe6d102ac3, type: 3}
-  spriteHanging: {fileID: 21300000, guid: 75689b786909d3248bb60ffc47b6bdc1, type: 3}
+  spriteDefault: {fileID: -4199159395038673434, guid: b2fbe8cda8618e44cac3d0d862b4af57, type: 3}
+  spriteInRange: {fileID: 2749061298113785705, guid: 0bddd319f2f7ec04fab3eeb3318bbaee, type: 3}
+  spriteHanging: {fileID: 9086604627481349999, guid: d125b7ad248b44d4ab44ba92ca35dc86, type: 3}
 --- !u!95 &816319389713595261
 Animator:
   serializedVersion: 7
