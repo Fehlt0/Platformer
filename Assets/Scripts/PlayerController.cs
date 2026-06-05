@@ -236,7 +236,7 @@ public class PlayerController : MonoBehaviour
             facingRight = !facingRight;
 
             Vector3 tetePos = langueControll.playerHead.transform.localPosition;
-            tetePos.x = facingRight ? 0.242f : -0.242f;
+            tetePos.x = facingRight ? 0.242f : -0f;
             langueControll.playerHead.transform.localPosition = tetePos;
 
         }
@@ -432,7 +432,6 @@ public class PlayerController : MonoBehaviour
             lightSphere.SetActive(true);
             canLamp = false;
             StartCoroutine(LampOffTimer());
-            animatorRef.SetBool("isFlashing", true);
         }
         
     }
@@ -441,7 +440,6 @@ public class PlayerController : MonoBehaviour
     {
         yield return new WaitForSeconds(lampTimer);
         canLamp = true;
-        animatorRef.SetBool("isFlashing", false);
         lightSphere.SetActive(false);
     }
     
