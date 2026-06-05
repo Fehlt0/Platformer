@@ -1000,7 +1000,7 @@ MonoBehaviour:
   firePoint: {fileID: 141112127335099985}
   animatorRef: {fileID: 0}
   lucioleAnimatorRef: {fileID: 0}
-  launchSpeed: 25
+  launchSpeed: 45
   returnSpeed: 40
   pointeur: {fileID: 2378635752514104430}
   RefpropulsionLuciole: {fileID: 1225201125059626360}
