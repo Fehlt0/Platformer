@@ -1,6 +1,7 @@
 using System;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 
 public class GameManager : MonoBehaviour
@@ -8,6 +9,8 @@ public class GameManager : MonoBehaviour
     public static GameManager instance;
     
     private bool isPaused = false;
+
+    private GameObject currentPlayer;
     
     [SerializeField] private GameObject pauseMenuUI;
 
@@ -28,7 +31,15 @@ public class GameManager : MonoBehaviour
 
     private void Start()
     {
-        Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
+        currentPlayer = Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
+    }
+
+    private void Update()
+    {
+        if (Keyboard.current.escapeKey.wasPressedThisFrame || Gamepad.current.startButton.wasPressedThisFrame)
+        {
+            OnPauseMenu();
+        }
     }
 
     public List<Plant> listPlant = new List<Plant>();
@@ -54,7 +65,7 @@ public class GameManager : MonoBehaviour
         {
             plant.ResetPlant();
         }
-        Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
+        currentPlayer = Instantiate(player, listCheckPoint[lastCheckpoint].position, Quaternion.identity);
         CameraManager.instance.SetNewTarget(lastCamTarget);
     }
 
@@ -62,8 +73,6 @@ public class GameManager : MonoBehaviour
     {
         Time.timeScale = 0;
         pauseMenuUI.SetActive(true);
-        Debug.Log("Canvas actif : " + pauseMenuUI.activeSelf);
-        
         
     }
 
@@ -93,5 +102,17 @@ public class GameManager : MonoBehaviour
     public void Quit()
     {
         Application.Quit();
+    }
+
+    public void ResetLevel()
+    {
+
+        foreach (var plant in listPlant)
+        {
+            plant.ResetPlant();
+        }
+        currentPlayer.transform.position = listCheckPoint[lastCheckpoint].position;
+        
+        CameraManager.instance.SetNewTarget(lastCamTarget);
     }
 }
