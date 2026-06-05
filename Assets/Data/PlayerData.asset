@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b434843ce11836b46afbe0a04191ca27, type: 3}
   m_Name: PlayerData
   m_EditorClassIdentifier: Assembly-CSharp::PlayerData
-  currentmoveSpeed: 11
-  airControlSpeed: 1.5
+  currentmoveSpeed: 13
+  airControlSpeed: 1.8
   jumpForce: 18
   multiplierStaticJump: 1.3
   groundCheckDistance: 0.18
