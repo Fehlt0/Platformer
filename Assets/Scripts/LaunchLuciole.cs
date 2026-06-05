@@ -9,9 +9,8 @@ public class LaunchLuciole : MonoBehaviour
     public GameObject luciolePrefab;
     public Transform firePoint;
     
-    
     public Animator animatorRef;
-    
+    public Animator lucioleAnimatorRef;
     
     
     public float launchSpeed = 10f;
@@ -98,11 +97,11 @@ public class LaunchLuciole : MonoBehaviour
         Rigidbody2D rb = currentLuciole.GetComponent<Rigidbody2D>();
         Luciole script = currentLuciole.GetComponent<Luciole>();
         CircleCollider2D collider = currentLuciole.GetComponent<CircleCollider2D>();
-        sprite = currentLuciole.GetComponent<SpriteRenderer>();
+        lucioleAnimatorRef = currentLuciole.GetComponent<Animator>();
         
         if (sprite != null)
         {
-            sprite.color = Color.red;
+            lucioleAnimatorRef.SetBool("isLauching", false);
         }
         
         rb.bodyType = RigidbodyType2D.Dynamic;
