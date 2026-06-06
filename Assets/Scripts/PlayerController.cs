@@ -124,7 +124,6 @@ public class PlayerController : MonoBehaviour
         CheckWall();
         JumpBuffer();
         PointeurPosition();
-        Drying();
         SwitchState();
         SwitchAnim();
     }
@@ -242,16 +241,6 @@ public class PlayerController : MonoBehaviour
         }
     }   
     
-
-    private void Drying()
-    {
-        dryCount -= 0.01f;
-        UIManager.instance.dryCountImage.fillAmount = dryCount / maxDryCount;
-        if (dryCount <= 0)
-        {
-            Die();
-        }
-    }
 
     private void PointeurPosition()
     {
