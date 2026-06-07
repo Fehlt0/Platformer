@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 7452a71db15fb0b4dae295b99b4eadb0
+guid: 437ac83ff3b62ec47820d741c9bdaa8e
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -5742589203108616787
-    second: LucioleTest2 1_0
+      213: -5165977490860142948
+    second: LucioleTest2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -100,7 +100,7 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: LucioleTest2 1_0
+      name: LucioleTest2_0
       rect:
         serializedVersion: 2
         x: 0
@@ -115,8 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: da5a7b99b893e40b0800000000000000
-      internalID: -5742589203108616787
+      spriteID: c9e0e93b7d2ce48b0800000000000000
+      internalID: -5165977490860142948
       vertices: []
       indices: 
       edges: []
@@ -125,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 1f9643b59946bf94b94631dde760c81e
+    spriteID: 4904d386b8a7114428068ff33532e892
     internalID: 0
     vertices: []
     indices: 
@@ -137,7 +137,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      LucioleTest2 1_0: -5742589203108616787
+      LucioleTest2_0: -5165977490860142948
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
