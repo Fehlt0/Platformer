@@ -25,6 +25,7 @@ public class PlayerController : MonoBehaviour
     public float maxDryCount = 10f;
     private float maxVelocity;
     private float jumpForceLangue;
+    private float autoJumpForceLangue;
     
     private Vector2 wallJumpForce = new Vector2(8f, 12f);
     private Vector2 boxSize = new Vector2(0.5f, 0.05f);
@@ -108,7 +109,11 @@ public class PlayerController : MonoBehaviour
         maxDryCount = playerData.dryCount;
         dryCount = maxDryCount;
         maxVelocity = playerData.maxVelocity;
+        
         jumpForceLangue = playerData.jumpForceLangue;
+        autoJumpForceLangue =  playerData.autoJumpForceLangue;
+        
+        
         currentWallJumpY = wallJumpForce.y;
 
         airControlSpeed = playerData.airControlSpeed;
@@ -376,6 +381,8 @@ public class PlayerController : MonoBehaviour
         {
             langueControll.isGrappling = false;
             langueControll.wasHoldingTongue = false;
+            langueControll.tongueGoing = false;
+            langueControll.tongueLine.enabled = false;
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
         }
@@ -473,4 +480,15 @@ public class PlayerController : MonoBehaviour
             GameManager.instance.ResetScene();
         }
     }
+    
+    public void TriggerTongueJump()
+    {
+
+        langueControll.isGrappling = false;
+        langueControll.wasHoldingTongue = false;
+        rb.AddForce(Vector2.up * autoJumpForceLangue, ForceMode2D.Impulse);
+    }
+    
+    
+    
 }
