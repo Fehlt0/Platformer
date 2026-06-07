@@ -1000,6 +1000,7 @@ MonoBehaviour:
   firePoint: {fileID: 141112127335099985}
   animatorRef: {fileID: 6789198014465418406}
   lucioleAnimatorRef: {fileID: 0}
+  lucioleParent: {fileID: 1225201125059626360}
   launchSpeed: 45
   returnSpeed: 40
   pointeur: {fileID: 2378635752514104430}
