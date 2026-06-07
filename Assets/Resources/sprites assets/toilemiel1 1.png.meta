@@ -1,16 +1,22 @@
 fileFormatVersion: 2
-guid: a7718abcefe0ffc44b4e6775e1013d31
+guid: 9e3bb42c44a6a524ba1d0c453b9b6519
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7437041970020755962
-    second: spikes platformer_0
+      213: 7404402153356360732
+    second: toilemiel1 1_0
   - first:
-      213: -4210064727878224061
-    second: spikes platformer_1
+      213: 6547800153459899941
+    second: toilemiel1 1_1
   - first:
-      213: -2201012056229890868
-    second: spikes platformer_2
+      213: 781390621920393680
+    second: toilemiel1 1_2
+  - first:
+      213: 899246857253821925
+    second: toilemiel1 1_3
+  - first:
+      213: 7061909068928782436
+    second: toilemiel1 1_4
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,88 +112,111 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: spikes platformer_0
+      name: toilemiel1 1_0
       rect:
         serializedVersion: 2
-        x: 114
-        y: 656
-        width: 774
-        height: 378
+        x: 63
+        y: 593
+        width: 480
+        height: 450
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -387, y: 101}
-        - {x: -387, y: -189}
-        - {x: -120, y: -189}
-        - {x: 330, y: -189}
-        - {x: 387, y: -125}
-        - {x: 387, y: -31}
-        - {x: 317, y: 189}
-        - {x: -387, y: 189}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: af922c2c44ea53760800000000000000
-      internalID: 7437041970020755962
+      spriteID: c1c71fc3788b1c660800000000000000
+      internalID: 7404402153356360732
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spikes platformer_1
+      name: toilemiel1 1_1
       rect:
         serializedVersion: 2
-        x: 855
-        y: 654
-        width: 443
-        height: 392
+        x: 1171
+        y: 621
+        width: 520
+        height: 286
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -221.5, y: 55}
-        - {x: -178.5, y: -72}
-        - {x: -221.5, y: -196}
-        - {x: 166.5, y: -196}
-        - {x: 221.5, y: -109}
-        - {x: 221.5, y: 196}
-        - {x: -221.5, y: 196}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 347ba659f68d295c0800000000000000
-      internalID: -4210064727878224061
+      spriteID: 52eb93f3c857eda50800000000000000
+      internalID: 6547800153459899941
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: spikes platformer_2
+      name: toilemiel1 1_2
       rect:
         serializedVersion: 2
-        x: 1259
-        y: 641
-        width: 995
-        height: 372
+        x: 129
+        y: 71
+        width: 630
+        height: 402
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -411.5, y: -45}
-        - {x: -497.5, y: -114}
-        - {x: -497.5, y: -186}
-        - {x: 497.5, y: -186}
-        - {x: 497.5, y: 186}
-        - {x: -497.5, y: 186}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: cc4b012423f6471e0800000000000000
-      internalID: -2201012056229890868
+      spriteID: 0d9f26271ae08da00800000000000000
+      internalID: 781390621920393680
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toilemiel1 1_3
+      rect:
+        serializedVersion: 2
+        x: 885
+        y: 147
+        width: 506
+        height: 266
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 5ed10049044ca7c00800000000000000
+      internalID: 899246857253821925
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: toilemiel1 1_4
+      rect:
+        serializedVersion: 2
+        x: 1571
+        y: 173
+        width: 184
+        height: 396
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 4601c91f1e0f00260800000000000000
+      internalID: 7061909068928782436
       vertices: []
       indices: 
       edges: []
@@ -196,7 +225,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: cc9cc3e13a8bf38438bd8fcc0b10e9e7
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -206,9 +235,11 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      spikes platformer_0: 7437041970020755962
-      spikes platformer_1: -4210064727878224061
-      spikes platformer_2: -2201012056229890868
+      toilemiel1 1_0: 7404402153356360732
+      toilemiel1 1_1: 6547800153459899941
+      toilemiel1 1_2: 781390621920393680
+      toilemiel1 1_3: 899246857253821925
+      toilemiel1 1_4: 7061909068928782436
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

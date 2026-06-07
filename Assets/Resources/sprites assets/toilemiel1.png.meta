@@ -1,16 +1,16 @@
 fileFormatVersion: 2
-guid: 2fe2de283280647489a3705915064c95
+guid: 0d788f3a39db668448b8a09aa05b3bf6
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 1108026747520023707
-    second: Placeholder_ronces__0
+      213: -4847006087632885215
+    second: toilemiel1_0
   - first:
-      213: 1617068874757387640
-    second: Placeholder_ronces__1
+      213: 6515091885817432958
+    second: toilemiel1_1
   - first:
-      213: -7351966113082008999
-    second: Placeholder_ronces__2
+      213: -8105460625866915077
+    second: toilemiel1_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,87 +106,67 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: Placeholder_ronces__0
+      name: toilemiel1_0
       rect:
         serializedVersion: 2
-        x: 34
-        y: 820
-        width: 966
-        height: 471
+        x: 73
+        y: 823
+        width: 336
+        height: 190
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -483, y: -235.5}
-        - {x: 483, y: -235.5}
-        - {x: 483, y: -45.5}
-        - {x: 398, y: 235.5}
-        - {x: -483, y: 235.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: b9cff8fc470806f00800000000000000
-      internalID: 1108026747520023707
+      spriteID: 12a6c72d4a9fbbcb0800000000000000
+      internalID: -4847006087632885215
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_ronces__1
+      name: toilemiel1_1
       rect:
         serializedVersion: 2
-        x: 960
-        y: 818
-        width: 552
-        height: 487
+        x: 819
+        y: 391
+        width: 1101
+        height: 498
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -276, y: 146.5}
-        - {x: -203, y: -98.5}
-        - {x: -276, y: -243.5}
-        - {x: 222, y: -243.5}
-        - {x: 276, y: -145.5}
-        - {x: 276, y: 243.5}
-        - {x: -276, y: 243.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 8753141f29bf07610800000000000000
-      internalID: 1617068874757387640
+      spriteID: e7b8d2d3d814a6a50800000000000000
+      internalID: 6515091885817432958
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: Placeholder_ronces__2
+      name: toilemiel1_2
       rect:
         serializedVersion: 2
-        x: 1466
-        y: 801
-        width: 1240
-        height: 463
+        x: 37
+        y: 23
+        width: 516
+        height: 378
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -620, y: -231.5}
-        - {x: 67, y: -231.5}
-        - {x: 21, y: 231.5}
-        - {x: -620, y: 231.5}
-      - - {x: 64, y: -231.5}
-        - {x: 620, y: -231.5}
-        - {x: 620, y: 231.5}
-        - {x: 86, y: 231.5}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 95a9905c5c198f990800000000000000
-      internalID: -7351966113082008999
+      spriteID: bf2894e518e938f80800000000000000
+      internalID: -8105460625866915077
       vertices: []
       indices: 
       edges: []
@@ -195,7 +175,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: b7d5b007b1375fa4e88c6541a5cebb76
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -205,9 +185,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      Placeholder_ronces__0: 1108026747520023707
-      Placeholder_ronces__1: 1617068874757387640
-      Placeholder_ronces__2: -7351966113082008999
+      toilemiel1_0: -4847006087632885215
+      toilemiel1_1: 6515091885817432958
+      toilemiel1_2: -8105460625866915077
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

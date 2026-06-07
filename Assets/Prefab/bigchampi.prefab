@@ -81,7 +81,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: -208694715383193473, guid: be248530de3f73348a4050a7da484068, type: 3}
+  m_Sprite: {fileID: -1225243173552832686, guid: 3decccad744fea743926da2b79b102cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -106,7 +106,7 @@ GameObject:
   - component: {fileID: 6300767432769583086}
   - component: {fileID: 4965284566519920517}
   m_Layer: 0
-  m_Name: Champi
+  m_Name: bigchampi
   m_TagString: plant
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -178,7 +178,7 @@ SpriteRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 1
   m_MaskInteraction: 0
-  m_Sprite: {fileID: 1390812845638516906, guid: 70fd5ecfc9c72d04285656108fcac361, type: 3}
+  m_Sprite: {fileID: -1225243173552832686, guid: 3decccad744fea743926da2b79b102cd, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
@@ -242,7 +242,7 @@ Animator:
   m_GameObject: {fileID: 8632155052844384070}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: a33c3c24dd43c3e45b4d8d58b3fc72fd, type: 2}
+  m_Controller: {fileID: 9100000, guid: b345c5efc9cf51b4a9d37690687715b9, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -288,8 +288,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0052030236, y: 0.1977439}
-  m_Size: {x: 1.0913571, y: 1.2392983}
+  m_Offset: {x: 0.016511703, y: 0.3036948}
+  m_Size: {x: 2.562237, y: 2.9646232}
   m_Direction: 1
 --- !u!1001 &9026455006223261337
 PrefabInstance:
@@ -299,6 +299,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 4303868552970595819}
     m_Modifications:
+    - target: {fileID: 4170354906512895383, guid: 4bc439aa213058f438e956a873d844f7, type: 3}
+      propertyPath: ShapeModule.radius.value
+      value: 1.58
+      objectReference: {fileID: 0}
     - target: {fileID: 7052547955053245662, guid: 4bc439aa213058f438e956a873d844f7, type: 3}
       propertyPath: m_Name
       value: particulebumper
