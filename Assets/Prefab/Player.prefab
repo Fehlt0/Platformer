@@ -998,10 +998,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::LaunchLuciole
   luciolePrefab: {fileID: 708272399311144551, guid: a93f7d75477a7f640b32b9c00ec23b3a, type: 3}
   firePoint: {fileID: 141112127335099985}
-  animatorRef: {fileID: 0}
+  animatorRef: {fileID: 6789198014465418406}
   lucioleAnimatorRef: {fileID: 0}
-  lucioleLauncher: {fileID: 1225201125059626360}
-  launchAnimLength: 1
   launchSpeed: 45
   returnSpeed: 40
   pointeur: {fileID: 2378635752514104430}
@@ -1349,6 +1347,7 @@ GameObject:
   m_Component:
   - component: {fileID: 7572616360151419271}
   - component: {fileID: 4217007561163828359}
+  - component: {fileID: 6789198014465418406}
   m_Layer: 0
   m_Name: LuciolePlaceHolder
   m_TagString: Untagged
@@ -1430,3 +1429,25 @@ SpriteRenderer:
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_SpriteSortPoint: 0
+--- !u!95 &6789198014465418406
+Animator:
+  serializedVersion: 7
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8443434747231692401}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: 7c6fa3800228a934fb4e6df406445bed, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_AnimatePhysics: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0

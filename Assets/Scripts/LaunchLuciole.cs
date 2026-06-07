@@ -9,10 +9,9 @@ public class LaunchLuciole : MonoBehaviour
     public GameObject luciolePrefab;
     public Transform firePoint;
     
+    public Animator animatorRef;
     public Animator lucioleAnimatorRef;
-
-    public GameObject lucioleLauncher;
-    public float launchAnimLength;
+    public GameObject lucioleParent;
     
     
     public float launchSpeed = 10f;
@@ -32,6 +31,7 @@ public class LaunchLuciole : MonoBehaviour
     public void Update()
     {
         aimDirection = Gamepad.current.rightStick.ReadValue();
+        
     }
 
 
@@ -148,13 +148,13 @@ public class LaunchLuciole : MonoBehaviour
     
     private IEnumerator PlayAnimReset()
     {
-        lucioleLauncher.SetActive(true);
+        lucioleParent.SetActive(true);
 
         yield return null;
+
+        yield return new WaitForSeconds(animatorRef.GetCurrentAnimatorStateInfo(0).length);
         
-        yield return new WaitForSeconds(launchAnimLength);
-    
-        lucioleLauncher.SetActive(false);
+        lucioleParent.SetActive(false);
     }
 
 }
