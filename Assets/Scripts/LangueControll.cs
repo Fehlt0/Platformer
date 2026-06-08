@@ -81,7 +81,7 @@ public class LangueControll : MonoBehaviour
         {
             GrappleMove();
         }
-        else
+        else if(!tongueGoing)
         {
             ClearTarget();
         }
@@ -273,6 +273,7 @@ public class LangueControll : MonoBehaviour
     {
         if (context.performed)
         {
+            UpdateTarget();
             if (currentTarget == null)
             {
                 return;
