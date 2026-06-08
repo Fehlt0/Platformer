@@ -229,6 +229,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
+  aliveClip: {fileID: 8300000, guid: a0b097668ff395f4b80c66ed1a489a90, type: 3}
+  decayClip: {fileID: 0}
   isAlive: 0
   hasBulb: 0
   strength: 500

@@ -15,6 +15,7 @@ public class LangueControll : MonoBehaviour
     [SerializeField] private LayerMask obstacleLayer;
 
 
+    [SerializeField] private AudioClip tongueClip;
     [SerializeField] public LineRenderer tongueLine;
     [SerializeField] private Transform mouthPoint;
     [SerializeField] private Transform tongueTip;
@@ -195,6 +196,7 @@ public class LangueControll : MonoBehaviour
 
         grapplePoint = nearest.transform.position;
         AnimLangue();
+        
 
         Vector2 origin = transform.position;
         Vector2 dir = (grapplePoint - origin).normalized;
@@ -258,8 +260,13 @@ public class LangueControll : MonoBehaviour
 
     private void AnimLangue()
     {
+        if (animatorRef.GetBool("isOnTongue") == false)
+        {
+            AudioManager.instance.PlayAudioClip(tongueClip);
+        }
         animatorRef.SetBool("isOnTongue", true);
         headSpriteRenderer.flipX = !playerController.facingRight;
+        
     }
 
     private void StopGrapple()

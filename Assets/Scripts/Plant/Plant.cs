@@ -9,6 +9,8 @@ public abstract class Plant : MonoBehaviour, IPlant
     private bool isHitByLuciole;
 
     private Animator animatorRef;
+    public AudioClip aliveClip;
+    public  AudioClip decayClip;
     
     public bool isAlive;
     public bool hasBulb;
@@ -34,6 +36,10 @@ public abstract class Plant : MonoBehaviour, IPlant
     {
         if (other.CompareTag("Light") && !hasBulb)
         {
+            if (animatorRef.GetBool("isAlive") == false)
+            {
+                AudioManager.instance.PlayAudioClip(aliveClip);
+            }
             timeUntilDecay = baseTimeUntilDecay;
         }
     }

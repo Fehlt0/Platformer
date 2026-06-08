@@ -483,7 +483,6 @@ public class PlayerController : MonoBehaviour
     
     public void TriggerTongueJump()
     {
-
         langueControll.isGrappling = false;
         langueControll.wasHoldingTongue = false;
         rb.AddForce(Vector2.up * autoJumpForceLangue, ForceMode2D.Impulse);

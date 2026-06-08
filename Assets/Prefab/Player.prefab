@@ -15467,6 +15467,7 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
+  tongueClip: {fileID: 8300000, guid: 343cd31eaeedef14e86d4d0871205bd8, type: 3}
   tongueLine: {fileID: -4433647437144218176}
   mouthPoint: {fileID: 4191907138082063214}
   tongueTip: {fileID: 5357453113590400469, guid: 7b3b8e3b5175ac84e8ac58ccb9b60ab8, type: 3}
