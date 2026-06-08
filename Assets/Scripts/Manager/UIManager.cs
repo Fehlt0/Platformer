@@ -22,7 +22,7 @@ public class UIManager : MonoBehaviour
     public GameObject pauseMenu;
     public GameObject deathMenu;
 
-    public Image dryCountImage;
+    
     
     
     public void ReloadScene()

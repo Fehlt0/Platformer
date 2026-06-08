@@ -11,6 +11,7 @@ public class LaunchLuciole : MonoBehaviour
     
     public Animator animatorRef;
     public Animator lucioleAnimatorRef;
+    public GameObject lucioleParent;
     
     
     public float launchSpeed = 10f;
@@ -140,7 +141,6 @@ public class LaunchLuciole : MonoBehaviour
     
     private void AnimLucioleLaunch()
     {
-        animatorRef = GetComponent<Animator>();
         RefpropulsionLuciole.transform.rotation = pointeur.transform.rotation * Quaternion.Euler(0f, 0f, 180f);;
 
         StartCoroutine(PlayAnimReset());
@@ -148,14 +148,13 @@ public class LaunchLuciole : MonoBehaviour
     
     private IEnumerator PlayAnimReset()
     {
-        animatorRef.SetBool("isOnLuciole", true);
+        lucioleParent.SetActive(true);
 
         yield return null;
-    
 
         yield return new WaitForSeconds(animatorRef.GetCurrentAnimatorStateInfo(0).length);
-    
-        animatorRef.SetBool("isOnLuciole", false);
+        
+        lucioleParent.SetActive(false);
     }
 
 }

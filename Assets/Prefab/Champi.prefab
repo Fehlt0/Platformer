@@ -79,7 +79,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: -208694715383193473, guid: be248530de3f73348a4050a7da484068, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -176,7 +176,7 @@ SpriteRenderer:
   m_GlobalIlluminationMeshLod: 0
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: 1
   m_MaskInteraction: 0
   m_Sprite: {fileID: 1390812845638516906, guid: 70fd5ecfc9c72d04285656108fcac361, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -288,8 +288,8 @@ CapsuleCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: 0.0030846898, y: 0.0000005930614}
-  m_Size: {x: 0.9006719, y: 0.8438026}
+  m_Offset: {x: 0.0052030236, y: 0.1977439}
+  m_Size: {x: 1.0913571, y: 1.2392983}
   m_Direction: 1
 --- !u!1001 &9026455006223261337
 PrefabInstance:
