@@ -182,7 +182,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   spriteDefault: {fileID: -4199159395038673434, guid: b2fbe8cda8618e44cac3d0d862b4af57, type: 3}
   spriteInRange: {fileID: 2749061298113785705, guid: 0bddd319f2f7ec04fab3eeb3318bbaee, type: 3}
-  spriteHanging: {fileID: 9086604627481349999, guid: d125b7ad248b44d4ab44ba92ca35dc86, type: 3}
+  spriteHanging: {fileID: -7664855652579512093, guid: 806c2280658281949ab06b610c4bef66, type: 3}
 --- !u!95 &816319389713595261
 Animator:
   serializedVersion: 7
