@@ -269,6 +269,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Champi_01
       objectReference: {fileID: 0}
+    - target: {fileID: 8632155052844384070, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
+      propertyPath: m_TagString
+      value: Untagged
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
