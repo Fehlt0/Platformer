@@ -18,18 +18,10 @@ public class AudioManager : MonoBehaviour
         
     }
     
-    [SerializeField] private AudioClip mainMusic;
     [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource audioSource;
 
-
-
-    private void Start()
-    {
-        musicSource.clip = mainMusic;
-        musicSource.loop = true;
-        musicSource.Play();
-    }
+    
 
     public void PlayAudioClip(AudioClip clip)
     {

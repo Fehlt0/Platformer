@@ -270,6 +270,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: Assembly-CSharp::PlantPlatform
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
+  aliveClip: {fileID: 8300000, guid: 16e4e9949d44df84db1e256364e155e8, type: 3}
   isAlive: 0
   hasBulb: 0
 --- !u!50 &9030301918532956678

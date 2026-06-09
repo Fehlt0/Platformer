@@ -62,7 +62,6 @@ public class Luciole : MonoBehaviour
     
     private void StickToTarget(Transform target)
     {
-        AudioManager.instance.PlayAudioClip(EndCourseLucioleClip);
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         transform.parent = target;

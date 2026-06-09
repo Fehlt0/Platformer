@@ -52,6 +52,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 59d99820c8740144dbc57e9383d89ceb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Luciole
+  EndCourseLucioleClip: {fileID: 8300000, guid: 102c903a34fe78b4f81fe65c8d53f794, type: 3}
+  BounceLucioleClip: {fileID: 8300000, guid: 4dbd714cc4cfcb6498219284b5894714, type: 3}
+  LaunchLucioleClip: {fileID: 8300000, guid: e71b8ca544cd9b44dad18dcdb5fac8f0, type: 3}
   bounceForce: 10
   hasBounce: 0
   direction: {x: 4, y: 8}
