@@ -22,12 +22,11 @@ public class BulbPlant : Plant
     {
         if (other.CompareTag("Light"))
         {
-            timeUntilDecay = baseTimeUntilDecay;
             if (childPlant != null)
             {
                 childPlant.timeUntilDecay = childPlant.baseTimeUntilDecay;
+                timeUntilDecay = baseTimeUntilDecay;
             }
-
         }
     }
 
@@ -36,14 +35,11 @@ public class BulbPlant : Plant
         if (childPlant != null)
             childPlant.SetHit(value);
     }
-
-    public override void IfIsAlive()
-    {
-        base.IfIsAlive();
-    }
+    
     public override void ResetPlant()
     {
         timeUntilDecay = 0;
         isAlive = false;
     }
+    
 }

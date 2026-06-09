@@ -16,7 +16,7 @@ GameObject:
   - component: {fileID: 8369117967223875390}
   m_Layer: 7
   m_Name: Luciole
-  m_TagString: Untagged
+  m_TagString: Light
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

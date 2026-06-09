@@ -44,7 +44,7 @@ public abstract class Plant : MonoBehaviour, IPlant
         IfIsAlive();
     }
 
-    private void Decaying()
+    protected virtual void Decaying()
     {
         if (isHitByLuciole)
         {
