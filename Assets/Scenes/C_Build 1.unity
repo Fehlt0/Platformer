@@ -93561,8 +93561,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   pauseMenuUI: {fileID: 918452824}
   listPlant: []
-  lastCheckpoint: 0
-  lastCamTarget: 0
+  lastCheckpoint: 34
+  lastCamTarget: 25
   listCheckPoint:
   - {fileID: 994595944}
   - {fileID: 814181650}
