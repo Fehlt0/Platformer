@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 0d788f3a39db668448b8a09aa05b3bf6
+guid: 7b6cc908d7e488e41be7e97bd1c36fd5
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -4847006087632885215
-    second: toilemiel1_0
-  - first:
-      213: 6515091885817432958
-    second: toilemiel1_1
-  - first:
-      213: -8105460625866915077
-    second: toilemiel1_2
+      213: -5259133918915513869
+    second: particulespatate 1_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toilemiel1_0
+      name: particulespatate 1_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 823
-        width: 336
-        height: 190
+        x: 8
+        y: 9
+        width: 234
+        height: 235
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,52 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 12a6c72d4a9fbbcb0800000000000000
-      internalID: -4847006087632885215
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toilemiel1_1
-      rect:
-        serializedVersion: 2
-        x: 819
-        y: 391
-        width: 1101
-        height: 498
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: e7b8d2d3d814a6a50800000000000000
-      internalID: 6515091885817432958
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toilemiel1_2
-      rect:
-        serializedVersion: 2
-        x: 37
-        y: 23
-        width: 516
-        height: 378
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: bf2894e518e938f80800000000000000
-      internalID: -8105460625866915077
+      spriteID: 3f135d8909dc307b0800000000000000
+      internalID: -5259133918915513869
       vertices: []
       indices: 
       edges: []
@@ -185,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toilemiel1_0: -4847006087632885215
-      toilemiel1_1: 6515091885817432958
-      toilemiel1_2: -8105460625866915077
+      particulespatate 1_0: -5259133918915513869
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

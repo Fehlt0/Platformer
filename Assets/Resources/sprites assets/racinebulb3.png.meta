@@ -1,13 +1,16 @@
 fileFormatVersion: 2
-guid: 1eb3d8c463e087242a8d3da0460b69aa
+guid: 101c55a98e9c2854db40b2ddff258403
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8985390644965646782
-    second: toilemiel_0
+      213: 2942664553449487497
+    second: racinebulb3_0
   - first:
-      213: 8946467135720204770
-    second: toilemiel_1
+      213: -3245323456914562515
+    second: racinebulb3_1
+  - first:
+      213: 7405417805355981206
+    second: racinebulb3_2
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,45 +106,75 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toilemiel_0
+      name: racinebulb3_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 251
-        width: 1143
-        height: 829
+        x: 84
+        y: 0
+        width: 262
+        height: 724
       alignment: 0
-      pivot: {x: 0, y: 0}
+      pivot: {x: 0.5, y: 0.5}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: eb1ab495f2582bc70800000000000000
-      internalID: 8985390644965646782
+      spriteID: 98c7d7902d176d820800000000000000
+      internalID: 2942664553449487497
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilemiel_1
+      name: racinebulb3_1
       rect:
         serializedVersion: 2
-        x: 1531
-        y: 159
-        width: 389
-        height: 542
+        x: 789
+        y: 0
+        width: 247
+        height: 1020
       alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 80}
       customData: 
-      outline: []
+      outline:
+      - - {x: -123.5, y: -510}
+        - {x: 123.5, y: -510}
+        - {x: 123.5, y: 287}
+        - {x: -123.5, y: 268}
       physicsShape: []
-      tessellationDetail: -1
+      tessellationDetail: 0
       bones: []
-      spriteID: 2e92f43a57c382c70800000000000000
-      internalID: 8946467135720204770
+      spriteID: d226d59a28b46f2d0800000000000000
+      internalID: -3245323456914562515
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: racinebulb3_2
+      rect:
+        serializedVersion: 2
+        x: 1475
+        y: 0
+        width: 125
+        height: 878
+      alignment: 0
+      pivot: {x: 0.5, y: 0.5}
+      border: {x: 0, y: 0, z: 0, w: 139}
+      customData: 
+      outline:
+      - - {x: -62.5, y: -439}
+        - {x: 62.5, y: -439}
+        - {x: 62.5, y: 288}
+        - {x: -62.5, y: 338}
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 6999895224455c660800000000000000
+      internalID: 7405417805355981206
       vertices: []
       indices: 
       edges: []
@@ -150,7 +183,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 
+    spriteID: 135be9dc1e06dcf488e40517ddae1953
     internalID: 0
     vertices: []
     indices: 
@@ -160,8 +193,9 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toilemiel_0: 8985390644965646782
-      toilemiel_1: 8946467135720204770
+      racinebulb3_0: 2942664553449487497
+      racinebulb3_1: -3245323456914562515
+      racinebulb3_2: 7405417805355981206
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
