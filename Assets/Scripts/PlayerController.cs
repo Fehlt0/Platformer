@@ -379,6 +379,7 @@ public class PlayerController : MonoBehaviour
             
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
         }
         else if (!isGrounded && langueControll.wasHoldingTongue )
         {
@@ -388,12 +389,14 @@ public class PlayerController : MonoBehaviour
             langueControll.tongueLine.enabled = false;
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
         }
         else if (isGrounded && Mathf.Abs(moveInput.x) < 0.01f && !langueControll.wasHoldingTongue)
         {
 
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * multiplierStaticJump);
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
         }
         
         else
@@ -401,6 +404,7 @@ public class PlayerController : MonoBehaviour
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             coyoteTimeCounter = 0f;
             AudioManager.instance.PlayAudioClip(JumpClip);
+            
         }
 
     }

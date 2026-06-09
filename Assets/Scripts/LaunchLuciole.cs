@@ -22,6 +22,8 @@ public class LaunchLuciole : MonoBehaviour
     [SerializeField] private GameObject pointeur;
     [SerializeField] private GameObject RefpropulsionLuciole;
 
+    [SerializeField] private AudioClip LaunchLucioleClip;
+    
     private Vector2 aimDirection;
     
     public static GameObject currentLuciole;
@@ -63,7 +65,7 @@ public class LaunchLuciole : MonoBehaviour
             return;
         }
         
-        
+        AudioManager.instance.PlayAudioClip(LaunchLucioleClip);
 
         Vector2 direction = aimDirection.normalized;
         

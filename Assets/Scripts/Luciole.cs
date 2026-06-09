@@ -3,7 +3,10 @@ using UnityEngine;
 
 public class Luciole : MonoBehaviour
 {
-
+    [SerializeField] private AudioClip EndCourseLucioleClip;
+    [SerializeField] private AudioClip BounceLucioleClip;
+    [SerializeField] private AudioClip LaunchLucioleClip;
+    
     public float bounceForce;
     
     public bool hasBounce = false;
@@ -17,6 +20,7 @@ public class Luciole : MonoBehaviour
 
     private void Start()
     {
+        AudioManager.instance.PlayAudioClip(LaunchLucioleClip);
         rb = GetComponent<Rigidbody2D>();
         
     }
@@ -58,6 +62,7 @@ public class Luciole : MonoBehaviour
     
     private void StickToTarget(Transform target)
     {
+        AudioManager.instance.PlayAudioClip(EndCourseLucioleClip);
         rb.linearVelocity = Vector2.zero;
         rb.bodyType = RigidbodyType2D.Kinematic;
         transform.parent = target;
@@ -79,8 +84,9 @@ public class Luciole : MonoBehaviour
     
     private void Bounce(Collision2D collision)
     {
+        AudioManager.instance.PlayAudioClip(BounceLucioleClip);
         Vector2 normal = collision.contacts[0].normal;
-
+        
         Vector2 reflected = Vector2.Reflect(rb.linearVelocity, normal);
 
         rb.linearVelocity = reflected;
@@ -88,6 +94,7 @@ public class Luciole : MonoBehaviour
 
     private void StopProjectile()
     {
+        AudioManager.instance.PlayAudioClip(EndCourseLucioleClip);
         BulbPlant bulb = currentPlant as BulbPlant;
         if (bulb != null)
             bulb.SetHit(false);
