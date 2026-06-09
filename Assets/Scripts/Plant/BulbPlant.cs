@@ -22,6 +22,7 @@ public class BulbPlant : Plant
     {
         if (other.CompareTag("Light"))
         {
+            timeUntilDecay = baseTimeUntilDecay;
             if (childPlant != null)
             {
                 childPlant.timeUntilDecay = childPlant.baseTimeUntilDecay;
