@@ -1,16 +1,10 @@
 fileFormatVersion: 2
-guid: 101c55a98e9c2854db40b2ddff258403
+guid: 7a607d559ddc503468af3d7df6cbda89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2942664553449487497
-    second: racinebulb3_0
-  - first:
-      213: -3245323456914562515
-    second: racinebulb3_1
-  - first:
-      213: 7405417805355981206
-    second: racinebulb3_2
+      213: 2287442920186821784
+    second: housefrog2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,75 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: racinebulb3_0
+      name: housefrog2_0
       rect:
         serializedVersion: 2
-        x: 84
-        y: 0
-        width: 262
-        height: 724
+        x: 1038
+        y: 376
+        width: 315
+        height: 628
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
       outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 98c7d7902d176d820800000000000000
-      internalID: 2942664553449487497
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: racinebulb3_1
-      rect:
-        serializedVersion: 2
-        x: 789
-        y: 0
-        width: 247
-        height: 1020
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 80}
-      customData: 
-      outline:
-      - - {x: -123.5, y: -510}
-        - {x: 123.5, y: -510}
-        - {x: 123.5, y: 287}
-        - {x: -123.5, y: 268}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: d226d59a28b46f2d0800000000000000
-      internalID: -3245323456914562515
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: racinebulb3_2
-      rect:
-        serializedVersion: 2
-        x: 1475
-        y: 0
-        width: 125
-        height: 878
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 139}
-      customData: 
-      outline:
-      - - {x: -62.5, y: -439}
-        - {x: 62.5, y: -439}
-        - {x: 62.5, y: 288}
-        - {x: -62.5, y: 338}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 6999895224455c660800000000000000
-      internalID: 7405417805355981206
+      spriteID: 89cb7bd6731aebf10800000000000000
+      internalID: 2287442920186821784
       vertices: []
       indices: 
       edges: []
@@ -183,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 135be9dc1e06dcf488e40517ddae1953
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -193,9 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      racinebulb3_0: 2942664553449487497
-      racinebulb3_1: -3245323456914562515
-      racinebulb3_2: 7405417805355981206
+      housefrog2_0: 2287442920186821784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

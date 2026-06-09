@@ -332,6 +332,10 @@ PrefabInstance:
       propertyPath: hasBulb
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 6300767432769583086, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
+      propertyPath: m_Controller
+      value: 
+      objectReference: {fileID: 9100000, guid: 216582c560a43c348aa3b05c8826f097, type: 2}
     - target: {fileID: 8632155052844384070, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
       propertyPath: m_Name
       value: Champi_01
@@ -341,7 +345,8 @@ PrefabInstance:
       value: Untagged
       objectReference: {fileID: 0}
     m_RemovedComponents: []
-    m_RemovedGameObjects: []
+    m_RemovedGameObjects:
+    - {fileID: 2061461151486634567, guid: 017ee8f04be978743a3c378991d1df77, type: 3}
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 017ee8f04be978743a3c378991d1df77, type: 3}

@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: b9ce19b8251bb4440bf6fe0f3972ec8e
+guid: 7c6e834d29833254dbad84e6a682c1a9
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8836038735121277119
-    second: liane tableau_0
-  - first:
-      213: -4579188225198790269
-    second: liane tableau_1
+      213: -5562541147702437630
+    second: bulbedbigchampi_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,53 +100,23 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: liane tableau_0
+      name: bulbedbigchampi_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 15
-        height: 142
+        x: 1171
+        y: 409
+        width: 255
+        height: 253
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -7.5, y: -61}
-        - {x: 7.5, y: -61}
-        - {x: 7.5, y: 51}
-        - {x: -7.5, y: 51}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 14f1183f595106580800000000000000
-      internalID: -8836038735121277119
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: liane tableau_1
-      rect:
-        serializedVersion: 2
-        x: 470
-        y: 11
-        width: 15
-        height: 138
-      alignment: 0
-      pivot: {x: 0.5, y: 0.5}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline:
-      - - {x: -7.5, y: -58}
-        - {x: 7.5, y: -58}
-        - {x: 7.5, y: 61}
-        - {x: -7.5, y: 61}
-      physicsShape: []
-      tessellationDetail: 0
-      bones: []
-      spriteID: 389ef5d12947370c0800000000000000
-      internalID: -4579188225198790269
+      spriteID: 209d3ba3c42edc2b0800000000000000
+      internalID: -5562541147702437630
       vertices: []
       indices: 
       edges: []
@@ -158,7 +125,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 131331c78f998ee4ca1f8fa91026c071
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -168,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      liane tableau_0: -8836038735121277119
-      liane tableau_1: -4579188225198790269
+      bulbedbigchampi_0: -5562541147702437630
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
