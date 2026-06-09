@@ -1,16 +1,28 @@
 fileFormatVersion: 2
-guid: 49a44d268e680954d9c9db08d5fe683b
+guid: dc82ca858fcf3764db767f8321e21618
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7013470837562238731
-    second: toilemiel2_0
+      213: -6847229724417474997
+    second: racinebulb_0
   - first:
-      213: -1448323011501648731
-    second: toilemiel2_1
+      213: 8998238902766128955
+    second: racinebulb_1
   - first:
-      213: 1109944451372236249
-    second: toilemiel2_2
+      213: 4902059809936343933
+    second: racinebulb_2
+  - first:
+      213: -2444202576561454542
+    second: racinebulb_3
+  - first:
+      213: 8487875099458477032
+    second: racinebulb_4
+  - first:
+      213: -5384682883252509040
+    second: racinebulb_5
+  - first:
+      213: -7313607052458242946
+    second: racinebulb_6
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -106,13 +118,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toilemiel2_0
+      name: racinebulb_0
       rect:
         serializedVersion: 2
-        x: 73
-        y: 823
-        width: 336
-        height: 190
+        x: 711
+        y: 754
+        width: 120
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -121,20 +133,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: b07657b519ad45160800000000000000
-      internalID: 7013470837562238731
+      spriteID: b4eb99408d0c9f0a0800000000000000
+      internalID: -6847229724417474997
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilemiel2_1
+      name: racinebulb_1
       rect:
         serializedVersion: 2
-        x: 819
-        y: 391
-        width: 1101
-        height: 498
+        x: 993
+        y: 829
+        width: 116
+        height: 106
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -143,20 +155,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5a49b6305e586ebe0800000000000000
-      internalID: -1448323011501648731
+      spriteID: b3fc97b7b9a20ec70800000000000000
+      internalID: 8998238902766128955
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilemiel2_2
+      name: racinebulb_2
       rect:
         serializedVersion: 2
-        x: 37
-        y: 23
-        width: 516
-        height: 378
+        x: 978
+        y: 666
+        width: 78
+        height: 69
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -165,8 +177,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 9dd35780990576f00800000000000000
-      internalID: 1109944451372236249
+      spriteID: d7389f6cc6d970440800000000000000
+      internalID: 4902059809936343933
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: racinebulb_3
+      rect:
+        serializedVersion: 2
+        x: 1290
+        y: 296
+        width: 134
+        height: 496
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 232c5f0e4b2741ed0800000000000000
+      internalID: -2444202576561454542
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: racinebulb_4
+      rect:
+        serializedVersion: 2
+        x: 789
+        y: 430
+        width: 66
+        height: 126
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 8eb1b19ae6dfac570800000000000000
+      internalID: 8487875099458477032
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: racinebulb_5
+      rect:
+        serializedVersion: 2
+        x: 967
+        y: 302
+        width: 66
+        height: 141
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 096ab9b6273c545b0800000000000000
+      internalID: -5384682883252509040
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: racinebulb_6
+      rect:
+        serializedVersion: 2
+        x: 787
+        y: 197
+        width: 93
+        height: 96
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: e7c4f6b8229d08a90800000000000000
+      internalID: -7313607052458242946
       vertices: []
       indices: 
       edges: []
@@ -185,9 +285,13 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toilemiel2_0: 7013470837562238731
-      toilemiel2_1: -1448323011501648731
-      toilemiel2_2: 1109944451372236249
+      racinebulb_0: -6847229724417474997
+      racinebulb_1: 8998238902766128955
+      racinebulb_2: 4902059809936343933
+      racinebulb_3: -2444202576561454542
+      racinebulb_4: 8487875099458477032
+      racinebulb_5: -5384682883252509040
+      racinebulb_6: -7313607052458242946
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

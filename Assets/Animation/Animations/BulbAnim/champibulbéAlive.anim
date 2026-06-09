@@ -6,7 +6,7 @@ AnimationClip:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_Name: BulbDead
+  m_Name: "champibulb\xE9Alive"
   serializedVersion: 7
   m_Legacy: 0
   m_Compressed: 0
@@ -21,7 +21,7 @@ AnimationClip:
   - serializedVersion: 2
     curve:
     - time: 0
-      value: {fileID: -2390989175126755256, guid: dd2609f62229f0d4383908960d266cec, type: 3}
+      value: {fileID: -8632713093089946288, guid: eba66a48377d0434c95300ec7b38c5eb, type: 3}
     attribute: m_Sprite
     path: 
     classID: 212
@@ -44,7 +44,7 @@ AnimationClip:
       isIntCurve: 0
       isSerializeReferenceCurve: 0
     pptrCurveMapping:
-    - {fileID: -2390989175126755256, guid: dd2609f62229f0d4383908960d266cec, type: 3}
+    - {fileID: -8632713093089946288, guid: eba66a48377d0434c95300ec7b38c5eb, type: 3}
   m_AnimationClipSettings:
     serializedVersion: 2
     m_AdditiveReferencePoseClip: {fileID: 0}

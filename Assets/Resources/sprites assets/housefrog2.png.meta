@@ -1,13 +1,10 @@
 fileFormatVersion: 2
-guid: 1eb3d8c463e087242a8d3da0460b69aa
+guid: 7a607d559ddc503468af3d7df6cbda89
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 8985390644965646782
-    second: toilemiel_0
-  - first:
-      213: 8946467135720204770
-    second: toilemiel_1
+      213: 2287442920186821784
+    second: housefrog2_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,13 +100,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toilemiel_0
+      name: housefrog2_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 251
-        width: 1143
-        height: 829
+        x: 1038
+        y: 376
+        width: 315
+        height: 628
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -118,30 +115,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: eb1ab495f2582bc70800000000000000
-      internalID: 8985390644965646782
-      vertices: []
-      indices: 
-      edges: []
-      weights: []
-    - serializedVersion: 2
-      name: toilemiel_1
-      rect:
-        serializedVersion: 2
-        x: 1531
-        y: 159
-        width: 389
-        height: 542
-      alignment: 0
-      pivot: {x: 0, y: 0}
-      border: {x: 0, y: 0, z: 0, w: 0}
-      customData: 
-      outline: []
-      physicsShape: []
-      tessellationDetail: -1
-      bones: []
-      spriteID: 2e92f43a57c382c70800000000000000
-      internalID: 8946467135720204770
+      spriteID: 89cb7bd6731aebf10800000000000000
+      internalID: 2287442920186821784
       vertices: []
       indices: 
       edges: []
@@ -160,8 +135,7 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toilemiel_0: 8985390644965646782
-      toilemiel_1: 8946467135720204770
+      housefrog2_0: 2287442920186821784
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

@@ -1,13 +1,13 @@
 fileFormatVersion: 2
-guid: b9ce19b8251bb4440bf6fe0f3972ec8e
+guid: 9e01939af1e2afb4ab2aba41b1e734ac
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: -8836038735121277119
-    second: liane tableau_0
+      213: -802961695530748705
+    second: mouchz_0
   - first:
-      213: -4579188225198790269
-    second: liane tableau_1
+      213: 6151191027084008130
+    second: mouchz_1
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -103,53 +103,45 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: liane tableau_0
+      name: mouchz_0
       rect:
         serializedVersion: 2
-        x: 0
-        y: 0
-        width: 15
-        height: 142
+        x: 479
+        y: 885
+        width: 106
+        height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -7.5, y: -61}
-        - {x: 7.5, y: -61}
-        - {x: 7.5, y: 51}
-        - {x: -7.5, y: 51}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 14f1183f595106580800000000000000
-      internalID: -8836038735121277119
+      spriteID: fd4f4a9979e4bd4f0800000000000000
+      internalID: -802961695530748705
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: liane tableau_1
+      name: mouchz_1
       rect:
         serializedVersion: 2
-        x: 470
-        y: 11
-        width: 15
-        height: 138
+        x: 483
+        y: 629
+        width: 106
+        height: 58
       alignment: 0
-      pivot: {x: 0.5, y: 0.5}
+      pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
       customData: 
-      outline:
-      - - {x: -7.5, y: -58}
-        - {x: 7.5, y: -58}
-        - {x: 7.5, y: 61}
-        - {x: -7.5, y: 61}
+      outline: []
       physicsShape: []
-      tessellationDetail: 0
+      tessellationDetail: -1
       bones: []
-      spriteID: 389ef5d12947370c0800000000000000
-      internalID: -4579188225198790269
+      spriteID: 2ca99e216ab6d5550800000000000000
+      internalID: 6151191027084008130
       vertices: []
       indices: 
       edges: []
@@ -158,7 +150,7 @@ TextureImporter:
     customData: 
     physicsShape: []
     bones: []
-    spriteID: 131331c78f998ee4ca1f8fa91026c071
+    spriteID: 
     internalID: 0
     vertices: []
     indices: 
@@ -168,8 +160,8 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      liane tableau_0: -8836038735121277119
-      liane tableau_1: -4579188225198790269
+      mouchz_0: -802961695530748705
+      mouchz_1: 6151191027084008130
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 

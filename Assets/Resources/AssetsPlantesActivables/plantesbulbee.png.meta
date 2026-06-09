@@ -1,22 +1,34 @@
 fileFormatVersion: 2
-guid: 9e3bb42c44a6a524ba1d0c453b9b6519
+guid: eba66a48377d0434c95300ec7b38c5eb
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 7404402153356360732
-    second: toilemiel1 1_0
+      213: -5137934932125320120
+    second: plantesbulbee_0
   - first:
-      213: 6547800153459899941
-    second: toilemiel1 1_1
+      213: 4874261685085756141
+    second: plantesbulbee_1
   - first:
-      213: 781390621920393680
-    second: toilemiel1 1_2
+      213: 1579198279169751136
+    second: plantesbulbee_2
   - first:
-      213: 899246857253821925
-    second: toilemiel1 1_3
+      213: -5078114290044552097
+    second: plantesbulbee_3
   - first:
-      213: 7061909068928782436
-    second: toilemiel1 1_4
+      213: -4793111229910524248
+    second: plantesbulbee_4
+  - first:
+      213: -277795845233834903
+    second: plantesbulbee_5
+  - first:
+      213: -8632713093089946288
+    second: plantesbulbee_6
+  - first:
+      213: -4817378351221091079
+    second: plantesbulbee_7
+  - first:
+      213: 2609770981711714035
+    second: plantesbulbee_8
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -112,13 +124,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: toilemiel1 1_0
+      name: plantesbulbee_0
       rect:
         serializedVersion: 2
-        x: 63
-        y: 593
-        width: 480
-        height: 450
+        x: 367
+        y: 909
+        width: 90
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -127,20 +139,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: c1c71fc3788b1c660800000000000000
-      internalID: 7404402153356360732
+      spriteID: 84c7993b66362b8b0800000000000000
+      internalID: -5137934932125320120
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilemiel1 1_1
+      name: plantesbulbee_1
       rect:
         serializedVersion: 2
-        x: 1171
-        y: 621
-        width: 520
-        height: 286
+        x: 620
+        y: 911
+        width: 85
+        height: 102
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -149,20 +161,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 52eb93f3c857eda50800000000000000
-      internalID: 6547800153459899941
+      spriteID: dea55d97d2bd4a340800000000000000
+      internalID: 4874261685085756141
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilemiel1 1_2
+      name: plantesbulbee_2
       rect:
         serializedVersion: 2
-        x: 129
-        y: 71
-        width: 630
-        height: 402
+        x: 868
+        y: 911
+        width: 85
+        height: 101
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -171,20 +183,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 0d9f26271ae08da00800000000000000
-      internalID: 781390621920393680
+      spriteID: 06832dbc7707ae510800000000000000
+      internalID: 1579198279169751136
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilemiel1 1_3
+      name: plantesbulbee_3
       rect:
         serializedVersion: 2
-        x: 885
-        y: 147
-        width: 506
-        height: 266
+        x: 358
+        y: 681
+        width: 99
+        height: 91
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -193,20 +205,20 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 5ed10049044ca7c00800000000000000
-      internalID: 899246857253821925
+      spriteID: f5c3f0d45f9e689b0800000000000000
+      internalID: -5078114290044552097
       vertices: []
       indices: 
       edges: []
       weights: []
     - serializedVersion: 2
-      name: toilemiel1 1_4
+      name: plantesbulbee_4
       rect:
         serializedVersion: 2
-        x: 1571
-        y: 173
-        width: 184
-        height: 396
+        x: 606
+        y: 683
+        width: 99
+        height: 89
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -215,8 +227,96 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4601c91f1e0f00260800000000000000
-      internalID: 7061909068928782436
+      spriteID: 8ae5f3c3bb27b7db0800000000000000
+      internalID: -4793111229910524248
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantesbulbee_5
+      rect:
+        serializedVersion: 2
+        x: 854
+        y: 684
+        width: 99
+        height: 90
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 96402cc8622152cf0800000000000000
+      internalID: -277795845233834903
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantesbulbee_6
+      rect:
+        serializedVersion: 2
+        x: 351
+        y: 416
+        width: 107
+        height: 107
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 055928e0e21723880800000000000000
+      internalID: -8632713093089946288
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantesbulbee_7
+      rect:
+        serializedVersion: 2
+        x: 599
+        y: 414
+        width: 100
+        height: 111
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 9f45fc2c9eb352db0800000000000000
+      internalID: -4817378351221091079
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: plantesbulbee_8
+      rect:
+        serializedVersion: 2
+        x: 855
+        y: 423
+        width: 84
+        height: 102
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      customData: 
+      outline: []
+      physicsShape: []
+      tessellationDetail: -1
+      bones: []
+      spriteID: 3f69c0671e4c73420800000000000000
+      internalID: 2609770981711714035
       vertices: []
       indices: 
       edges: []
@@ -235,11 +335,15 @@ TextureImporter:
     spriteCustomMetadata:
       entries: []
     nameFileIdTable:
-      toilemiel1 1_0: 7404402153356360732
-      toilemiel1 1_1: 6547800153459899941
-      toilemiel1 1_2: 781390621920393680
-      toilemiel1 1_3: 899246857253821925
-      toilemiel1 1_4: 7061909068928782436
+      plantesbulbee_0: -5137934932125320120
+      plantesbulbee_1: 4874261685085756141
+      plantesbulbee_2: 1579198279169751136
+      plantesbulbee_3: -5078114290044552097
+      plantesbulbee_4: -4793111229910524248
+      plantesbulbee_5: -277795845233834903
+      plantesbulbee_6: -8632713093089946288
+      plantesbulbee_7: -4817378351221091079
+      plantesbulbee_8: 2609770981711714035
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
