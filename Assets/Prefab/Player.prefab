@@ -15467,7 +15467,7 @@ MonoBehaviour:
   obstacleLayer:
     serializedVersion: 2
     m_Bits: 64
-  tongueClip: {fileID: 8300000, guid: 343cd31eaeedef14e86d4d0871205bd8, type: 3}
+  tongueClip: {fileID: 8300000, guid: 300224d22286cef40a6a94f1fc4a52f4, type: 3}
   tongueLine: {fileID: -4433647437144218176}
   mouthPoint: {fileID: 4191907138082063214}
   tongueTip: {fileID: 5357453113590400469, guid: 7b3b8e3b5175ac84e8ac58ccb9b60ab8, type: 3}
@@ -15503,6 +15503,8 @@ MonoBehaviour:
   animatorRef: {fileID: 0}
   facingRight: 1
   langueControll: {fileID: 3815535619944118968}
+  LightClip: {fileID: 8300000, guid: 1d0083477811ffe4c8bffb81c3869efb, type: 3}
+  JumpClip: {fileID: 8300000, guid: d836e756f1f568a40ac1af85baec7422, type: 3}
 --- !u!114 &-2455956732645949397
 MonoBehaviour:
   m_ObjectHideFlags: 0

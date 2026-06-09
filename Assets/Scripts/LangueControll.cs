@@ -14,7 +14,6 @@ public class LangueControll : MonoBehaviour
     [SerializeField] private LayerMask grappleLayer;
     [SerializeField] private LayerMask obstacleLayer;
 
-
     [SerializeField] private AudioClip tongueClip;
     [SerializeField] public LineRenderer tongueLine;
     [SerializeField] private Transform mouthPoint;

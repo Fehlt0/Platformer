@@ -75,6 +75,9 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private LangueControll langueControll;
     
+    [SerializeField] private AudioClip LightClip;
+    [SerializeField] private AudioClip JumpClip;
+    
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
     private float wallSlideSpeed = 2f;
@@ -397,6 +400,7 @@ public class PlayerController : MonoBehaviour
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
         }
 
     }
@@ -426,6 +430,7 @@ public class PlayerController : MonoBehaviour
         if (context.ReadValueAsButton() && canLamp)
         {
             lightSphere.SetActive(true);
+            AudioManager.instance.PlayAudioClip(LightClip);
             canLamp = false;
             StartCoroutine(LampOffTimer());
         }
