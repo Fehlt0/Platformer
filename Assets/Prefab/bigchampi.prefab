@@ -229,8 +229,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: '::'
   baseTimeUntilDecay: 10
   timeUntilDecay: 0
+  aliveClip: {fileID: 8300000, guid: 16e4e9949d44df84db1e256364e155e8, type: 3}
   isAlive: 0
   hasBulb: 0
+  BumpedClip: {fileID: 8300000, guid: a686dbe23e4b79f488b5de8199d4df0a, type: 3}
   strength: 500
 --- !u!95 &6300767432769583086
 Animator:

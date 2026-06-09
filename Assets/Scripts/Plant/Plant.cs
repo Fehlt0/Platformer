@@ -9,13 +9,17 @@ public abstract class Plant : MonoBehaviour, IPlant
     private bool isHitByLuciole;
 
     private Animator animatorRef;
+    public AudioClip aliveClip;
     
     public bool isAlive;
     public bool hasBulb;
+    private bool hasDecayed;
+    private bool isReseting = true;
 
     private void Awake()
     {
         //GameManager.instance.AddPlant(this);
+        isReseting = true;
     }
 
     private void OnDestroy()
@@ -24,7 +28,8 @@ public abstract class Plant : MonoBehaviour, IPlant
     }
 
     public virtual void Start()
-    {
+    {       
+        
         animatorRef = GetComponent<Animator>();
         timeUntilDecay = 0;
         GameManager.instance.AddPlant(this);
@@ -34,7 +39,13 @@ public abstract class Plant : MonoBehaviour, IPlant
     {
         if (other.CompareTag("Light") && !hasBulb)
         {
+            isReseting = false;
+            if (animatorRef.GetBool("isAlive") == false)
+            {
+                AudioManager.instance.PlayAudioClip(aliveClip);
+            }
             timeUntilDecay = baseTimeUntilDecay;
+            hasDecayed = false;
         }
     }
     
@@ -49,6 +60,7 @@ public abstract class Plant : MonoBehaviour, IPlant
         if (isHitByLuciole)
         {
             timeUntilDecay = baseTimeUntilDecay;
+            hasDecayed = false;
         }
         else
         {
@@ -56,6 +68,10 @@ public abstract class Plant : MonoBehaviour, IPlant
             timeUntilDecay = Mathf.Max(0, timeUntilDecay);
         }
         isAlive = timeUntilDecay > 0;
+        if (!isAlive && !hasDecayed && !isReseting)
+        {
+            hasDecayed = true;
+        }
     }
     
 
@@ -71,6 +87,7 @@ public abstract class Plant : MonoBehaviour, IPlant
 
     public virtual void ResetPlant()
     {
+        isReseting = true;
         timeUntilDecay = 0;
         isAlive = false;
         animatorRef.SetBool("isAlive", false);

@@ -75,6 +75,9 @@ public class PlayerController : MonoBehaviour
     
     [SerializeField] private LangueControll langueControll;
     
+    [SerializeField] private AudioClip LightClip;
+    [SerializeField] private AudioClip JumpClip;
+    
     private int wallDirection; // sert a indiquer le coté opposé ou on saute, en gros 1 = droite et -1 c'est a gauche 
     
     private float wallSlideSpeed = 2f;
@@ -376,6 +379,7 @@ public class PlayerController : MonoBehaviour
             
             isTouchingWall = false;
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
         }
         else if (!isGrounded && langueControll.wasHoldingTongue )
         {
@@ -385,18 +389,22 @@ public class PlayerController : MonoBehaviour
             langueControll.tongueLine.enabled = false;
             rb.AddForce(Vector2.up*jumpForceLangue, ForceMode2D.Impulse);
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
         }
         else if (isGrounded && Mathf.Abs(moveInput.x) < 0.01f && !langueControll.wasHoldingTongue)
         {
 
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce * multiplierStaticJump);
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
         }
         
         else
         {
             rb.linearVelocity = new Vector2(rb.linearVelocity.x, jumpForce);
             coyoteTimeCounter = 0f;
+            AudioManager.instance.PlayAudioClip(JumpClip);
+            
         }
 
     }
@@ -426,6 +434,7 @@ public class PlayerController : MonoBehaviour
         if (context.ReadValueAsButton() && canLamp)
         {
             lightSphere.SetActive(true);
+            AudioManager.instance.PlayAudioClip(LightClip);
             canLamp = false;
             StartCoroutine(LampOffTimer());
         }
@@ -483,7 +492,6 @@ public class PlayerController : MonoBehaviour
     
     public void TriggerTongueJump()
     {
-
         langueControll.isGrappling = false;
         langueControll.wasHoldingTongue = false;
         rb.AddForce(Vector2.up * autoJumpForceLangue, ForceMode2D.Impulse);

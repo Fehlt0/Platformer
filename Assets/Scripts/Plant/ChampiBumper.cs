@@ -5,6 +5,8 @@ using UnityEngine;
 
 public class ChampiBumper : Plant
 {
+    [SerializeField] private AudioClip BumpedClip;
+    
     [SerializeField] private float strength;
     private Vector2 direction;
     
@@ -13,6 +15,7 @@ public class ChampiBumper : Plant
         base.OnTriggerEnter2D(other);
         if (isAlive && other.CompareTag("Player"))
         {
+            AudioManager.instance.PlayAudioClip(BumpedClip);
             float rotation = transform.eulerAngles.z;
             rotation *= Mathf.Deg2Rad;
 

@@ -7,25 +7,24 @@ public class AudioManager : MonoBehaviour
     
     private void Awake()
     {
-        if (instance == null)
+        if (instance != null)
         {
-            instance = this;
+            Destroy(this);
         }
         else
         {
-            Destroy(this);
+            instance = this;
         }
         
     }
     
-    [SerializeField] private AudioClip mainMusic;
+    [SerializeField] private AudioSource musicSource;
     [SerializeField] private AudioSource audioSource;
 
+    
 
-    private void Start()
+    public void PlayAudioClip(AudioClip clip)
     {
-        audioSource.clip = mainMusic;
-        audioSource.loop = true;
-        audioSource.Play();
+        audioSource.PlayOneShot(clip);
     }
 }
