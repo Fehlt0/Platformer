@@ -222,11 +222,11 @@ public class PlayerController : MonoBehaviour
 
     private void CheckRotate()
     {
-        if (!facingRight && rb.linearVelocityX > 0)
+        if (!facingRight && rb.linearVelocityX > 0.1f)
         {
             RotateAnim();
         }
-        else if (facingRight && rb.linearVelocityX < 0)
+        else if (facingRight && rb.linearVelocityX < -0.1f)
         {
             RotateAnim();
         }
@@ -234,7 +234,7 @@ public class PlayerController : MonoBehaviour
 
     private void RotateAnim()
     {
-        if (!animatorRef.GetBool("isOnWall"))
+        if (!animatorRef.GetBool("isOnWall") ||!animatorRef.GetBool("isRunning") || !animatorRef.GetBool("isWalking"))
         {
             spriteRef.flipX = facingRight;
             facingRight = !facingRight;
@@ -244,7 +244,7 @@ public class PlayerController : MonoBehaviour
             langueControll.playerHead.transform.localPosition = tetePos;
 
         }
-    }   
+    }
     
 
     private void PointeurPosition()
