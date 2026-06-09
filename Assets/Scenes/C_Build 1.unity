@@ -345806,6 +345806,10 @@ PrefabInstance:
     m_TransformParent: {fileID: 1299159831}
     m_Modifications:
     - target: {fileID: 2916108340725434362, guid: c6cd96a035f805043931746445038c54, type: 3}
+      propertyPath: m_Volume
+      value: 0.405
+      objectReference: {fileID: 0}
+    - target: {fileID: 2916108340725434362, guid: c6cd96a035f805043931746445038c54, type: 3}
       propertyPath: m_Resource
       value: 
       objectReference: {fileID: 8300000, guid: 756e182d7fa0bbf4385f7216a892219e, type: 3}
@@ -345816,7 +345820,7 @@ PrefabInstance:
     - target: {fileID: 4648436183171434005, guid: c6cd96a035f805043931746445038c54, type: 3}
       propertyPath: m_Resource
       value: 
-      objectReference: {fileID: 8300000, guid: 756e182d7fa0bbf4385f7216a892219e, type: 3}
+      objectReference: {fileID: 0}
     - target: {fileID: 6301704585746398884, guid: c6cd96a035f805043931746445038c54, type: 3}
       propertyPath: m_LocalPosition.x
       value: 0
